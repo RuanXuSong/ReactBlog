@@ -11,7 +11,6 @@ const { Header } = Layout;
 class PrimaryLayout extends Component {
   render() {
     const { path } =this.props.match;
-    console.log(path)
     return (
       <Layout>
         <Header className="header">             
