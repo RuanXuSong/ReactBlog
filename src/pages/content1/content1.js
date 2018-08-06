@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route ,Link,Switch } from 'react-router-dom'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Brief from './Brief/Brief'
-import Page2 from './page2/page2'
+import HtmlEle from './HtmlEle/HtmlEle'
 import Page3 from './page3/page3'
 import Page4 from './page4/page4'
 const { SubMenu } = Menu;
@@ -26,13 +26,13 @@ const { Header, Content, Sider } = Layout;
               <Sider width={200} style={{ background: '#fff' }}>
                 <Menu
                   mode="inline"
-                  defaultSelectedKeys={['brief']}
+                  defaultSelectedKeys={['HTML简介']}
                   defaultOpenKeys={['sub1']}
                   style={{ height: '100%', borderRight: 0 }}
                 >
                   <SubMenu key="sub1" title={<span><Icon type="user" />HTML基础</span>}>
-                    <Menu.Item key="brief" onClick={this.handleClick}><Link to={`${match.path}/brief`}>HTML简介</Link></Menu.Item>
-                    <Menu.Item key="page2" onClick={this.handleClick}><Link to={`${match.path}/page2`}>option2</Link></Menu.Item>
+                    <Menu.Item key="HTML简介" onClick={this.handleClick}><Link to={`${match.path}/brief`}>HTML简介</Link></Menu.Item>
+                    <Menu.Item key="HTML元素" onClick={this.handleClick}><Link to={`${match.path}/HtmlEle`}>HTML元素</Link></Menu.Item>
                     <Menu.Item key="page3" onClick={this.handleClick}><Link to={`${match.path}/page3`}>option3</Link></Menu.Item>
                     <Menu.Item key="page4" onClick={this.handleClick}><Link to={`${match.path}/page4`}>option4</Link></Menu.Item>
                   </SubMenu>                 
@@ -48,7 +48,7 @@ const { Header, Content, Sider } = Layout;
                   <Switch>
                     <Route exact path={`${match.path}`} component={Brief}/>
                     <Route path={`${match.path}/brief`} component={Brief}/>
-                    <Route path={`${match.path}/page2`} component={Page2}/>
+                    <Route path={`${match.path}/HtmlEle`} component={HtmlEle}/>
                     <Route path={`${match.path}/page3`} component={Page3}/>
                     <Route path={`${match.path}/page4`} component={Page4}/>
                   </Switch>

@@ -27,6 +27,10 @@
 dt{
   margin-bottom: 16px;
 }
+dd::before{
+  content:'●';
+  padding-right:10px; 
+}
 .split-line {
   border-bottom: 1px dashed #ddd;
   margin: 40px 0;
@@ -35,4 +39,19 @@ dt{
   font-weight: bold;
   margin-bottom: 16px;
   font-size: 18px;
+}
+.NoteTip{
+  color: $orange;
+  margin: 20px 0;
+  font-size: 14px;
+}
+.CodeSession {
+  width: 100%;
+  margin: 15px 0 15px;
+  padding: 20px;
+  border: 0;
+  border: 1px dotted $green;
+  background: $grey;
+  line-height: 1.4;
+  font-family: Consolas;
 }

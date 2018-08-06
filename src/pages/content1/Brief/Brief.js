@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import HeadTitle from '../../../components/HeadTitle';
 import SessionHead from '../../../components/SessionHead';
-import './index.scss'
+import SplitLine from '../../../components/SplitLine';
+import './index.scss';
   class Brief extends Component{
     render(){
       return(
@@ -16,7 +17,7 @@ import './index.scss'
               <dd>标记语言是一套标记标签 (markup tag)</dd>
               <dd>HTML 使用标记标签来描述网页</dd>
             </dl>
-            <div className="split-line"></div>
+            <SplitLine/>
             <dl>
               <SessionHead title="HTML 标签"/>
               <dt>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。</dt>
