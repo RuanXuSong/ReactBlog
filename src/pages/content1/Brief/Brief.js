@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import HeadTitle from '../../../components/HeadTitle';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
-import './index.scss';
   class Brief extends Component{
     render(){
       return(
