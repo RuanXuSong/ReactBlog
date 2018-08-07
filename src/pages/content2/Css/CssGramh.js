@@ -4,57 +4,7 @@ import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import In from '../../../components/Indent';
 import CodeSession from '../../../components/CodeSession';
-const columns1 = [{
-  title: '标签',
-  dataIndex: 'Tag',
-  key: 'Tag',
-},{
-  title: '描述',
-  dataIndex: 'Description',
-  key: 'Description',
-}];
-const columns2 = [{
-  title: '属性',
-  dataIndex: 'Tag',
-  key: 'Tag',
-},{
-  title: '描述',
-  dataIndex: 'Description',
-  key: 'Description',
-}];
-
-const data1 = [{
-  key: '1',
-  Tag: '<center>',
-  Description:'定义居中的内容。',
-}, {
-  key: '2',
-  Tag: '<font> 和 <basefont>',
-  Description:'定义 HTML 字体。',
-}, {
-  key: '3',
-  Tag: '<s> 和 <strike>',
-  Description:'	定义删除线文本',
-}, {
-  key: '4',
-  Tag: '<u>',
-  Description:'定义下划线文本',
-}];
-
-const data2 = [{
-  key: '1',
-  Tag: 'align',
-  Description:'定义文本的对齐方式',
-}, {
-  key: '2',
-  Tag: 'bgcolor',
-  Description:'定义背景颜色',
-}, {
-  key: '3',
-  Tag: 'color',
-  Description:'	定义文本颜色',
-}];
-  class CssGramh extends Component{
+class CssGramh extends Component{
     render(){
       return(
         <div className="content">

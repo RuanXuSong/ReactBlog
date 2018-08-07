@@ -1,17 +1,15 @@
 import React, { Component } from 'react';
 import { Route ,Link,Switch } from 'react-router-dom'
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import Brief from './Brief/Brief'
-import Page2 from './page2/page2'
-import Page3 from './page3/page3'
-import Page4 from './page4/page4'
+import JsBrief from './Js/Brief'
+import EchartEg from './Echart/EchartEg'
 const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
-  class JsPage extends Component{
+const { Content, Sider } = Layout;
+class CssPage extends Component{
     constructor(props){
       super(props);
       this.state={
-        page:"brief"
+        page:"JS简介"
       }
     }
     handleClick = e =>{   
@@ -26,31 +24,30 @@ const { Header, Content, Sider } = Layout;
               <Sider width={200} style={{ background: '#fff' }}>
                 <Menu
                   mode="inline"
-                  defaultSelectedKeys={['brief']}
+                  defaultSelectedKeys={['JS简介']}
                   defaultOpenKeys={['sub1']}
                   style={{ height: '100%', borderRight: 0 }}
                 >
-                  <SubMenu key="sub1" title={<span><Icon type="user" />HTML基础</span>}>
-                    <Menu.Item key="brief" onClick={this.handleClick}><Link to={`${match.path}/brief`}>HTML简介</Link></Menu.Item>
-                    <Menu.Item key="page2" onClick={this.handleClick}><Link to={`${match.path}/page2`}>option2</Link></Menu.Item>
-                    <Menu.Item key="page3" onClick={this.handleClick}><Link to={`${match.path}/page3`}>option3</Link></Menu.Item>
-                    <Menu.Item key="page4" onClick={this.handleClick}><Link to={`${match.path}/page4`}>option4</Link></Menu.Item>
-                  </SubMenu>                 
+                  <SubMenu key="sub1" title={<span><Icon type="bars" />JS简介</span>}>
+                    <Menu.Item key="JS简介" onClick={this.handleClick}><Link to={`${match.path}/JsBrief`}>JS简介</Link></Menu.Item>                                     
+                  </SubMenu>
+                  <SubMenu key="sub2" title={<span><Icon type="bars" />Echart</span>}>
+                    <Menu.Item key="Echart简介" onClick={this.handleClick}><Link to={`${match.path}/EchartBrief`}>Echart简介</Link></Menu.Item>
+                    <Menu.Item key="Echart实例" onClick={this.handleClick}><Link to={`${match.path}/EchartEg`}>Echart实例</Link></Menu.Item>                  
+                  </SubMenu>             
                 </Menu>
               </Sider>
               <Layout style={{ padding: '0 24px 0' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
-                  <Breadcrumb.Item>Home</Breadcrumb.Item>
-                  <Breadcrumb.Item>HTML</Breadcrumb.Item>
+                <Breadcrumb separator=">" style={{ margin: '16px 0' }}>
+                  <Breadcrumb.Item><Icon type="home" />Home</Breadcrumb.Item>
+                  <Breadcrumb.Item><Icon type="user" />JS</Breadcrumb.Item>
                   <Breadcrumb.Item>{this.state.page}</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>
                   <Switch>
-                    <Route exact path={`${match.path}`} component={Brief}/>
-                    <Route path={`${match.path}/brief`} component={Brief}/>
-                    <Route path={`${match.path}/page2`} component={Page2}/>
-                    <Route path={`${match.path}/page3`} component={Page3}/>
-                    <Route path={`${match.path}/page4`} component={Page4}/>
+                    <Route exact path={`${match.path}`} component={JsBrief}/>
+                    <Route path={`${match.path}/JsBrief`} component={JsBrief}/>
+                    <Route path={`${match.path}/EchartEg`} component={EchartEg}/>
                   </Switch>
                 </Content>
               </Layout>
@@ -58,4 +55,4 @@ const { Header, Content, Sider } = Layout;
         )
     }
   }
-export default JsPage;
+export default CssPage;

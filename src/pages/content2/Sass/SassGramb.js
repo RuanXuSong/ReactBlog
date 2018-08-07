@@ -93,7 +93,7 @@ import CodeSession from '../../../components/CodeSession';
               <In>width&#58; $container-width;</In>
               <p>&#125; </p>     
               <p>.col-4 &#123;</p>
-              <In>width&#58; $container-width;/ 4</In>
+              <In>width&#58; $container-width/ 4;</In>
               <p>&#125; </p>      
             </CodeSession>
             <SplitLine/>

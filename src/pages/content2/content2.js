@@ -45,9 +45,9 @@ class CssPage extends Component{
                 </Menu>
               </Sider>
               <Layout style={{ padding: '0 24px 0' }}>
-                <Breadcrumb style={{ margin: '16px 0' }}>
-                  <Breadcrumb.Item>Home</Breadcrumb.Item>
-                  <Breadcrumb.Item>CSS</Breadcrumb.Item>
+                <Breadcrumb separator=">" style={{ margin: '16px 0' }}>
+                  <Breadcrumb.Item><Icon type="home" />Home</Breadcrumb.Item>
+                  <Breadcrumb.Item><Icon type="user" />CSS</Breadcrumb.Item>
                   <Breadcrumb.Item>{this.state.page}</Breadcrumb.Item>
                 </Breadcrumb>
                 <Content style={{ background: '#fff', padding: 24, margin: 0, minHeight: 280 }}>

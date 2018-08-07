@@ -4,7 +4,7 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
-p,.Indent{
+p{
   margin-top: 0;
   margin-bottom: 0.2em;
 }
@@ -57,10 +57,11 @@ dd::before{
   background: $grey;
   line-height: 1.4;
   font-family: Consolas;
+  .Indent{
+     margin-left: rem(20);
+     @extend p;
+  }
 }
 .imgWrap{
   margin: rem(20) 0;
-}
-.Indent{
-  margin-left: rem(20);
 }
