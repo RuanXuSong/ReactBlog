@@ -4,6 +4,7 @@ import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import TableList from '../../../components/TableList';
 import NoteTip from '../../../components/NoteTip';
+import In from '../../../components/Indent';
 import CodeSession from '../../../components/CodeSession';
 const columns1 = [{
   title: '标签',
@@ -92,10 +93,10 @@ const data2 = [{
             <p>text-align 属性规定了元素中文本的水平对齐方式：</p>
             <CodeSession>
               <p>&lt;html&gt;</p>
-              <p>&lt;body&gt;</p>
-              <p>&lt;h1 style="text-align:center"&gt; This is a heading &lt;/h1&gt;</p>   
-              <p>&lt;p&gt;The heading above is aligned to the center of this page.&lt;/p&gt;</p> 
-              <p>&lt;/body&gt;</p>
+              <In>&lt;body&gt;</In>
+              <In><In>&lt;h1 style="text-align:center"&gt; This is a heading &lt;/h1&gt;</In></In>   
+              <In><In>&lt;p&gt;The heading above is aligned to the center of this page.&lt;/p&gt;</In></In> 
+              <In>&lt;/body&gt;</In>
               <p>&lt;/html&gt;</p>
             </CodeSession>
             <dl>

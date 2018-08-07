@@ -116,8 +116,32 @@ const data = [{
   key: '16',
   Result: '÷',
   Description:'除号',
-  Name:'	&divide;',
+  Name:'&divide;',
   Rank:'&#247;'
+}, {
+  key: '17',
+  Result: '{',
+  Description:'大括号左边部分',
+  Name:'-',
+  Rank:'&#123;'
+}, {
+  key: '18',
+  Result: '}',
+  Description:'大括号右边部分',
+  Name:'-',
+  Rank:'&#125;'
+}, {
+  key: '19',
+  Result: ':',
+  Description:'冒号',
+  Name:'-',
+  Rank:'&#58;'
+}, {
+  key: '20',
+  Result: ';',
+  Description:'分号',
+  Name:'-',
+  Rank:'&#59;'
 }];
 class Esse extends Component{
     render(){

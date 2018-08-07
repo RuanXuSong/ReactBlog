@@ -4,6 +4,7 @@ import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import TableList from '../../../components/TableList';
 import NoteTip from '../../../components/NoteTip';
+import In from '../../../components/Indent';
 import CodeSession from '../../../components/CodeSession';
 const columns = [{
   title: '开始标签',
@@ -74,7 +75,7 @@ const data = [{
             <SessionHead title="<body> 元素"/>
             <CodeSession>
               <p>&lt;body&gt;</p>
-              <p>&lt;p>This is my first paragraph.&lt;/p&gt;</p>    
+              <In>&lt;p>This is my first paragraph.&lt;/p&gt;</In>    
               <p>&lt;/body&gt;</p>     
             </CodeSession>
             <dl>
