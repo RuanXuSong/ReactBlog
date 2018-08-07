@@ -25,7 +25,11 @@ class CssPage extends Component{
       const { match }=this.props;
       return( 
            <Layout>
-              <Sider width={200} style={{ background: '#fff' }}>
+              <Sider 
+                collapsible 
+                collapsedWidth={0}
+                width={200} 
+                theme="light">
                 <Menu
                   mode="inline"
                   defaultSelectedKeys={['CSS简介']}

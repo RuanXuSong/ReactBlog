@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
   class JsBrief extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="JS简介"/>
+        <Panel title="JS简介">
           <div className="content-container">
             <SessionHead title="JavaScript简介"/>
             <dl>
@@ -20,7 +19,7 @@ import SplitLine from '../../../components/SplitLine';
             <div>HTML 中的脚本必须位于 &lt;script&gt; 与 &lt;/script&gt; 标签之间。</div>
             <div>脚本可被放置在 HTML 页面的 &lt;body&gt; 和 &lt;head&gt; 部分中。</div>   
           </div>
-        </div>
+        </Panel>
         )
     }
   }

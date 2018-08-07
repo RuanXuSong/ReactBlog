@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import NoteTip from '../../../components/NoteTip';
   class SassBrief extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="Sass简介"/>
+        <Panel title="Echart简介">
           <div className="content-container">
             <SessionHead title="Sass是什么"/>
             <div>Sass (Syntactically Awesome Style Sheets)是一个CSS预处理器。Sass与CSS关系就像CoffeeScript与Javascript关系。
@@ -35,7 +34,7 @@ import NoteTip from '../../../components/NoteTip';
             <SessionHead title="为什么使用Sass?"/>          
               <div>问得不错。Sass让编写可维护的CSSS更加简易方便。可以用更少的代码，做更多的事，用更少的时间，具有更强的可读性。</div>
           </div>
-        </div>
+        </Panel>
         )
     }
   }

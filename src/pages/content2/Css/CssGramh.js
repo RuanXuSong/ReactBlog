@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import In from '../../../components/Indent';
@@ -7,8 +7,7 @@ import CodeSession from '../../../components/CodeSession';
 class CssGramh extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="CSS高级语法"/>
+        <Panel title="CSS高级语法">
           <div className="content-container">
             <SessionHead title="选择器的分组"/>
            <div>
@@ -40,7 +39,7 @@ class CssGramh extends Component{
               <p>&#125; </p>
             </CodeSession>
           </div>
-        </div>
+        </Panel>
         )
     }
   }

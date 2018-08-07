@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import Img from '../../../components/Img';
@@ -9,8 +9,7 @@ import CodeSession from '../../../components/CodeSession';
   class CssGramb extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="CSS基础语法"/>
+        <Panel title="CSS基础语法">
           <div className="content-container">
             <SessionHead title="CSS语法"/>
             <dl>
@@ -78,7 +77,7 @@ import CodeSession from '../../../components/CodeSession';
               <dd>W3School 使用的是小写标签，因为万维网联盟（W3C）在 HTML 4 中推荐使用小写，而在未来 (X)HTML 版本中强制使用小写。</dd>
             </dl>
           </div>
-        </div>
+        </Panel>
         )
     }
   }

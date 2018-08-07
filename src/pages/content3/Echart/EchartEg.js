@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import In from '../../../components/Indent';
@@ -41,11 +41,26 @@ var echarts = require('echarts');
             ]
         }
     });
-    }   
+    echarts.init(document.getElementById('line-chart')).setOption({
+      title: {
+        text: 'ECharts-折线'
+      },       
+      xAxis: {
+        type: 'category',
+        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+      },
+      yAxis: {
+          type: 'value'
+      },
+      series: [{
+          data: [820, 932, 901, 934, 1290, 1330, 1320],
+          type: 'line'
+      }]
+    });
+  }   
     render(){   
       return(
-        <div className="content">
-          <HeadTitle title="Echarts实例"/>
+        <Panel title="Echarts实例">
           <div className="content-container">
             <SessionHead title="柱状图"/>
             <div id="bar-chart" style={{width:'90%',height:"500px"}}></div>
@@ -54,8 +69,11 @@ var echarts = require('echarts');
             <SessionHead title="饼状图"/>
             <div id="pie-chart" style={{width:'90%',height:"500px"}}></div>
             <SplitLine/>
+            <SessionHead title="折线图"/>
+            <div id="line-chart" style={{width:'90%',height:"500px"}}></div>
+            <SplitLine/>
           </div>
-        </div>
+        </Panel>
         )
     }
   }

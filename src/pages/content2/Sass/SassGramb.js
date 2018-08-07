@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import In from '../../../components/Indent';
@@ -8,8 +8,7 @@ import CodeSession from '../../../components/CodeSession';
   class CssGramb extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="Sass基础语法"/>
+        <Panel title="Sass基础语法">
           <div className="content-container">
             <SessionHead title="变量"/>
             <dl>
@@ -168,7 +167,7 @@ import CodeSession from '../../../components/CodeSession';
             </CodeSession>
             <NoteTip title="注意：如果可能，嵌套不要超过四层。虽然语法上嵌套五层没问题"/>
             </div>
-        </div>
+        </Panel>
         )
     }
   }

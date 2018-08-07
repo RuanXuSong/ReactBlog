@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import TableList from '../../../components/TableList';
@@ -146,8 +146,7 @@ const data = [{
 class Esse extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="HTML 字符实体"/>
+        <Panel title="HTML 字符实体">
           <div className="content-container">
             <SessionHead title="HTML 实体"/>
             <dl>
@@ -174,7 +173,7 @@ class Esse extends Component{
             <TableList columns={columns} data={data}/>
             <SplitLine/>
           </div>
-        </div>
+        </Panel>
         )
     }
   }

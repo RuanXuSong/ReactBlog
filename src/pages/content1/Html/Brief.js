@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
   class Brief extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="HTML简介"/>
+        <Panel title="HTML简介">
           <div className="content-container">
             <SessionHead title="HTML简介"/>
             <dl>
@@ -26,7 +25,7 @@ import SplitLine from '../../../components/SplitLine';
               <dd>HTML 使用标记标签来描述网页</dd>
             </dl>
           </div>
-        </div>
+        </Panel>
         )
     }
   }

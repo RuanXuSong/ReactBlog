@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import In from '../../../components/Indent';
@@ -8,8 +8,7 @@ import CodeSession from '../../../components/CodeSession';
   class CssGramh extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="Sass高级语法"/>
+        <Panel title="Sass高级语法">
           <div className="content-container">
             <SessionHead title="Imports"/>
             <dl>
@@ -128,7 +127,7 @@ import CodeSession from '../../../components/CodeSession';
               <p>&#125; </p>      
             </CodeSession>
           </div>
-        </div >
+        </Panel>
         )
     }
   }

@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
   class CssBrief extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="CSS简介"/>
+        <Panel title="CSS简介">
           <div className="content-container">
             <SessionHead title="CSS概述"/>
             <dl>
@@ -34,7 +33,7 @@ import SplitLine from '../../../components/SplitLine';
               <div>因此，内联样式（在 HTML 元素内部）拥有最高的优先权，这意味着它将优先于以下的样式声明：&lt;head&gt;
                   标签中的样式声明，外部样式表中的样式声明，或者浏览器中的样式声明（缺省值）。</div>            
           </div>
-        </div>
+        </Panel>
         )
     }
   }

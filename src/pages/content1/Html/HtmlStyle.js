@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HeadTitle from '../../../components/HeadTitle';
+import Panel from '../../../components/Panel';
 import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import TableList from '../../../components/TableList';
@@ -59,8 +59,7 @@ const data2 = [{
   class HtmlStyle extends Component{
     render(){
       return(
-        <div className="content">
-          <HeadTitle title="HTML样式"/>
+        <Panel title="HTML样式">
           <div className="content-container">
             <SessionHead title="HTML 的 style 属性"/>
             <dl>
@@ -104,7 +103,7 @@ const data2 = [{
               <dd>style 属性淘汰了旧的 "align" 属性。</dd>
             </dl>           
           </div>
-        </div>
+        </Panel>
         )
     }
   }
