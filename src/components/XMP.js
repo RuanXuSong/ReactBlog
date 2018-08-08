@@ -4,7 +4,7 @@ export default class XMP extends Component{
     // 1.缩进符用In包裹，
     // 2.如果遇到没有html标签包裹的文本，如css，就用i包裹
     // 3.如果已经用了In就无需再用i包裹
-    // 4.前大括号用&#123代替
+    // 4.前大括号用&#123;代替
     // 5.目前最多嵌套两层<In>
     // 6.请使用<i></i>或者<i/>作为换行符
     render(){

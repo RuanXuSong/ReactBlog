@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Route ,Link,Switch } from 'react-router-dom'
+import { Route ,Link,Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import JsBrief from './Js/Brief'
+import EchartBrief from './Echart/Brief'
 import EchartEg from './Echart/EchartEg'
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -51,6 +52,7 @@ class CssPage extends Component{
                   <Switch>
                     <Route exact path={`${match.path}`} component={JsBrief}/>
                     <Route path={`${match.path}/JsBrief`} component={JsBrief}/>
+                    <Route path={`${match.path}/EchartBrief`} component={EchartBrief}/>
                     <Route path={`${match.path}/EchartEg`} component={EchartEg}/>
                   </Switch>
                 </Content>

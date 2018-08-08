@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route ,Link,Switch } from 'react-router-dom'
+import { Route ,Link,Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Brief from './Html/Brief'
 import HtmlEle from './Html/HtmlEle'

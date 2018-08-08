@@ -4,7 +4,9 @@ export default class Panel extends Component{
         return(
             <div className="content">
                 <div className="head-title">{this.props.title}</div>
-                {this.props.children}
+                <div className="content-container">
+                    {this.props.children}
+                </div>
             </div>
         )
     }

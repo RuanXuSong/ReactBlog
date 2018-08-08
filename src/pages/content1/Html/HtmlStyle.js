@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
-import SessionHead from '../../../components/SessionHead';
-import SplitLine from '../../../components/SplitLine';
+import Session from '../../../components/Session';
 import TableList from '../../../components/TableList';
 import NoteTip from '../../../components/NoteTip';
 import In from '../../../components/Indent';
@@ -60,35 +59,34 @@ const data2 = [{
     render(){
       return(
         <Panel title="HTML样式">
-          <div className="content-container">
-            <SessionHead title="HTML 的 style 属性"/>
-            <dl>
-              <dt>style 属性的作用：</dt>
-              <dd>样式是 HTML 4 引入的，它是一种新的首选的改变 HTML 元素样式的方式。通过 HTML 样式，
-                能够通过使用 style 属性直接将样式添加到 HTML 元素，或者间接地在独立的样式表中（CSS 文件）进行定义。</dd>
-            </dl>           
-            <SplitLine/>
-            <dl>
-              <SessionHead title="不赞成使用的标签和属性"/>
-              <dd>在 HTML 4 中，有若干的标签和属性是被废弃的。
-                被废弃（Deprecated）的意思是在未来版本的 HTML 和 XHTML 中将不支持这些标签和属性。</dd>
-              <dd>请避免使用这些被废弃的标签和属性！</dd>
-              <dt>应该避免使用下面这些标签和属性：</dt>
-            </dl>
-            <TableList columns={columns1} data={data1}/>
-            <TableList columns={columns2} data={data2}/>
-            <NoteTip title="对于以上这些标签和属性：请使用样式代替"/>
-            <SplitLine/>
+          <Session title="HTML 的 style 属性">
+          <dl>
+            <dt>style 属性的作用：</dt>
+            <dd>样式是 HTML 4 引入的，它是一种新的首选的改变 HTML 元素样式的方式。通过 HTML 样式，
+              能够通过使用 style 属性直接将样式添加到 HTML 元素，或者间接地在独立的样式表中（CSS 文件）进行定义。</dd>
+          </dl>           
+          </Session>
+          <Session title="不赞成使用的标签和属性">
+          <dl>            
+            <dd>在 HTML 4 中，有若干的标签和属性是被废弃的。
+              被废弃（Deprecated）的意思是在未来版本的 HTML 和 XHTML 中将不支持这些标签和属性。</dd>
+            <dd>请避免使用这些被废弃的标签和属性！</dd>
+            <dt>应该避免使用下面这些标签和属性：</dt>
+          </dl>
+          <TableList columns={columns1} data={data1}/>
+          <TableList columns={columns2} data={data2}/>
+          <NoteTip title="对于以上这些标签和属性：请使用样式代替"/>
+          </Session>
 
-            <SessionHead title="Style例子"/>
-            <XMP>
-              <p style={{fontFamily:'Verdana',color:'red'}}>This text is in Verdana and red</p>
-              <p style={{fontFamily:'Times',color:'blue'}}>This text is in Times and blue</p>
-              <p style={{fontSize:'30px'}}>This text is 30 pixels high</p>           
-            </XMP>
-            <SplitLine/>
+          <Session title="Style例子">
+          <XMP>
+            <p style={{fontFamily:'Verdana',color:'red'}}>This text is in Verdana and red</p>
+            <p style={{fontFamily:'Times',color:'blue'}}>This text is in Times and blue</p>
+            <p style={{fontSize:'30px'}}>This text is 30 pixels high</p>           
+          </XMP>
+          </Session>
 
-            <SessionHead title="style实例-文本对齐"/>
+          <Session title="style实例-文本对齐">
             <p>text-align 属性规定了元素中文本的水平对齐方式：</p>
             <XMP>
               <i>&lt;html&gt;</i>
@@ -101,8 +99,8 @@ const data2 = [{
             <dl>
               <dd>在这个例子中，h1标签中的文字居中展示了</dd>
               <dd>style 属性淘汰了旧的 "align" 属性。</dd>
-            </dl>           
-          </div>
+            </dl> 
+          </Session>          
         </Panel>
         )
     }

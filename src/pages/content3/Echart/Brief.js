@@ -1,41 +1,27 @@
 import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
-import SessionHead from '../../../components/SessionHead';
-import SplitLine from '../../../components/SplitLine';
+import Session from '../../../components/Session';
 import NoteTip from '../../../components/NoteTip';
-  class SassBrief extends Component{
+  class EchartBrief extends Component{
     render(){
       return(
-        <Panel title="Echart简介">
-          <div className="content-container">
-            <SessionHead title="Sass是什么"/>
-            <div>Sass (Syntactically Awesome Style Sheets)是一个CSS预处理器。Sass与CSS关系就像CoffeeScript与Javascript关系。
-            它通过添加标记到样式表中，帮助我们更轻松惬意的书写CSS。</div>
-            <SplitLine/>
-
-            <SessionHead title="怎么使Sass工作"/>          
-              <dl>
-                <dt>实际上有多种编译Sass的方法：</dt>
-                <dd>Ruby Sass二进制源码。通过gem install sass命令安装，然后就可以使用running sassc myfile.scss myfile.css来编译了。</dd>
-                <dd>类似Hammer，CodeKit和Compass的GUI软件。</dd>
-                <dd>一个使用C语言编写且速度极快的Sass编译器。也可以通过NPM的node-sass (npm install node-sass)安装libsass。</dd>
-              </dl>
-            <NoteTip title="必须牢记libsass的特性并非完全与Ruby Sass相同"/>
-            <SplitLine/>
-
-            <SessionHead title=".sass vs .scss?"/>          
-              <dl>
-                <dd>Sass面世之初，其核心语法是明显不同于CSS的。它使用缩进代替了括号，没有分号并且操作符很短。简而言之，像极了Haml。</dd>
-                <dd>有些人非常不喜欢这种语法格式，所以在Sass 3.0中开发者将核心语法改成了.scss。SCSS是CSS的一个超集，在与 CSS写法完全相同的基础上，还同时兼具了Sass的所有特性。</dd>
-                <dd>也就是说，如果你喜欢还可以使用原生语法。我个人使用.scss，并且在本文中也是使用.scss语法。</dd>
-              </dl>
-            <SplitLine/>
-              
-            <SessionHead title="为什么使用Sass?"/>          
-              <div>问得不错。Sass让编写可维护的CSSS更加简易方便。可以用更少的代码，做更多的事，用更少的时间，具有更强的可读性。</div>
-          </div>
+        <Panel title="Echarts简介">
+          <Session title="Echarts特性">
+          <div>ECharts，一个使用 JavaScript 实现的开源可视化库，可以流畅的运行在 PC 和移动设备上，
+            兼容当前绝大部分浏览器（IE8/9/10/11，Chrome，Firefox，Safari等），
+            底层依赖轻量级的矢量图形库 ZRender，提供直观，交互丰富，可高度个性化定制的数据可视化图表。</div>
+          </Session>
+      
+          <Session title="丰富的可视化类型">
+            <dl>
+              <dt>实际上有多种编译Sass的方法：</dt>
+              <dd>ECharts 提供了常规的折线图、柱状图、散点图、饼图、K线图，用于统计的盒形图，用于地理数据可视化的地图、热力图、线图，用于关系数据可视化的关系图、treemap、旭日图，多维数据可视化的平行坐标，还有用于 BI 的漏斗图，仪表盘，并且支持图与图之间的混搭。</dd>
+              <dd>除了已经内置的包含了丰富功能的图表，ECharts 还提供了自定义系列，只需要传入一个renderItem函数，就可以从数据映射到任何你想要的图形，更棒的是这些都还能和已有的交互组件结合使用而不需要操心其它事情。</dd>
+              <dd>你可以在下载界面下载包含所有图表的构建文件，如果只是需要其中一两个图表，又嫌包含所有图表的构建文件太大，也可以在在线构建中选择需要的图表类型后自定义构建。</dd>
+            </dl>
+          </Session>
         </Panel>
         )
     }
   }
-export default SassBrief;
+export default EchartBrief;
