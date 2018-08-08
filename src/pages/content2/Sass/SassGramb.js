@@ -96,7 +96,7 @@ import XMP from '../../../components/XMP';
           </Session>
 
           <Session title="函数">
-          <div>Sass最好的一点就是它的内建函数。可以在<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" target="_blank">这里</a>查看完整的函数列表。内容非常广泛。</div>
+          <div>Sass最好的一点就是它的内建函数。可以在<a href="http://sass-lang.com/documentation/Sass/Script/Functions.html" rel="noopener noreferrer" target="_blank">这里</a>查看完整的函数列表。内容非常广泛。</div>
           <div>你是否想创建一个非常酷的按钮，然后在调色板上花费了很多时间，以尝试为阴影部分找到正确的色调？</div>
           <div>尝试darken()函数吧。你可以传递给它一个颜色和比例，稍等一会，就会使你的颜色变暗了。看看这个例子就知道为什么它很酷了：</div>
           <XMP>

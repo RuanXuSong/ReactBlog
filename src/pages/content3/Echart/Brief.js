@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
 import Session from '../../../components/Session';
-import NoteTip from '../../../components/NoteTip';
   class EchartBrief extends Component{
     render(){
       return(

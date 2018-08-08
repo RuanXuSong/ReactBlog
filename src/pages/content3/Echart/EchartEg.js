@@ -54,7 +54,7 @@ var echarts = require('echarts');
           type: 'line'
       }]
     });
-    $.getScript('vendors/simplex.js').done(function () {
+    $.getScript('./simplex.js').done(function () {
     function generateData() {
       var data = [];
       var noise = new SimplexNoise(Math.random);
