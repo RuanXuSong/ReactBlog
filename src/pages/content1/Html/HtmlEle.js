@@ -5,7 +5,7 @@ import SplitLine from '../../../components/SplitLine';
 import TableList from '../../../components/TableList';
 import NoteTip from '../../../components/NoteTip';
 import In from '../../../components/Indent';
-import CodeSession from '../../../components/CodeSession';
+import XMP from '../../../components/XMP';
 const columns = [{
   title: '开始标签',
   dataIndex: 'startTag',
@@ -61,9 +61,9 @@ const data = [{
             <SplitLine/>
 
             <SessionHead title="p元素"/>
-            <CodeSession>
-              <p>&lt;p>This is my first paragraph.&lt;/p&gt;</p>           
-            </CodeSession>
+            <XMP>
+              <i>&lt;p>This is my first paragraph.&lt;/p&gt;</i>           
+            </XMP>
             <dl>
               <dd>这个 &lt;p&gt; 元素定义了 HTML 文档中的一个段落。</dd>
               <dd>这个元素拥有一个开始标签 &lt;p&gt;，以及一个结束标签 &lt;/p&gt;。</dd>
@@ -72,11 +72,11 @@ const data = [{
             <SplitLine/>
 
             <SessionHead title="<body> 元素"/>
-            <CodeSession>
-              <p>&lt;body&gt;</p>
+            <XMP>
+              <i>&lt;body&gt;</i>
               <In>&lt;p>This is my first paragraph.&lt;/p&gt;</In>    
-              <p>&lt;/body&gt;</p>     
-            </CodeSession>
+              <i>&lt;/body&gt;</i>     
+            </XMP>
             <dl>
               <dd>&lt;html&gt; 元素定义了整个 HTML 文档。</dd>
               <dd>这个元素拥有一个开始标签 &lt;html&gt;，以及一个结束标签 &lt;/html&gt;。</dd>

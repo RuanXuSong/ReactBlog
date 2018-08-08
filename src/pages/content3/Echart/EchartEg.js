@@ -4,7 +4,7 @@ import SessionHead from '../../../components/SessionHead';
 import SplitLine from '../../../components/SplitLine';
 import In from '../../../components/Indent';
 import NoteTip from '../../../components/NoteTip';
-import CodeSession from '../../../components/CodeSession';
+import XMP from '../../../components/XMP';
 import { height } from 'window-size';
 var echarts = require('echarts');
 // 基于准备好的dom，初始化echarts实例

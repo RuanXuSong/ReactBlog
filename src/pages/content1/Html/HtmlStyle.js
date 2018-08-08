@@ -5,7 +5,7 @@ import SplitLine from '../../../components/SplitLine';
 import TableList from '../../../components/TableList';
 import NoteTip from '../../../components/NoteTip';
 import In from '../../../components/Indent';
-import CodeSession from '../../../components/CodeSession';
+import XMP from '../../../components/XMP';
 const columns1 = [{
   title: '标签',
   dataIndex: 'Tag',
@@ -81,23 +81,23 @@ const data2 = [{
             <SplitLine/>
 
             <SessionHead title="Style例子"/>
-            <CodeSession>
+            <XMP>
               <p style={{fontFamily:'Verdana',color:'red'}}>This text is in Verdana and red</p>
               <p style={{fontFamily:'Times',color:'blue'}}>This text is in Times and blue</p>
               <p style={{fontSize:'30px'}}>This text is 30 pixels high</p>           
-            </CodeSession>
+            </XMP>
             <SplitLine/>
 
             <SessionHead title="style实例-文本对齐"/>
             <p>text-align 属性规定了元素中文本的水平对齐方式：</p>
-            <CodeSession>
-              <p>&lt;html&gt;</p>
+            <XMP>
+              <i>&lt;html&gt;</i>
               <In>&lt;body&gt;</In>
               <In><In>&lt;h1 style="text-align:center"&gt; This is a heading &lt;/h1&gt;</In></In>   
               <In><In>&lt;p&gt;The heading above is aligned to the center of this page.&lt;/p&gt;</In></In> 
               <In>&lt;/body&gt;</In>
-              <p>&lt;/html&gt;</p>
-            </CodeSession>
+              <i>&lt;/html&gt;</i>
+            </XMP>
             <dl>
               <dd>在这个例子中，h1标签中的文字居中展示了</dd>
               <dd>style 属性淘汰了旧的 "align" 属性。</dd>
