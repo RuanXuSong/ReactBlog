@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
 import Session from '../../../components/Session';
 import SimplexNoise from './simplex';
-import $ from 'jquery'
+require('echarts-gl');
 var echarts = require('echarts');
 // 基于准备好的dom，初始化echarts实例
   class EchartEg extends Component{ 
@@ -54,59 +54,78 @@ var echarts = require('echarts');
           type: 'line'
       }]
     });
-    $.getScript('./simplex.js').done(function () {
-    function generateData() {
-      var data = [];
-      var noise = new SimplexNoise(Math.random);
-      for (var i = 0; i <= 10; i++) {
-          for (var j = 0; j <= 10; j++) {
-              var value = noise.noise2D(i / 5, j / 5);
-              data.push([i, j, value * 2 + 4]);
-          }
-      }
-      return data;
-  }
-  
-    var series = [];
-    for (var i = 0; i < 10; i++) {
-        series.push({
-            type: 'bar3D',
-            data: generateData(),
-            stack: 'stack',
-            shading: 'lambert',
-            emphasis: {
-                label: {
-                    show: false
+
+function generate(n){
+    var data=[];
+    var z;
+    for(var i=0;i<n;i++){
+        z=Math.floor(i/10);
+        data[i] = new Array();
+        for(var j=0;j<3;j++){      
+            data[i][j]=Math.random()*10;
+            data[i][0]=i%10;
+            data[i][1]=z;
+            }
+        }
+        return data;   
+    }
+        
+    let seriesData=generate(300);
+// 绘制图表。
+    echarts.init(document.getElementById('3d-chart')).setOption({
+            xAxis3D: {
+        type: 'value'
+        },
+        yAxis3D: {
+        type: 'value'
+        },
+        zAxis3D: {
+        type: 'value'
+        },
+        grid3D: {
+            environment: '#000',
+            light: {
+                main: {
+                    shadow: true,
+                    quality: 'ultra',
+                    intensity: 1.5
                 }
             }
-        });
-    }
-    
-    echarts.init(document.getElementById('3d-chart')).setOption({
-      xAxis3D: {
-        type: 'value'
-      },
-      yAxis3D: {
-          type: 'value'
-      },
-      zAxis3D: {
-          type: 'value'
-      },
-      grid3D: {
-          viewControl: {
-              // autoRotate: true
-          },
-          light: {
-              main: {
-                  shadow: true,
-                  quality: 'ultra',
-                  intensity: 1.5
-              }
-          }
-      },
-      series: series
-    });   
-  })   
+        },
+        // visualMap: {
+        // show: false,
+        // min: 0,
+        // max: 5,
+        // inRange: {
+        // symbolSize: [5, 25],
+        // color: [
+        //     '#6e6e6e',
+        //     '#5ad563',
+        //     '#9dc416',
+        //     '#fdd01d',
+        //     '#fd931d',
+        //     '#f7776a'
+        // ],
+        // colorAlpha: [0.2, 1]
+        // }
+        // },
+        series: [{      
+            type: 'bar3D',
+            data: seriesData,
+            shading: 'realistic',
+            stack: 'stack',
+            barSize: 4,
+            bevelSize: 0.4,
+            bevelSmoothness: 4,
+            realisticMaterial: {
+                roughness: 0.3,
+                metalness: 0.4
+            },
+            itemStyle: {
+                color: '#ccc'
+            },
+        }]           
+        })    
 }  
     render(){   
       return(
