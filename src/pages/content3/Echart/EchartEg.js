@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
 import Session from '../../../components/Session';
-import SimplexNoise from './simplex';
 require('echarts-gl');
 var echarts = require('echarts');
 // 基于准备好的dom，初始化echarts实例
@@ -59,21 +58,27 @@ function generate(n){
     var data=[];
     var z;
     for(var i=0;i<n;i++){
-        z=Math.floor(i/10);
+        z=Math.floor(i/30);
         data[i] = new Array();
-        for(var j=0;j<3;j++){      
-            data[i][j]=Math.random()*10;
-            data[i][0]=i%10;
+        for(var j=0;j<3;j++){
+            data[i][j]=(z<15?Math.abs(z):Math.abs(30-z))*(i%30<15?Math.abs(i%30):Math.abs(30-i%30));
+            data[i][0]=i%30;
             data[i][1]=z;
             }
         }
         return data;   
     }
-        
-    let seriesData=generate(300);
+function RandomColor(){
+    var r,g,b;
+    r=255*Math.random();
+    g=255*Math.random();
+    b=255*Math.random();
+    return 'rgb('+r+','+g+','+b+')';
+}    
+    let seriesData=generate(900);
 // 绘制图表。
     echarts.init(document.getElementById('3d-chart')).setOption({
-            xAxis3D: {
+        xAxis3D: {
         type: 'value'
         },
         yAxis3D: {
@@ -83,6 +88,7 @@ function generate(n){
         type: 'value'
         },
         grid3D: {
+            show:false,
             environment: '#000',
             light: {
                 main: {
@@ -90,42 +96,298 @@ function generate(n){
                     quality: 'ultra',
                     intensity: 1.5
                 }
-            }
+            },
+            axisPointer: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#000'
+                }
+            },
+            postEffect: {
+                enable: true,
+                SSAO: {
+                    enable: true,
+                    radius: 10,
+                    intensity: 2
+                },
+                edge: {
+                    enable: true
+                }
+            },
+            temporalSuperSampling: {
+                enable: true
+            },
+            // light: {
+            //     main: {
+            //         intensity: 1.5,
+            //         shadow: true,
+            //     },
+            //     ambient: {
+            //         intensity: 0.5
+            //     }     
+            // },
+            // viewControl: {
+            //      projection: 'orthographic'
+            // }
         },
-        // visualMap: {
-        // show: false,
-        // min: 0,
-        // max: 5,
-        // inRange: {
-        // symbolSize: [5, 25],
-        // color: [
-        //     '#6e6e6e',
-        //     '#5ad563',
-        //     '#9dc416',
-        //     '#fdd01d',
-        //     '#fd931d',
-        //     '#f7776a'
-        // ],
-        // colorAlpha: [0.2, 1]
-        // }
-        // },
+
         series: [{      
-            type: 'bar3D',
+            type: 'scatter3D',
             data: seriesData,
             shading: 'realistic',
             stack: 'stack',
-            barSize: 4,
-            bevelSize: 0.4,
+            barSize: 8,
+            bevelSize: 0.3,
             bevelSmoothness: 4,
             realisticMaterial: {
-                roughness: 0.3,
+                roughness: 1,
                 metalness: 0.4
             },
             itemStyle: {
-                color: '#ccc'
+                normal:{
+                    color: RandomColor()
+                }
             },
         }]           
-        })    
+    })    
+var sin = Math.sin;
+var cos = Math.cos;
+var pow = Math.pow;
+var sqrt = Math.sqrt;
+var cosh = Math.cosh;
+var sinh = Math.sinh;
+var exp = Math.exp;
+var PI = Math.PI;
+var square = function (x) {
+    return x*x;
+}
+var mod2 = function (a, b) {
+    var c = a % b;
+    return c > 0 ? c : (c + b);
+}
+var square5 = function (x) {
+    return x*x*x*x*x;
+}
+var theta1 = -(20/9) * PI;
+var theta2 = 15 * PI;
+function getParametricEquation() {
+    return {
+        u: {
+            min: 0,
+            max: 1,
+            step: 1 / 24
+        },
+        v: {
+            min: theta1,
+            max: theta2,
+            step: (theta2 - theta1) / 575
+        },
+        x: function (x1, theta) {
+            //var r=1-sin(theta);
+            var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
+            // var phi = (PI/2)*exp(-theta/(8*PI));
+            // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
+            // var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            // var r = X*(x1*sin(phi)+y1*cos(phi));
+            return r * sin(theta);
+        },
+        y: function (x1, theta) {
+            //var r=1-sin(theta);
+            var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
+            // var phi = (PI/2)*exp(-theta/(8*PI));
+            // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
+            // var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            // var r = X*(x1*sin(phi)+y1*cos(phi));
+            return r * cos(theta);
+        },
+        z: function (x1, theta) {
+             //var r=1-sin(theta);
+             var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
+             var y1 = x1;
+            //var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            // var r = X*(x1*sin(phi)+y1*cos(phi));
+            
+            return r*(x1+y1);
+        }
+    };
+}
+    // 绘制图表。
+    echarts.init(document.getElementById('3d-butterfly')).setOption({      
+        xAxis3D: {
+            type: 'value'
+        },
+        yAxis3D: {
+            type: 'value'
+        },
+        zAxis3D: {
+            type: 'value'
+        },
+        grid3D: {
+    
+            show: false,
+    
+            axisPointer: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            },
+            postEffect: {
+                enable: true,
+                SSAO: {
+                    enable: false,
+                    radius: 10,
+                    intensity: 2
+                },
+                edge: {
+                    enable: true,
+                }
+            },
+            temporalSuperSampling: {
+                enable: true
+            },
+            light: {
+                main: {
+                    intensity: 3,
+                    shadow: true,
+                }              
+            },
+            viewControl: {
+                // projection: 'orthographic'
+            }
+        },
+        series: [{
+            type: 'surface',
+            parametric: true,
+            shading: 'realistic',
+            silent: true,
+            wireframe: {
+                show: false
+            },
+            
+            itemStyle: {
+                color: '#96232a'
+            },
+            parametricEquation: getParametricEquation()
+        }]        
+})  
+function createSeries(dx, dy, color) {
+    return {
+        
+        type: 'surface',
+        parametric: true,
+        shading: 'realistic',
+        silent: true,
+        wireframe: {
+            show: false
+        },
+        realisticMaterial: {
+            roughness: 0.3,
+            metalness: 0.3
+        },
+        itemStyle: {
+            color: color || [2, 1.5, 0.2]
+        },
+        parametricEquation: getParametricEquation1(1.5*dx,1.5*dy)
+    };
+}
+function createFlowers(n){
+    var arr=[];
+    var z,r,g,b;
+    for(var i=0;i<n;i++){        
+        z=Math.floor(i/3);     
+        arr[i]=(createSeries(i%3,z,RandomColor()));            
+    } 
+    return arr;
+}
+function getParametricEquation1(dx,dy) {
+    return {
+        u: {
+            min: 0,
+            max: 1,
+            step: 1 / 24
+        },
+        v: {
+            min: theta1,
+            max: theta2,
+            step: (theta2 - theta1) / 575
+        },
+        x: function (x1, theta) {
+            var phi = (PI/2)*exp(-theta/(8*PI));
+            var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
+            var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            var r = X*(x1*sin(phi)+y1*cos(phi));
+            return r * sin(theta)+dx;
+        },
+        y: function (x1, theta) {
+            var phi = (PI/2)*exp(-theta/(8*PI));
+            var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
+            var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            var r = X*(x1*sin(phi)+y1*cos(phi));
+            return r * cos(theta)+dy;
+        },
+        z: function (x1, theta) {
+            var phi = (PI/2)*exp(-theta/(8*PI));
+            var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
+            var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            var r = X*(x1*sin(phi)+y1*cos(phi));
+            return X*(x1*cos(phi)-y1*sin(phi));
+        }
+    };
+}
+    // 绘制图表。
+    echarts.init(document.getElementById('3d-flower')).setOption({      
+        xAxis3D: {
+            type: 'value'
+        },
+        yAxis3D: {
+            type: 'value'
+        },
+        zAxis3D: {
+            type: 'value'
+        },
+        grid3D: {
+    
+            show: false,
+    
+            axisPointer: {
+                show: false
+            },
+            axisLine: {
+                lineStyle: {
+                    color: '#fff'
+                }
+            },
+            postEffect: {
+                enable: true,
+                SSAO: {
+                    enable: false,
+                    radius: 10,
+                    intensity: 2
+                },
+                edge: {
+                    enable: true,
+                }
+            },
+            temporalSuperSampling: {
+                enable: true
+            },
+            light: {
+                main: {
+                    intensity: 3,
+                    shadow: true,
+                }              
+            },
+            viewControl: {
+                // projection: 'orthographic'
+            }
+        },
+        series: createFlowers(9)
+})    
 }  
     render(){   
       return(
@@ -144,6 +406,14 @@ function generate(n){
 
           <Session title="3d柱状图">
           <div id="3d-chart" style={{width:'90%',height:"500px"}}></div>
+          </Session>
+
+           <Session title="3d表面图-蝴蝶">
+          <div id="3d-butterfly" style={{width:'90%',height:"500px"}}></div>
+          </Session>
+        
+          <Session title="3d表面图-花朵">
+          <div id="3d-flower" style={{width:'90%',height:"500px"}}></div>
           </Session>
         </Panel>
         )

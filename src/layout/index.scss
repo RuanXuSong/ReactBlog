@@ -64,6 +64,10 @@ dd::before{
 }
 .imgWrap{
   margin: rem(20) 0;
+  width: 100%;
+  img{
+      max-width: 100%;
+  }
 }
 .ant-layout-sider-zero-width-trigger{
     top: 100px;

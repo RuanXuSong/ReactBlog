@@ -29,7 +29,7 @@ import XMP from '../../../components/XMP';
             <div>
               下面的示意图为您展示了上面这段代码的结构：
             </div>
-            <Img src={require("../../../images/css_selector.gif")} alt="css选择器"/>
+            <Img src='css_selector.gif' alt="css选择器"/>
             <NoteTip title="提示：请使用花括号来包围声明。"/>
           </Session>
 

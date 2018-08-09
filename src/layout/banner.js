@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import $ from 'jquery'
+import Img from '../components/Img';
 import homebackground from '../images/banner.jpg';
 const homeImage = {
 	  height:200,
@@ -20,7 +21,7 @@ const homeImage = {
       return(
         <div className="banner" style={homeImage} onMouseMove={(event)=>this.move(event)}>
           <div className="maple">
-          	<img src={require("../images/mapleleaf.png")} alt="枫叶图标"/>
+            <Img src="mapleleaf.png" alt="枫叶图标"/>
           </div>
         </div>
 	        

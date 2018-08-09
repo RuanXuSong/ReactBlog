@@ -4,6 +4,7 @@ import { Layout, Menu } from 'antd';
 import HtmlPage from '../pages/content1/content1';
 import CssPage from '../pages/content2/content2';
 import JsPage from '../pages/content3/content3';
+import FramePage from '../pages/content4/content4';
 import Banner from './banner';
 import './index.scss';
 const { Header } = Layout;
@@ -23,6 +24,7 @@ class PrimaryLayout extends Component {
             <Menu.Item key="1"><Link to={`${path}/html`}>HTML</Link></Menu.Item>
             <Menu.Item key="2"><Link to={`${path}/css`}>CSS</Link></Menu.Item>
             <Menu.Item key="3"><Link to={`${path}/js`}>JS</Link></Menu.Item>
+            <Menu.Item key="4"><Link to={`${path}/frame`}>框架</Link></Menu.Item>
             </Menu>           
         </Header>
         <Banner/>
@@ -34,6 +36,7 @@ class PrimaryLayout extends Component {
             <Route path={`${path}/html`} component={HtmlPage}/> 
             <Route path={`${path}/css`} component={CssPage}/> 
             <Route path={`${path}/js`} component={JsPage}/> 
+            <Route path={`${path}/frame`} component={FramePage}/> 
           </Switch>
         </Layout>           
       </Layout>                           
