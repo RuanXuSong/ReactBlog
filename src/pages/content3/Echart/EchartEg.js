@@ -186,7 +186,8 @@ function getParametricEquation() {
         },
         x: function (x1, theta) {
             //var r=1-sin(theta);
-            var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
+            var r=3*sin(3*θ)+3.5*cos(10*θ)*cos(8*θ);
+            //var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
             // var phi = (PI/2)*exp(-theta/(8*PI));
             // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
             // var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
@@ -195,7 +196,8 @@ function getParametricEquation() {
         },
         y: function (x1, theta) {
             //var r=1-sin(theta);
-            var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
+            //var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
+            var r=3*sin(3*θ)+3.5*cos(10*θ)*cos(8*θ);
             // var phi = (PI/2)*exp(-theta/(8*PI));
             // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
             // var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
@@ -204,12 +206,17 @@ function getParametricEquation() {
         },
         z: function (x1, theta) {
              //var r=1-sin(theta);
-             var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
-             var y1 = x1;
+             var r=3*sin(3*θ)+3.5*cos(10*θ)*cos(8*θ);
+             var r=exp(cos(theta))-2*sin(4*theta)+square5(cos((2*theta-PI)/24))
+             //var y1 = x1;
             //var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
             // var r = X*(x1*sin(phi)+y1*cos(phi));
             
-            return r*(x1+y1);
+            var phi = (PI/2)*exp(-theta/(8*PI));
+            var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
+            var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            var r = X*(x1*sin(phi)+y1*cos(phi));
+            return X*(x1*cos(phi)-y1*sin(phi));
         }
     };
 }
