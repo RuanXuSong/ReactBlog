@@ -186,8 +186,10 @@ function getParametricEquation() {
         },
         x: function (x1, theta) {
             //var r=1-sin(theta);
-            var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);
-            //var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
+            //var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);
+            var r=100*Math.cos( 6*theta );
+            //var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))//蝴蝶
+            // var r=4*(1+cos(3*theta)+3*square(sin(3*theta)))//三叶草
             // var phi = (PI/2)*exp(-theta/(8*PI));
             // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
             // var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
@@ -195,28 +197,34 @@ function getParametricEquation() {
             return r * sin(theta);
         },
         y: function (x1, theta) {
-            //var r=1-sin(theta);
-            //var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))
-            var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);
-            // var phi = (PI/2)*exp(-theta/(8*PI));
+            //var r=1-sin(theta);//笛卡尔爱心
+            //var r=200 * Math.sin( 3*theta );
+            var r=100*Math.cos( 6*theta );
+            //var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))//蝴蝶
+            //var r=4*(1+cos(3*theta)+3*square(sin(3*theta)))//三叶草
+           // var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);//螳螂花朵
+
+            // var phi = (PI/2)*exp(-theta/(8*PI));//圆花朵
             // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
             // var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
             // var r = X*(x1*sin(phi)+y1*cos(phi));
             return r * cos(theta);
         },
         z: function (x1, theta) {
-             //var r=1-sin(theta);
-             var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);
-             var r=exp(cos(theta))-2*sin(4*theta)+square5(cos((2*theta-PI)/24))
+             //var r=1-sin(Math.abs(theta));
+             //var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);
+             var r=4*(1+cos(3*theta)+3*square(sin(3*theta)))//三叶草
+             //var r=exp(cos(theta))-2*sin(4*theta)+square5(cos((2*theta-PI)/24))
              //var y1 = x1;
             //var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
             // var r = X*(x1*sin(phi)+y1*cos(phi));
             
-            var phi = (PI/2)*exp(-theta/(8*PI));
-            var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
-            var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
-            var r = X*(x1*sin(phi)+y1*cos(phi));
-            return X*(x1*cos(phi)-y1*sin(phi));
+            // var phi = (PI/2)*exp(-theta/(8*PI));
+            // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
+            // var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            // var r = X*(x1*sin(phi)+y1*cos(phi));
+            // return X*(x1*cos(phi)-y1*sin(phi));
+            return r*(sin(x1)+cos(x1));
         }
     };
 }

@@ -23,7 +23,7 @@ p{
   margin-bottom: rem(24);
 }
 .content-container{
-  border: 1px solid #eee;
+  border: 1px solid $grey;
   padding: rem(20);
 }
 dt{
@@ -34,7 +34,7 @@ dd::before{
   padding-right:rem(10); 
 }
 .split-line {
-  border-bottom: 1px dashed #ddd;
+  border-bottom: 1px dashed $grey;
   margin: rem(40) 0;
 }
 .session-head{
@@ -53,7 +53,7 @@ dd::before{
   padding: rem(20);
   border: 0;
   border: 1px dotted $green;
-  background: $grey;
+  background: $lblue;
   line-height: 1.4;
   font-family: Consolas;
   .Indent{

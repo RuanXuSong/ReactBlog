@@ -6,7 +6,7 @@ import CssPage from '../pages/content2/content2';
 import JsPage from '../pages/content3/content3';
 import FramePage from '../pages/content4/content4';
 import Banner from './banner';
-import './antd.css';
+import 'antd/dist/antd.css';
 import './index.scss';
 const { Header } = Layout;
 

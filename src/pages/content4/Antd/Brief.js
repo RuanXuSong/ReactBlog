@@ -15,14 +15,12 @@ import Session from '../../../components/Session';
             <dd>使用 TypeScript 构建，提供完整的类型定义文件。</dd>
             <dd>全链路开发和设计工具体系。</dd>
           </dl>
-          </Session>
-          <Session title="HTML标签">
+          </Session>       
+          <Session title="支持环境">
             <dl>
-              <dt>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。</dt>
-              <dd>HTML 指的是超文本标记语言 (Hyper Text Markup Language)</dd>
-              <dd>HTML 不是一种编程语言，而是一种标记语言 (markup language)</dd>
-              <dd>标记语言是一套标记标签 (markup tag)</dd>
-              <dd>HTML 使用标记标签来描述网页</dd>
+              <dt>现代浏览器和 IE9 及以上（需要 polyfills）。</dt>
+              <dd>支持服务端渲染。</dd>
+              <dd>Electron</dd>
             </dl>
           </Session>
         </Panel>

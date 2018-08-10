@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { Route ,Link,Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-import JsBrief from './Js/Brief'
-import EchartBrief from './Echart/Brief'
-import EchartEg from './Echart/EchartEg'
+import JsBrief from './Js/Brief';
+import EchartBrief from './Echart/Brief';
+import EchartEg from './Echart/EchartEg';
+import TypeBrief from './TypeScript/Brief';
+import TypeBase from './TypeScript/TypeBase';
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 class CssPage extends Component{
@@ -39,7 +41,11 @@ class CssPage extends Component{
                   <SubMenu key="sub2" title={<span><Icon type="bars" />Echart</span>}>
                     <Menu.Item key="Echart简介" onClick={this.handleClick}><Link to={`${match.path}/EchartBrief`}>Echart简介</Link></Menu.Item>
                     <Menu.Item key="Echart实例" onClick={this.handleClick}><Link to={`${match.path}/EchartEg`}>Echart实例</Link></Menu.Item>                  
-                  </SubMenu>             
+                  </SubMenu>  
+                  <SubMenu key="sub3" title={<span><Icon type="bars" />TypeScript</span>}>
+                    <Menu.Item key="TypeScript简介" onClick={this.handleClick}><Link to={`${match.path}/TypeBrief`}>TypeScript简介</Link></Menu.Item>
+                    <Menu.Item key="TypeScript基础" onClick={this.handleClick}><Link to={`${match.path}/TypeBase`}>TypeScript基础</Link></Menu.Item>               
+                  </SubMenu>           
                 </Menu>
               </Sider>
               <Layout style={{ padding: '0 24px 0' }}>
@@ -54,6 +60,8 @@ class CssPage extends Component{
                     <Route path={`${match.path}/JsBrief`} component={JsBrief}/>
                     <Route path={`${match.path}/EchartBrief`} component={EchartBrief}/>
                     <Route path={`${match.path}/EchartEg`} component={EchartEg}/>
+                    <Route path={`${match.path}/TypeBrief`} component={TypeBrief}/>
+                    <Route path={`${match.path}/TypeBase`} component={TypeBase}/>
                   </Switch>
                 </Content>
               </Layout>

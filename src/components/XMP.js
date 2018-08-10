@@ -5,7 +5,7 @@ export default class XMP extends Component{
     // 2.如果遇到没有html标签包裹的文本，如css，就用i包裹
     // 3.如果已经用了In就无需再用i包裹
     // 4.前大括号用&#123;代替
-    // 5.目前最多嵌套两层<In>
+    // 5.在二级及以上<In>里面用html标签仍会被编译
     // 6.请使用<i></i>或者<i/>作为换行符
     render(){
         let arr=[];
@@ -13,11 +13,10 @@ export default class XMP extends Component{
         return(
             <div className="CodeSession">     
             {arr.map((Item,i)=>{
-                if(typeof(Item.type)==='function'){     
-                          
-                    if(typeof(Item.props.children.type)==='object'){
+                if(typeof(Item.type)==='function'){           
+                    if(typeof(Item.props.children.type)==='undefined'){
                         return(
-                            <div className="Indent" key={i}>{'<'+Item.props.children.type+'>'+Item.props.children.props.children+'</'+Item.props.children.type+'>'}</div>
+                            <div className="Indent" key={i}>{Item.props.children}</div>                           
                         ) 
                     }
                     else if(typeof(Item.props.children.type)==='function'){
@@ -27,7 +26,7 @@ export default class XMP extends Component{
                     }
                     else{
                         return(                         
-                            <div className="Indent" key={i}>{Item.props.children}</div>
+                            <div className="Indent" key={i}>{'<'+Item.props.children.type+'>'+Item.props.children.props.children+'</'+Item.props.children.type+'>'}</div>
                         )   
                     }
                 }
