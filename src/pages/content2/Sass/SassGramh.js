@@ -60,7 +60,7 @@ import XMP from '../../../components/XMP';
           <div>第一步是定义混合宏：</div>
           <XMP>
             <i> @mixin media($queryString) &#123;</i>
-              <In>//</In>
+              <In>/ /</In>
             <i>}</i>            
           </XMP>
           <div>注意我们在混合宏media中声明了一个$queryString参数。

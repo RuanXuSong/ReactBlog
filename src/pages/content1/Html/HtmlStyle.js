@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
 import Session from '../../../components/Session';
 import TableList from '../../../components/TableList';
+import Result from '../../../components/Result';
 import NoteTip from '../../../components/NoteTip';
 import In from '../../../components/Indent';
 import XMP from '../../../components/XMP';
@@ -80,10 +81,15 @@ const data2 = [{
 
           <Session title="Style例子">
           <XMP>
+            <i>&lt;p style="font-family:Verdana;color:red">This text is in Verdana and red&lt;/p></i>
+            <i>&lt;p style="font-family:Times;color:blue">This text is in Times and blue&lt;/p></i>
+            <i>&lt;p style="font-size:30px">This text is 30 pixels high&lt;/p></i>           
+          </XMP>
+          <Result>
             <p style={{fontFamily:'Verdana',color:'red'}}>This text is in Verdana and red</p>
             <p style={{fontFamily:'Times',color:'blue'}}>This text is in Times and blue</p>
-            <p style={{fontSize:'30px'}}>This text is 30 pixels high</p>           
-          </XMP>
+            <p style={{fontSize:'30px'}}>This text is 30 pixels high</p>
+          </Result>
           </Session>
 
           <Session title="style实例-文本对齐">
@@ -96,6 +102,12 @@ const data2 = [{
               <In>&lt;/body&gt;</In>
               <i>&lt;/html&gt;</i>
             </XMP>
+            <Result>
+              <div>
+                <h1 style={{textAlign:'center'}}> This is a heading </h1>
+                <p>The heading above is aligned to the center of this page.</p>
+              </div>
+            </Result>
             <dl>
               <dd>在这个例子中，h1标签中的文字居中展示了</dd>
               <dd>style 属性淘汰了旧的 "align" 属性。</dd>

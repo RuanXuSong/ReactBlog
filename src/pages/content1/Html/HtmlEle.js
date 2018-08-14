@@ -5,6 +5,7 @@ import TableList from '../../../components/TableList';
 import NoteTip from '../../../components/NoteTip';
 import In from '../../../components/Indent';
 import XMP from '../../../components/XMP';
+import Result from '../../../components/Result';
 const columns = [{
   title: '开始标签',
   dataIndex: 'startTag',
@@ -62,6 +63,9 @@ const data = [{
           <XMP>
             <i>&lt;p>This is my first paragraph.&lt;/p&gt;</i>           
           </XMP>
+          <Result>
+            <p>This is my first paragraph.</p>
+          </Result>
           <dl>
             <dd>这个 &lt;p&gt; 元素定义了 HTML 文档中的一个段落。</dd>
             <dd>这个元素拥有一个开始标签 &lt;p&gt;，以及一个结束标签 &lt;/p&gt;。</dd>
@@ -75,6 +79,11 @@ const data = [{
             <In>&lt;p>This is my first paragraph.&lt;/p&gt;</In>    
             <i>&lt;/body&gt;</i>     
           </XMP>
+          <Result>
+            <div>
+              <p>This is my first paragraph.</p>
+            </div>
+          </Result>
           <dl>
             <dd>&lt;html&gt; 元素定义了整个 HTML 文档。</dd>
             <dd>这个元素拥有一个开始标签 &lt;html&gt;，以及一个结束标签 &lt;/html&gt;。</dd>

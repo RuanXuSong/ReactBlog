@@ -59,7 +59,7 @@ function generate(n){
     var z;
     for(var i=0;i<n;i++){
         z=Math.floor(i/30);
-        data[i] = new Array();
+        data[i]=[];
         for(var j=0;j<3;j++){
             data[i][j]=(z<15?Math.abs(z):Math.abs(30-z))*(i%30<15?Math.abs(i%30):Math.abs(30-i%30));
             data[i][0]=i%30;
@@ -88,15 +88,14 @@ function RandomColor(){
         type: 'value'
         },
         grid3D: {
-            show:false,
             environment: '#000',
-            light: {
-                main: {
-                    shadow: true,
-                    quality: 'ultra',
-                    intensity: 1.5
-                }
-            },
+            // light: {
+            //     main: {
+            //         shadow: true,
+            //         quality: 'ultra',
+            //         intensity: 1.5
+            //     }
+            // },
             axisPointer: {
                 show: false
             },
@@ -119,22 +118,19 @@ function RandomColor(){
             temporalSuperSampling: {
                 enable: true
             },
-            // light: {
-            //     main: {
-            //         intensity: 1.5,
-            //         shadow: true,
-            //     },
-            //     ambient: {
-            //         intensity: 0.5
-            //     }     
-            // },
-            // viewControl: {
-            //      projection: 'orthographic'
-            // }
+            light: {
+                main: {
+                    intensity: 1.5,
+                    shadow: true,
+                },
+                ambient: {
+                    intensity: 0.5
+                }     
+            },
         },
 
         series: [{      
-            type: 'scatter3D',
+            type: 'bar3D',
             data: seriesData,
             shading: 'realistic',
             stack: 'stack',
@@ -154,10 +150,6 @@ function RandomColor(){
     })    
 var sin = Math.sin;
 var cos = Math.cos;
-var pow = Math.pow;
-var sqrt = Math.sqrt;
-var cosh = Math.cosh;
-var sinh = Math.sinh;
 var exp = Math.exp;
 var PI = Math.PI;
 var square = function (x) {
@@ -187,8 +179,8 @@ function getParametricEquation() {
         x: function (x1, theta) {
             //var r=1-sin(theta);
             //var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);
-            var r=100*Math.cos( 6*theta );
-            //var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))//蝴蝶
+            //var r=100*Math.cos( 6*theta );蝴蝶结
+            var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))//蝴蝶
             // var r=4*(1+cos(3*theta)+3*square(sin(3*theta)))//三叶草
             // var phi = (PI/2)*exp(-theta/(8*PI));
             // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
@@ -199,8 +191,8 @@ function getParametricEquation() {
         y: function (x1, theta) {
             //var r=1-sin(theta);//笛卡尔爱心
             //var r=200 * Math.sin( 3*theta );
-            var r=100*Math.cos( 6*theta );
-            //var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))//蝴蝶
+            //var r=100*Math.cos( 6*theta );蝴蝶结
+            var r=exp(sin(theta))-2*cos(4*theta)+square5(sin((2*theta-PI)/24))//蝴蝶
             //var r=4*(1+cos(3*theta)+3*square(sin(3*theta)))//三叶草
            // var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);//螳螂花朵
 
@@ -213,18 +205,18 @@ function getParametricEquation() {
         z: function (x1, theta) {
              //var r=1-sin(Math.abs(theta));
              //var r=3*sin(3*theta)+3.5*cos(10*theta)*cos(8*theta);
-             var r=4*(1+cos(3*theta)+3*square(sin(3*theta)))//三叶草
+             //var r=4*(1+cos(3*theta)+3*square(sin(3*theta)))//三叶草
              //var r=exp(cos(theta))-2*sin(4*theta)+square5(cos((2*theta-PI)/24))
              //var y1 = x1;
             //var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
             // var r = X*(x1*sin(phi)+y1*cos(phi));
             
-            // var phi = (PI/2)*exp(-theta/(8*PI));
-            // var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
-            // var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
-            // var r = X*(x1*sin(phi)+y1*cos(phi));
-            // return X*(x1*cos(phi)-y1*sin(phi));
-            return r*(sin(x1)+cos(x1));
+            var phi = (PI/2)*exp(-theta/(8*PI));
+            var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
+            var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
+            //var r = X*(x1*sin(phi)+y1*cos(phi));
+            return X*(x1*cos(phi)-y1*sin(phi));
+            //return r*(sin(x1)+cos(x1));
         }
     };
 }
@@ -271,9 +263,7 @@ function getParametricEquation() {
                     shadow: true,
                 }              
             },
-            viewControl: {
-                // projection: 'orthographic'
-            }
+           
         },
         series: [{
             type: 'surface',
@@ -312,7 +302,7 @@ function createSeries(dx, dy, color) {
 }
 function createFlowers(n){
     var arr=[];
-    var z,r,g,b;
+    var z;
     for(var i=0;i<n;i++){        
         z=Math.floor(i/3);     
         arr[i]=(createSeries(i%3,z,RandomColor()));            
@@ -349,7 +339,7 @@ function getParametricEquation1(dx,dy) {
             var phi = (PI/2)*exp(-theta/(8*PI));
             var y1 = 1.9565284531299512*square(x1)*square(1.2768869870150188*x1-1)*sin(phi);
             var X = 1-square(1.25*square(1-mod2((3.6*theta),(2*PI))/PI)-0.25)/2;
-            var r = X*(x1*sin(phi)+y1*cos(phi));
+            // var r = X*(x1*sin(phi)+y1*cos(phi));
             return X*(x1*cos(phi)-y1*sin(phi));
         }
     };

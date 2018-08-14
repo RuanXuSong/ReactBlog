@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
 import Session from '../../../components/Session';
-import XMP from '../../../components/XMP';
-import In from '../../../components/Indent';
   class TypeBrief extends Component{
     render(){
       return(
@@ -11,9 +9,9 @@ import In from '../../../components/Indent';
             <dl>
               <dt>JavaScript的超集</dt>
               <dd>TypeScript是JavaScript类型的超集，他可以编译成纯JS</dd>
-              <dd>TypeScript可以在任何浏览器，任何计算机，任何操作系统上运行</dd>         
+              <dd>TypeScript可以在任何浏览器，任何计算机，任何操作系统上运行</dd>
             </dl>
-          </Session>         
+          </Session>                  
         </Panel>
         )
     }

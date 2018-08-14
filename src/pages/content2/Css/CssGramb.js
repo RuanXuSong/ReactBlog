@@ -3,6 +3,7 @@ import Panel from '../../../components/Panel';
 import Session from '../../../components/Session';
 import Img from '../../../components/Img';
 import In from '../../../components/Indent';
+import Result from '../../../components/Result';
 import NoteTip from '../../../components/NoteTip';
 import XMP from '../../../components/XMP';
   class CssGramb extends Component{
@@ -26,6 +27,9 @@ import XMP from '../../../components/XMP';
             <XMP>
               <i>h1 &#123;color:red; font-size:14px;}</i>
             </XMP> 
+            <Result>
+              <h1 style={{color:'red',fontSize:14}}>我是h1</h1>
+            </Result>
             <div>
               下面的示意图为您展示了上面这段代码的结构：
             </div>
@@ -38,6 +42,9 @@ import XMP from '../../../components/XMP';
           <XMP>
             <i>p &#123;font-family : "sans serif";} </i>       
           </XMP>
+          <Result>
+              <p style={{fontFamily:'sans serif'}}>我是p元素</p>
+          </Result>
           <dl>
             <dd>这个 &lt;p&gt; 元素使用了sans serif字体。</dd>
           </dl>
@@ -50,6 +57,9 @@ import XMP from '../../../components/XMP';
           <XMP>
             <i>p &#123;text-align:center;color:red;} </i>
           </XMP>
+          <Result>
+              <p style={{textAlign:'center',color:'red'}}>我是p元素</p>
+          </Result>
           <div>你应该在每行只描述一个属性，这样可以增强样式定义的可读性，就像这样：</div>
           <XMP>
             <i>p &#123;</i>
@@ -58,6 +68,9 @@ import XMP from '../../../components/XMP';
               <In>font-family: arial;</In>
             <i>} </i>
           </XMP>
+          <Result>
+              <p style={{textAlign:'center',color:'black',fontFamily:'arial'}}>我是p元素</p>
+          </Result>
           </Session>
           
           <Session title="空的 HTML 元素">
