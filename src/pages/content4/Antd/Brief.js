@@ -23,6 +23,11 @@ import Session from '../../../components/Session';
               <dd>Electron</dd>
             </dl>
           </Session>
+          <Session title="关于安装">
+            <dl>
+              <dt>安装步骤在官网上有，这里不再赘述，只是就遇到问题进行分析解答</dt>     
+            </dl>
+          </Session>
         </Panel>
         )
     }
