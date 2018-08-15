@@ -34,7 +34,7 @@ class JsPage extends Component{
                 <Menu
                   mode="inline"
                   defaultSelectedKeys={[Page.getPageInfo().page?Page.getPageInfo().page:'JS简介']}
-                  defaultOpenKeys={Page.getPageInfo()?['sub'+Page.getPageInfo().sub]:['sub1']}
+                  defaultOpenKeys={Page.getPageInfo().sub?['sub'+Page.getPageInfo().sub]:['sub1']}
                   style={{ height: '100%', borderRight: 0 }}
                 >
                   <SubMenu key="sub1" title={<span><Icon type="bars" />JS简介</span>}>

@@ -23,7 +23,7 @@ class PrimaryLayout extends Component {
             <Menu
             theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={Page.getPageInfo?[`${Page.getPageInfo().index}`]:['1']}
+            defaultSelectedKeys={Page.getPageInfo().index?[`${Page.getPageInfo().index}`]:['1']}
             style={{ lineHeight: '64px' }}
             >
             <Menu.Item key="1" onClick={this.handleClick}><Link to={`${path}/html`}>HTML</Link></Menu.Item>

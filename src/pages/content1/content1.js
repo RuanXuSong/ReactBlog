@@ -33,7 +33,7 @@ const { Content, Sider } = Layout;
                 <Menu
                   mode="inline"
                   defaultSelectedKeys={[Page.getPageInfo().page?Page.getPageInfo().page:'HTML简介']}
-                  defaultOpenKeys={Page.getPageInfo()?['sub'+Page.getPageInfo().sub]:['sub1']}
+                  defaultOpenKeys={Page.getPageInfo().sub?['sub'+Page.getPageInfo().sub]:['sub1']}
                   style={{ height: '100%', borderRight: 0 }}
                 >
                   <SubMenu key="sub1" title={<span><Icon type="bars" />HTML基础</span>}>
