@@ -6,7 +6,7 @@ import In from '../../../components/Indent';
 import Result from '../../../components/Result';
 import NoteTip from '../../../components/NoteTip';
 import XMP from '../../../components/XMP';
-  class CssGramb extends Component{
+class CssGramb extends Component{
     render(){
       return(
         <Panel title="CSS基础语法">
@@ -66,7 +66,7 @@ import XMP from '../../../components/XMP';
               <In>text-align: center;</In>
               <In>color: black;</In>
               <In>font-family: arial;</In>
-            <i>} </i>
+            <i>}</i>
           </XMP>
           <Result>
               <p style={{textAlign:'center',color:'black',fontFamily:'arial'}}>我是p元素</p>

@@ -57,7 +57,7 @@ class Events extends Component{
             <div>在 React 中另一个不同是你不能使用返回 false 的方式阻止默认行为， 你必须明确的使用 preventDefault。</div>
             <div>例如，通常我们在 HTML 中阻止链接默认打开一个新页面，可以这样写：</div>
             <XMP>
-              <i>&lt;a href="#" onclick="console.log('点击链接'); return false"></i>
+              <i>&lt;a href="http://www.baidu.com" onclick="console.log('点击链接'); return false"></i>
                 <In>点我</In>
               <i>&lt;/a></i>
             </XMP>
@@ -70,14 +70,14 @@ class Events extends Component{
                 <In>}</In>
                 <i/>
                 <In>return (</In>
-                  <In><In>&lt;a href="#" onClick=&#123;handleClick}></In></In>
+                  <In><In>&lt;a href="http://www.baidu.com" onClick=&#123;handleClick}></In></In>
                   <In><In><In>点我</In></In></In>
                   <In><In>&lt;/a></In></In>
                 <In>);</In>
               <i>}</i>
             </XMP>
             <Result>
-                <a href="#" onClick={handleClick}>点我</a>
+                <a href="http://www.baidu.com" onClick={handleClick}>点我</a>
             </Result>
             <div>上面例子中e 是一个合成事件。点击了以后并没有跳转，而且在控制台console中返回了“链接被点击”</div>
             当你使用 ES6 class 语法来定义一个组件的时候，事件处理器会成为类的一个方法。
