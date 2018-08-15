@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route ,Link,Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import Page from '../../utils/Page';
 import CssBrief from './Css/Brief'
 import CssGramb from './Css/CssGramb'
 import CssGramh from './Css/CssGramh'
@@ -16,10 +17,11 @@ class CssPage extends Component{
         page:"brief"
       }
     }
-    handleClick = e =>{   
+    handleClick = (e,sub) =>{   
       this.setState({
         page:e.key
       });
+      Page.savePageInfo(2,sub,e.key);
     }
     render(){
       const { match }=this.props;
@@ -32,19 +34,19 @@ class CssPage extends Component{
                 theme="light">
                 <Menu
                   mode="inline"
-                  defaultSelectedKeys={['CSS简介']}
-                  defaultOpenKeys={['sub1']}
+                  defaultSelectedKeys={[Page.getPageInfo().page?Page.getPageInfo().page:'CSS简介']}
+                  defaultOpenKeys={Page.getPageInfo()?['sub'+Page.getPageInfo().sub]:['sub1']}
                   style={{ height: '100%', borderRight: 0 }}
                 >
                   <SubMenu key="sub1" title={<span><Icon type="bars" />CSS基础</span>}>
-                    <Menu.Item key="CSS简介" onClick={this.handleClick}><Link to={`${match.path}/CssBrief`}>CSS简介</Link></Menu.Item>
-                    <Menu.Item key="CSS基础语法" onClick={this.handleClick}><Link to={`${match.path}/CssGramb`}>CSS基础语法</Link></Menu.Item>
-                    <Menu.Item key="CSS高级语法" onClick={this.handleClick}><Link to={`${match.path}/CssGramh`}>CSS高级语法</Link></Menu.Item>                   
+                    <Menu.Item key="CSS简介" onClick={(e)=>this.handleClick(e,1)}><Link to={`${match.path}/CssBrief`}>CSS简介</Link></Menu.Item>
+                    <Menu.Item key="CSS基础语法" onClick={(e)=>this.handleClick(e,1)}><Link to={`${match.path}/CssGramb`}>CSS基础语法</Link></Menu.Item>
+                    <Menu.Item key="CSS高级语法" onClick={(e)=>this.handleClick(e,1)}><Link to={`${match.path}/CssGramh`}>CSS高级语法</Link></Menu.Item>                   
                   </SubMenu>
                   <SubMenu key="sub2" title={<span><Icon type="bars" />Sass</span>}>
-                    <Menu.Item key="Sass简介" onClick={this.handleClick}><Link to={`${match.path}/SassBrief`}>Sass简介</Link></Menu.Item>
-                    <Menu.Item key="Sass基础语法" onClick={this.handleClick}><Link to={`${match.path}/SassGramb`}>Sass基础语法</Link></Menu.Item>
-                    <Menu.Item key="Sass高级语法" onClick={this.handleClick}><Link to={`${match.path}/SassGramh`}>Sass高级语法</Link></Menu.Item>                   
+                    <Menu.Item key="Sass简介" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/SassBrief`}>Sass简介</Link></Menu.Item>
+                    <Menu.Item key="Sass基础语法" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/SassGramb`}>Sass基础语法</Link></Menu.Item>
+                    <Menu.Item key="Sass高级语法" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/SassGramh`}>Sass高级语法</Link></Menu.Item>                   
                   </SubMenu>             
                 </Menu>
               </Sider>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route ,Link,Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import Page from '../../utils/Page';
 import Brief from './Html/Brief'
 import HtmlEle from './Html/HtmlEle'
 import HtmlStyle from './Html/HtmlStyle'
@@ -14,10 +15,11 @@ const { Content, Sider } = Layout;
         page:"brief"
       }
     }
-    handleClick = e =>{   
+    handleClick = (e,sub) =>{   
       this.setState({
         page:e.key
       });
+      Page.savePageInfo(1,sub,e.key);
     }
     render(){
       const { match }=this.props;
@@ -30,15 +32,15 @@ const { Content, Sider } = Layout;
                 theme="light">
                 <Menu
                   mode="inline"
-                  defaultSelectedKeys={['HTML简介']}
-                  defaultOpenKeys={['sub1']}
+                  defaultSelectedKeys={[Page.getPageInfo().page?Page.getPageInfo().page:'HTML简介']}
+                  defaultOpenKeys={Page.getPageInfo()?['sub'+Page.getPageInfo().sub]:['sub1']}
                   style={{ height: '100%', borderRight: 0 }}
                 >
                   <SubMenu key="sub1" title={<span><Icon type="bars" />HTML基础</span>}>
-                    <Menu.Item key="HTML简介" onClick={this.handleClick}><Link to={`${match.path}/brief`}>HTML简介</Link></Menu.Item>
-                    <Menu.Item key="HTML元素" onClick={this.handleClick}><Link to={`${match.path}/HtmlEle`}>HTML元素</Link></Menu.Item>
-                    <Menu.Item key="HTML样式" onClick={this.handleClick}><Link to={`${match.path}/HtmlStyle`}>HTML样式</Link></Menu.Item>
-                    <Menu.Item key="HTML字符实体" onClick={this.handleClick}><Link to={`${match.path}/Esse`}>HTML字符实体</Link></Menu.Item>
+                    <Menu.Item key="HTML简介" onClick={(e)=>this.handleClick(e,1)}><Link to={`${match.path}/brief`}>HTML简介</Link></Menu.Item>
+                    <Menu.Item key="HTML元素" onClick={(e)=>this.handleClick(e,1)}><Link to={`${match.path}/HtmlEle`}>HTML元素</Link></Menu.Item>
+                    <Menu.Item key="HTML样式" onClick={(e)=>this.handleClick(e,1)}><Link to={`${match.path}/HtmlStyle`}>HTML样式</Link></Menu.Item>
+                    <Menu.Item key="HTML字符实体" onClick={(e)=>this.handleClick(e,1)}><Link to={`${match.path}/Esse`}>HTML字符实体</Link></Menu.Item>
                   </SubMenu>                 
                 </Menu>
               </Sider>

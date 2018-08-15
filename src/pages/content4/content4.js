@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route ,Link,Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
+import Page from '../../utils/Page';
 import Brief from './Antd/Brief'
 import ReactBrief from './React/Brief';
 import VirtualDom from './React/VirtualDom';
@@ -11,19 +12,23 @@ import State from './React/State';
 import LifeCycle from './React/LifeCycle';
 import Events from './React/Events';
 import BiBinding from './React/BiBinding';
+
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
-  class FramePage extends Component{
+class FramePage extends Component{
+  
     constructor(props){
       super(props);
       this.state={
         page:"Antd简介"
       }
     }
-    handleClick = e =>{   
+    handleClick = (e,sub) =>{   
       this.setState({
         page:e.key
       });
+      Page.savePageInfo(4,sub,e.key);
+      console.log(Page.getPageInfo());
     }
     render(){
       const { match }=this.props;
@@ -36,23 +41,23 @@ const { Content, Sider } = Layout;
                 theme="light">
                 <Menu
                   mode="inline"
-                  defaultSelectedKeys={['Antd简介']}
-                  defaultOpenKeys={['sub1']}
+                  defaultSelectedKeys={[Page.getPageInfo().page?Page.getPageInfo().page:'Antd简介']}
+                  defaultOpenKeys={Page.getPageInfo()?['sub'+Page.getPageInfo().sub]:['sub1']}
                   style={{ height: '100%', borderRight: 0 }}
                 >
                   <SubMenu key="sub1" title={<span><Icon type="bars" />Antd基础</span>}>
-                    <Menu.Item key="Antd简介" onClick={this.handleClick}><Link to={`${match.path}/brief`}>Antd简介</Link></Menu.Item>                    
+                    <Menu.Item key="Antd简介" onClick={(e)=>this.handleClick(e,1)}><Link to={`${match.path}/brief`}>Antd简介</Link></Menu.Item>                    
                   </SubMenu>   
                   <SubMenu key="sub2" title={<span><Icon type="bars" />React</span>}>
-                    <Menu.Item key="React简介" onClick={this.handleClick}><Link to={`${match.path}/ReactBrief`}>React简介</Link></Menu.Item>
-                    <Menu.Item key="虚拟DOM" onClick={this.handleClick}><Link to={`${match.path}/VirtualDom`}>虚拟DOM</Link></Menu.Item>
-                    <Menu.Item key="JSX" onClick={this.handleClick}><Link to={`${match.path}/JSX`}>JSX</Link></Menu.Item>
-                    <Menu.Item key="Components" onClick={this.handleClick}><Link to={`${match.path}/Components`}>Components</Link></Menu.Item>
-                    <Menu.Item key="Props" onClick={this.handleClick}><Link to={`${match.path}/Props`}>Props</Link></Menu.Item> 
-                    <Menu.Item key="State" onClick={this.handleClick}><Link to={`${match.path}/State`}>State</Link></Menu.Item>
-                    <Menu.Item key="生命周期" onClick={this.handleClick}><Link to={`${match.path}/LifeCycle`}>生命周期</Link></Menu.Item>  
-                    <Menu.Item key="事件处理" onClick={this.handleClick}><Link to={`${match.path}/Events`}>事件处理</Link></Menu.Item>  
-                    <Menu.Item key="双向绑定" onClick={this.handleClick}><Link to={`${match.path}/BiBinding`}>双向绑定</Link></Menu.Item>                               
+                    <Menu.Item key="React简介" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/ReactBrief`}>React简介</Link></Menu.Item>
+                    <Menu.Item key="虚拟DOM" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/VirtualDom`}>虚拟DOM</Link></Menu.Item>
+                    <Menu.Item key="JSX" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/JSX`}>JSX</Link></Menu.Item>
+                    <Menu.Item key="Components" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/Components`}>Components</Link></Menu.Item>
+                    <Menu.Item key="Props" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/Props`}>Props</Link></Menu.Item> 
+                    <Menu.Item key="State" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/State`}>State</Link></Menu.Item>
+                    <Menu.Item key="生命周期" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/LifeCycle`}>生命周期</Link></Menu.Item>  
+                    <Menu.Item key="事件处理" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/Events`}>事件处理</Link></Menu.Item>  
+                    <Menu.Item key="双向绑定" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/BiBinding`}>双向绑定</Link></Menu.Item>                               
                   </SubMenu>              
                 </Menu>
               </Sider>

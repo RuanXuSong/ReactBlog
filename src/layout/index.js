@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route ,Link, Switch } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
+import Page from '../utils/Page';
 import HtmlPage from '../pages/content1/content1';
 import CssPage from '../pages/content2/content2';
 import JsPage from '../pages/content3/content3';
@@ -11,6 +12,9 @@ import './index.scss';
 const { Header } = Layout;
 
 class PrimaryLayout extends Component {
+  handleClick(e){
+    Page.savePageInfo(e.key,1,'');
+  }
   render() {
     const { path } =this.props.match;
     return (
@@ -19,13 +23,13 @@ class PrimaryLayout extends Component {
             <Menu
             theme="dark"
             mode="horizontal"
-            defaultSelectedKeys={['1']}
+            defaultSelectedKeys={Page.getPageInfo?[`${Page.getPageInfo().index}`]:['1']}
             style={{ lineHeight: '64px' }}
             >
-            <Menu.Item key="1"><Link to={`${path}/html`}>HTML</Link></Menu.Item>
-            <Menu.Item key="2"><Link to={`${path}/css`}>CSS</Link></Menu.Item>
-            <Menu.Item key="3"><Link to={`${path}/js`}>JS</Link></Menu.Item>
-            <Menu.Item key="4"><Link to={`${path}/frame`}>框架</Link></Menu.Item>
+            <Menu.Item key="1" onClick={this.handleClick}><Link to={`${path}/html`}>HTML</Link></Menu.Item>
+            <Menu.Item key="2" onClick={this.handleClick}><Link to={`${path}/css`}>CSS</Link></Menu.Item>
+            <Menu.Item key="3" onClick={this.handleClick}><Link to={`${path}/js`}>JS</Link></Menu.Item>
+            <Menu.Item key="4" onClick={this.handleClick}><Link to={`${path}/frame`}>框架</Link></Menu.Item>
             </Menu>           
         </Header>
         <Banner/>
