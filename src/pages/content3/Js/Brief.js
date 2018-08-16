@@ -14,8 +14,8 @@ import Session from '../../../components/Session';
           </dl>
           </Session>         
           <Session title="JavaScript 使用">
-          <div>HTML 中的脚本必须位于 &lt;script&gt; 与 &lt;/script&gt; 标签之间。</div>
-          <div>脚本可被放置在 HTML 页面的 &lt;body&gt; 和 &lt;head&gt; 部分中。</div>
+          <div>HTML 中的脚本必须位于 <code>&lt;script&gt;</code> 与 <code>&lt;/script&gt;</code> 标签之间。</div>
+          <div>脚本可被放置在 HTML 页面的 <code>&lt;body&gt;</code> 和 <code>&lt;head&gt;</code> 部分中。</div>
           </Session>   
         </Panel>
         )

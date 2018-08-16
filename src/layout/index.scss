@@ -111,3 +111,16 @@ dd::before{
     display: block;
   }
 }
+code{
+  color:$red;
+  background: $lred;
+  padding: rem(5);
+  border-radius: rem(5);
+  margin:0 rem(5);
+}
+.code-string{
+  color: $red;
+}
+.Number{
+  color:$blue;
+}

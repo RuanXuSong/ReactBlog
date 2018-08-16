@@ -44,7 +44,7 @@ class Events extends Component{
             </dl>
             <div>HTML 通常写法是：</div>
             <XMP>
-              <i>&lt;button onclick="activateLasers()"></i>
+              <i>&lt;button onclick=<span className="code-string">"activateLasers()"</span>></i>
                 <In>激活按钮</In>
               <i>&lt;/button></i>
             </XMP>
@@ -54,10 +54,10 @@ class Events extends Component{
                 <In>激活按钮</In>
               <i>&lt;/button></i>
             </XMP>
-            <div>在 React 中另一个不同是你不能使用返回 false 的方式阻止默认行为， 你必须明确的使用 preventDefault。</div>
+            <div>在 React 中另一个不同是你不能使用返回 <code>false</code> 的方式阻止默认行为， 你必须明确的使用 <code>preventDefault</code>。</div>
             <div>例如，通常我们在 HTML 中阻止链接默认打开一个新页面，可以这样写：</div>
             <XMP>
-              <i>&lt;a href="http://www.baidu.com" onclick="console.log('点击链接'); return false"></i>
+              <i>&lt;a href=<span className="code-string">"http://www.baidu.com"</span> onclick=<span className="code-string">"console.log('点击链接'); return false"</span>></i>
                 <In>点我</In>
               <i>&lt;/a></i>
             </XMP>
@@ -66,11 +66,11 @@ class Events extends Component{
             <i>function ActionLink() &#123;</i>
                 <In>function handleClick(e) &#123;</In>
                 <In><In>e.preventDefault();</In></In>
-                <In><In>console.log('链接被点击');</In></In>
+                <In><In>console.log(<span className="code-string">'链接被点击'</span>);</In></In>
                 <In>}</In>
                 <i/>
                 <In>return (</In>
-                  <In><In>&lt;a href="http://www.baidu.com" onClick=&#123;handleClick}></In></In>
+                  <In><In>&lt;a href=<span className="code-string">"http://www.baidu.com"</span> onClick=&#123;handleClick}></In></In>
                   <In><In><In>点我</In></In></In>
                   <In><In>&lt;/a></In></In>
                 <In>);</In>
@@ -79,9 +79,9 @@ class Events extends Component{
             <Result>
                 <a href="http://www.baidu.com" onClick={handleClick}>点我</a>
             </Result>
-            <div>上面例子中e 是一个合成事件。点击了以后并没有跳转，而且在控制台console中返回了“链接被点击”</div>
-            当你使用 ES6 class 语法来定义一个组件的时候，事件处理器会成为类的一个方法。
-            例如，下面的 Toggle 组件渲染一个让用户切换开关状态的按钮：
+            <div>上面例子中<code>e</code> 是一个合成事件。点击了以后并没有跳转，而且在控制台<code>console</code>中返回了“链接被点击”</div>
+            当你使用 ES6 <code>class</code> 语法来定义一个组件的时候，事件处理器会成为类的一个方法。
+            例如，下面的 <code>Toggle</code> 组件渲染一个让用户切换开关状态的按钮：
             <XMP>
             <i>class Toggle extends React.Component &#123;</i>
               <In>constructor(props) &#123;</In>
@@ -100,7 +100,7 @@ class Events extends Component{
             <In>render() &#123;</In>
               <In><In>return (</In></In>
                 <In><In><In>&lt;button onClick=&#123;this.handleClick}></In></In></In>
-                <In><In><In><In>&#123;this.state.isToggleOn ? 'ON' : 'OFF'}</In></In></In></In>
+                <In><In><In><In>&#123;this.state.isToggleOn ? <span className="code-string">'ON'</span> : <span className="code-string">'OFF'</span>}</In></In></In></In>
                 <In><In><In>&lt;/button></In></In></In>
               <In><In>);</In></In>
             <In>}</In>
@@ -108,7 +108,7 @@ class Events extends Component{
             <i/>
             <i>ReactDOM.render(</i>
               <In>&lt;Toggle />,</In>
-              <In>document.getElementById('example')</In>
+              <In>document.getElementById(<span className="code-string">'example'</span>)</In>
             <i>);</i>
             </XMP>
             <Result>
@@ -141,7 +141,7 @@ class Events extends Component{
             <In>render() &#123;</In>
               <In><In>return (</In></In>
                 <In><In><In>&lt;button onClick=&#123;(e) => this.handleClick(e)}></In></In></In>
-                <In><In><In><In>&#123;this.state.isToggleOn ? 'ON' : 'OFF'}</In></In></In></In>
+                <In><In><In><In>&#123;this.state.isToggleOn ? <span className="code-string">'ON'</span> : <span className="code-string">'OFF'</span>}</In></In></In></In>
                 <In><In><In>&lt;/button></In></In></In>
               <In><In>);</In></In>
             <In>}</In>
@@ -149,7 +149,7 @@ class Events extends Component{
             <i/>
             <i>ReactDOM.render(</i>
               <In>&lt;Toggle />,</In>
-              <In>document.getElementById('example')</In>
+              <In>document.getElementById(<span className="code-string">'example'</span>)</In>
             <i>);</i>              
             </XMP>
             <div>效果也是一样的</div>

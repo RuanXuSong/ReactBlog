@@ -51,12 +51,12 @@ class LifeCycle extends Component{
           <dl>
             <dt>生命周期的方法有：</dt>
             <dd><b>componentWillMount</b> 在渲染前调用,在客户端也在服务端。</dd>
-            <dd><b>componentDidMount</b> : 在第一次渲染后调用，只在客户端。之后组件已经生成了对应的DOM结构，可以通过this.getDOMNode()来进行访问。 如果你想和其他JavaScript框架一起使用，
-              可以在这个方法中调用setTimeout, setInterval或者发送AJAX请求等操作(防止异步操作阻塞UI)。</dd>
-            <dd><b>componentWillReceiveProps</b>: 在组件接收到一个新的 prop (更新后)时被调用。这个方法在初始化render时不会被调用。</dd>
-            <dd><b>shouldComponentUpdate</b>: 返回一个布尔值。在组件接收到新的props或者state时被调用。在初始化时或者使用forceUpdate时不被调用。 
+            <dd><b>componentDidMount</b> : 在第一次渲染后调用，只在客户端。之后组件已经生成了对应的DOM结构，可以通过<code>this.getDOMNode()</code>来进行访问。 如果你想和其他JavaScript框架一起使用，
+              可以在这个方法中调用<code>setTimeout</code>, <code>setInterval</code>或者发送AJAX请求等操作(防止异步操作阻塞UI)。</dd>
+            <dd><b>componentWillReceiveProps</b>: 在组件接收到一个新的 <code>prop</code> (更新后)时被调用。这个方法在初始化render时不会被调用。</dd>
+            <dd><b>shouldComponentUpdate</b>: 返回一个布尔值。在组件接收到新的<code>props</code>或者<code>state</code>时被调用。在初始化时或者使用<code>forceUpdate</code>时不被调用。 
               可以在你确认不需要更新组件时使用。</dd>
-            <dd><b>componentWillUpdate</b>: 在组件接收到新的props或者state但还没有render时被调用。在初始化时不会被调用。</dd>
+            <dd><b>componentWillUpdate</b>: 在组件接收到新的<code>props</code>或者<code>state</code>但还没有<code>render</code>时被调用。在初始化时不会被调用。</dd>
             <dd><b>componentDidUpdate</b>: 在组件完成更新后立即调用。在初始化时不会被调用。</dd>
             <dd><b>componentWillUnmount</b>: 在组件从 DOM 中移除的时候立刻被调用。</dd>
           </dl>
@@ -79,7 +79,7 @@ class LifeCycle extends Component{
               <Step title="结束" description="结束" />
             </Steps>
           </div>
-          <div>下面是一个使用componentDidMount的实例:</div>
+          <div>下面是一个使用<code>componentDidMount</code>的实例:</div>
           <XMP>
           <i>class Hello extends React.Component &#123;</i>
             <In>constructor(props) &#123;</In>
@@ -117,8 +117,8 @@ class LifeCycle extends Component{
             <Result>
                 <Hello name="world"/>
             </Result>
-            <div>Hello 组件加载以后，通过 componentDidMount 方法设置一个定时器，每隔100毫秒重新设置组件的透明度，并重新渲染：</div>
-            <NoteTip>每一次setState以后，react就会判断shouldComponentUpdate的状态，如果为true就开始重新渲染。就像上章的Clock定时器一样</NoteTip>
+            <div>Hello 组件加载以后，通过 <code>componentDidMount</code> 方法设置一个定时器，每隔100毫秒重新设置组件的透明度，并重新渲染：</div>
+            <NoteTip>每一次<code>setState</code>以后，react就会判断<code>shouldComponentUpdate</code>的状态，如果为<code>true</code>就开始重新渲染。就像上章的Clock定时器一样</NoteTip>
           </Session>
       </Panel>
       )

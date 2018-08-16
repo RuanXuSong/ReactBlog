@@ -93,11 +93,11 @@ const data2 = [{
           </Session>
 
           <Session title="style实例-文本对齐">
-            <p>text-align 属性规定了元素中文本的水平对齐方式：</p>
+            <p><code>text-align</code> 属性规定了元素中文本的水平对齐方式：</p>
             <XMP>
               <i>&lt;html&gt;</i>
               <In>&lt;body&gt;</In>
-              <In><In>&lt;h1 style="text-align:center"&gt; This is a heading &lt;/h1&gt;</In></In>   
+              <In><In>&lt;h1 style=<span className="code-string">"text-align:center"</span>&gt; This is a heading &lt;/h1&gt;</In></In>   
               <In><In>&lt;p&gt;The heading above is aligned to the center of this page.&lt;/p&gt;</In></In> 
               <In>&lt;/body&gt;</In>
               <i>&lt;/html&gt;</i>
@@ -109,8 +109,8 @@ const data2 = [{
               </div>
             </Result>
             <dl>
-              <dd>在这个例子中，h1标签中的文字居中展示了</dd>
-              <dd>style 属性淘汰了旧的 "align" 属性。</dd>
+              <dd>在这个例子中，<code>h1</code>标签中的文字居中展示了</dd>
+              <dd><code>style</code> 属性淘汰了旧的 <code>"align"</code> 属性。</dd>
             </dl> 
           </Session>          
         </Panel>

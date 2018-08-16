@@ -153,16 +153,16 @@ class Esse extends Component{
             <dd>在 HTML 中不能使用小于号（&lt;）和大于号（&gt;），这是因为浏览器会误认为它们是标签。</dd>
             <dd>如果希望正确地显示预留字符，我们必须在 HTML 源代码中使用字符实体（character entities）。</dd>
           </dl>
-          <div>如需显示小于号，我们必须这样写：&lt；或 &#60；</div>
+          <div>如需显示小于号，我们必须这样写：<code>&lt；</code>或 <code>&#60；</code></div>
           <NoteTip title="提示：使用实体名而不是数字的好处是，名称易于记忆。不过坏处是，
           浏览器也许并不支持所有实体名称（对实体数字的支持却很好）。"/>
           </Session>
           <Session title="不间断空格（non-breaking space）">
           <dl>      
-            <dt>HTML 中的常用字符实体是不间断空格(&nbsp；)。</dt>
+            <dt>HTML 中的常用字符实体是不间断空格(<code>&nbsp；</code>)。</dt>
             <dd>浏览器总是会截短 HTML 页面中的空格。如果您在文本中写 10 个空格，
               在显示该页面之前，浏览器会删除它们中的 9 个。</dd>
-            <dd>如需在页面中增加空格的数量，您需要使用 &nbsp; 字符实体。</dd>             
+            <dd>如需在页面中增加空格的数量，您需要使用 <code>&nbsp；</code>字符实体。</dd>             
           </dl>        
           </Session>
 

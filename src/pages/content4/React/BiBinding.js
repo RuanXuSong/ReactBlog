@@ -45,10 +45,10 @@ class BiInput extends Component {
             <Img src="BiBinding.png" alt="双向绑定"/>
             <dl>
               <dt>双向绑定原理如上图，在vue里面是用v-model实现的。那么在react里面怎么实现双向绑定呢？</dt>
-              <dd><b>第一步</b>：在class的state中设定绑定元素value的初值</dd>
-              <dd><b>第二步</b>：在Input的事件中调用handle事件</dd>
-              <dd><b>第三步</b>：在handle事件中先获取input的value值，再调用setState更新state</dd>
-              <dd><b>第四步</b>：react识别到state的改变，再次自动渲染dom，显示出更新后的dom</dd>
+              <dd><b>第一步</b>：在<code>class</code>的<code>state</code>中设定绑定元素<code>value</code>的初值</dd>
+              <dd><b>第二步</b>：在<code>Input</code>的事件中调用<code>handle</code>事件</dd>
+              <dd><b>第三步</b>：在<code>handle</code>事件中先获取<code>input</code>的<code>value</code>值，再调用<code>setState</code>更新<code>state</code></dd>
+              <dd><b>第四步</b>：react识别到<code>state</code>的改变，再次自动渲染dom，显示出更新后的dom</dd>
             </dl>
             <div>下面是一个双向绑定Input的实例</div>
             <XMP>
@@ -56,7 +56,7 @@ class BiInput extends Component {
               <In>constructor(props) &#123;</In>
                 <In><In>super(props)</In></In>
                   <In><In>this.state = &#123;</In></In>
-                      <In><In><In>value: ''</In></In></In>
+                      <In><In><In>value: <span className="code-string">''</span></In></In></In>
                   <In><In>}</In></In>
               <In>}</In>
             <i/>
@@ -82,10 +82,10 @@ class BiInput extends Component {
               <BiInput/>
             </Result>
             <NoteTip>
-              用event.target来代替event才能获得属性中的value值
+              用<code>event.target</code>来代替<code>event</code>才能获得属性中的<code>value</code>值
             </NoteTip>
-            <div>双向绑定最大的好处是我们不再需要用jQuery去查询表单的状态，而是直接获得了state中的value值。</div>
-            <div>当表单提交的时候只要调用onSubmit事件进行双向绑定就不需要再用jquery查询表单数据了</div>
+            <div>双向绑定最大的好处是我们不再需要用jQuery去查询表单的状态，而是直接获得了<code>state</code>中的<code>value</code>值。</div>
+            <div>当表单提交的时候只要调用<code>onSubmit</code>事件进行双向绑定就不需要再用jquery查询表单数据了</div>
           </Session>
         </Panel>
         )

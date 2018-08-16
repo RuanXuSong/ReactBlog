@@ -20,8 +20,8 @@ class CssGramh extends Component{
           </Session>
           <Session title="解除继承">
           <div>
-            如果你不希望 "Verdana, sans-serif" 字体被所有的子元素继承，又该怎么做呢？
-            比方说，你希望段落的字体是 Times。没问题。创建一个针对 p 的特殊规则，这样它就会摆脱父元素的规则：
+            如果你不希望 <code>Verdana, sans-serif</code> 字体被所有的子元素继承，又该怎么做呢？
+            比方说，你希望段落的字体是 <code>Times</code>。没问题。创建一个针对 p 的特殊规则，这样它就会摆脱父元素的规则：
           </div>
           <XMP>
             <i>body &#123;</i>

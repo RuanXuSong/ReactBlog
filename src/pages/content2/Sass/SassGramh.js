@@ -11,7 +11,7 @@ import XMP from '../../../components/XMP';
           <Session title="Imports">
           <dl>
             <dd>imports允许将总的样式分割成小文件，并在另一个文件中导入。这对于组织方式和编写速度来说是神奇的。</dd>
-            <dd>我们可以使用@import指令导入.scss文件：</dd>
+            <dd>我们可以使用<code>@import</code>指令导入.scss文件：</dd>
           </dl>
           <XMP>
             <i>@import "grids.scss";</i>
@@ -27,7 +27,7 @@ import XMP from '../../../components/XMP';
           </Session>
 
           <Session title="扩展和占位符">
-          <div>在Sass中，@extend 指令是继承既有样式的标准方式。</div>
+          <div>在Sass中，<code>@extend</code> 指令是继承既有样式的标准方式。</div>
           <div>让我们使用@extend指令扩展一个input样式——指向input-error类：</div>
           <XMP>
             <i>.input &#123;</i>
@@ -50,12 +50,12 @@ import XMP from '../../../components/XMP';
               <In>color:black;</In>
             <i>}</i>
           </XMP>           
-          <div>声明占位符选择器需要在目标类名上前缀一个%符号。只有当扩展它的元素被渲染时，占位符选择器才会被编译输出。</div>
+          <div>声明占位符选择器需要在目标类名上前缀一个<code>%</code>符号。只有当扩展它的元素被渲染时，占位符选择器才会被编译输出。</div>
           <div>也就是引用一个并不存在的元素的样式表的css内容</div>                
           </Session>
 
           <Session title="混合宏">
-          <div>混合宏是Sass令人惊艳的特性，因为它在让你实现类似@extend功能的同时还提供了传参的功能。</div>
+          <div>混合宏是Sass令人惊艳的特性，因为它在让你实现类似<code>@extend</code>功能的同时还提供了传参的功能。</div>
           <div>Sass使用@mixin指令定义混合宏，并使用@include指令引入。让我们构建一个简单的混合宏实现媒体查询吧。</div>
           <div>第一步是定义混合宏：</div>
           <XMP>
@@ -63,7 +63,7 @@ import XMP from '../../../components/XMP';
               <In>/ /</In>
             <i>}</i>            
           </XMP>
-          <div>注意我们在混合宏media中声明了一个$queryString参数。
+          <div>注意我们在混合宏<code>media</code>中声明了一个<code>$queryString</code>参数。
             当我们引入混合宏时，可以一个字符串参数以实现动态渲染。勇敢试一下吧：</div>     
             <XMP>
             <i>@mixin media($queryString) &#123;</i>
@@ -73,10 +73,10 @@ import XMP from '../../../components/XMP';
             <i>}</i>            
           </XMP>
           <div>因为我们期待字符串参数被目标函数使用，所以使用了Sass的插值语法，
-            #{}。当你传递变量到这个括号中时，变量会像字符串一样输出而不是进行某种逻辑运算。</div>    
-          <div>这个例子中另一个生疏的地方是@content指令。
-            当你使用的混合宏后接被大括号包裹的样式，那么被包裹样式就可以通过@content指令加以使用。</div>
-          <div>最后，让我们使用混合宏和@include指令试一下实现渲染媒体查询吧：</div>
+            <code>#&#123;}</code>。当你传递变量到这个括号中时，变量会像字符串一样输出而不是进行某种逻辑运算。</div>    
+          <div>这个例子中另一个生疏的地方是<code>@content</code>指令。
+            当你使用的混合宏后接被大括号包裹的样式，那么被包裹样式就可以通过<code>@content</code>指令加以使用。</div>
+          <div>最后，让我们使用混合宏和<code>@include</code>指令试一下实现渲染媒体查询吧：</div>
           <XMP>
             <i>@mixin media($queryString) &#123;</i>
                 <In>@media #&#123;$queryString} &#123;</In>
@@ -105,7 +105,7 @@ import XMP from '../../../components/XMP';
           </Session>
 
           <Session title="函数指令">
-          <div>在Sass中，函数指令类似于混合宏，它们会通过@return指令返回值而不是返回样式。这可以降低代码中的重复率并提高可读性。</div>
+          <div>在Sass中，函数指令类似于混合宏，它们会通过<code>@return</code>指令返回值而不是返回样式。这可以降低代码中的重复率并提高可读性。</div>
           <div>让我们创建一个函数指令以清除grid例子中的grid运算式：</div>
           <XMP>
             <i>@function getColumnWidth($width, $columns,$margin) &#123;</i>

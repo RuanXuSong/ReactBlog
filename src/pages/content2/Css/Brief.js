@@ -25,10 +25,10 @@ import Panel from '../../../components/Panel';
               <dt>一般而言，所有的样式会根据下面的规则层叠于一个新的虚拟样式表中，其中数字 4 拥有最高的优先权。</dt>
               <dd>浏览器缺省设置</dd>
               <dd>外部样式表</dd>
-              <dd>内部样式表（位于 &lt;head&gt; 标签内部）</dd>
+              <dd>内部样式表（位于 <code>&lt;head&gt;</code> 标签内部）</dd>
               <dd>内联样式（在 HTML 元素内部）</dd>
             </dl>
-            <div>因此，内联样式（在 HTML 元素内部）拥有最高的优先权，这意味着它将优先于以下的样式声明：&lt;head&gt;
+            <div>因此，内联样式（在 HTML 元素内部）拥有最高的优先权，这意味着它将优先于以下的样式声明：<code>&lt;head&gt;</code>
                 标签中的样式声明，外部样式表中的样式声明，或者浏览器中的样式声明（缺省值）。</div>   
             </Session>         
         </Panel>

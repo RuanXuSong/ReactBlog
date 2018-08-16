@@ -14,10 +14,10 @@ import In from '../../../components/Indent';
             </dl>
             <XMP>
               <i>function greeter(person) &#123;</i>
-                <In>return "Hello, " + person;</In>
+                <In>return <span className="code-string">"Hello, "</span> + person;</In>
               <i>}</i>
               <i/>
-              <i>let user = "Jane User";</i>
+              <i>let user = <span className="code-string">"Jane User"</span>;</i>
               <i/>
               <i>document.body.innerHTML = greeter(user);</i>
             </XMP>
@@ -35,10 +35,10 @@ import In from '../../../components/Indent';
             <div>接下来让我们看看TypeScript工具带来的高级功能。 给 person函数的参数添加: string类型注解，如下：</div>
             <XMP>
               <i>function greeter(person: string) &#123;</i>
-                <In>return "Hello, " + person;</In>
+                <In>return <span className="code-string">"Hello, "</span> + person;</In>
               <i>}</i>
               <i/>
-              <i>let user = "Jane User";</i>
+              <i>let user = <span className="code-string">"Jane User"</span>;</i>
               <i>document.body.innerHTML = greeter(user);</i>
             </XMP>
           </Session>     
@@ -49,7 +49,7 @@ import In from '../../../components/Indent';
             </dl>
             <XMP>
               <i>function greeter(person: string) &#123;</i>
-                  <In>return "Hello, " + person;</In>
+                  <In>return <span className="code-string">"Hello, "</span> + person;</In>
                   <i>}</i>
               <i/>      
               <i>let user = [0, 1, 2];</i>
@@ -60,7 +60,7 @@ import In from '../../../components/Indent';
             <XMP>
               <i>greeter.ts(7,26): error TS2345: Argument of type 'number[]' is not assignable to parameter of type 'string'.</i>
             </XMP>
-            <div>类似地，尝试删除greeter调用的所有参数。 TypeScript会告诉你使用了非期望个数的参数调用了这个函数。</div>
+            <div>类似地，尝试删除<code>greeter</code>调用的所有参数。 TypeScript会告诉你使用了非期望个数的参数调用了这个函数。</div>
             <div>在这两种情况中，TypeScript提供了静态的代码分析，它可以分析代码结构和提供的类型注解。</div>
             <br/>
             <div>要注意的是尽管有错误，greeter.js文件还是被创建了。 </div>
@@ -68,8 +68,8 @@ import In from '../../../components/Indent';
           </Session>   
 
           <Session title="接口">
-            <div>让我们开发这个示例应用。这里我们使用接口来描述一个拥有firstName和lastName字段的对象。 在TypeScript里，只在两个类型内部的结构兼容那么这两个类型就是兼容的。 
-              这就允许我们在实现接口时候只要保证包含了接口要求的结构就可以，而不必明确地使用 implements语句。</div>             
+            <div>让我们开发这个示例应用。这里我们使用接口来描述一个拥有<code>firstName</code>和<code>lastName</code>字段的对象。 在TypeScript里，只在两个类型内部的结构兼容那么这两个类型就是兼容的。 
+              这就允许我们在实现接口时候只要保证包含了接口要求的结构就可以，而不必明确地使用 <code>implements</code>语句。</div>             
             <XMP>
             <i>interface Person &#123;</i>
                 <In><div>firstName: string;</div></In>
@@ -77,10 +77,10 @@ import In from '../../../components/Indent';
             <i>}</i>
             <i/>
             <i>function greeter(person: Person) &#123;</i>
-                <In>return "Hello, " + person.firstName + " " + person.lastName;</In>
+                <In>return <span className="code-string">Hello, "</span> + person.firstName + <span className="code-string">" "</span> + person.lastName;</In>
             <i>}</i>
             <i/>
-            <i>let user = &#123; firstName: "Jane", lastName: "User" };</i>
+            <i>let user = &#123; firstName: <span className="code-string">"Jane"</span>, lastName: <span className="code-string">"User"</span> };</i>
             <i/>
             <i>document.body.innerHTML = greeter(user);</i>
             </XMP>

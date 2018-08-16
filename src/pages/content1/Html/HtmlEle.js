@@ -67,8 +67,8 @@ const data = [{
             <p>This is my first paragraph.</p>
           </Result>
           <dl>
-            <dd>这个 &lt;p&gt; 元素定义了 HTML 文档中的一个段落。</dd>
-            <dd>这个元素拥有一个开始标签 &lt;p&gt;，以及一个结束标签 &lt;/p&gt;。</dd>
+            <dd>这个 <code>&lt;p&gt;</code> 元素定义了 HTML 文档中的一个段落。</dd>
+            <dd>这个元素拥有一个开始标签 <code>&lt;p&gt;</code>，以及一个结束标签 <code>&lt;/p&gt;</code>。</dd>
             <dd>元素内容是：This is my first paragraph。</dd>
           </dl>
           </Session>
@@ -85,8 +85,8 @@ const data = [{
             </div>
           </Result>
           <dl>
-            <dd>&lt;html&gt; 元素定义了整个 HTML 文档。</dd>
-            <dd>这个元素拥有一个开始标签 &lt;html&gt;，以及一个结束标签 &lt;/html&gt;。</dd>
+            <dd><code>&lt;html&gt;</code>元素定义了整个 HTML 文档。</dd>
+            <dd>这个元素拥有一个开始标签 <code>&lt;html&gt;</code>，以及一个结束标签 <code>&lt;/html&gt;</code>。</dd>
             <dd>元素内容是另一个 HTML 元素（body 元素）。</dd>
           </dl>
           </Session>
@@ -94,17 +94,17 @@ const data = [{
           <Session title="空的 HTML 元素">
           <dl>
             <dd>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</dd>
-            <dd>&lt;br&gt; 就是没有关闭标签的空元素（&lt;br&gt; 标签定义换行）。</dd>
+            <dd><code>&lt;br&gt;</code> 就是没有关闭标签的空元素（<code>&lt;br&gt;</code> 标签定义换行）。</dd>
             <dd>在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。</dd>
-            <dd>在开始标签中添加斜杠，比如 &lt;br /&gt;，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</dd>
-            <dd>即使 &lt;br&gt; 在所有浏览器中都是有效的，但使用 &lt;br /&gt; 其实是更长远的保障。</dd>
+            <dd>在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</dd>
+            <dd>即使 <code>&lt;br&gt;</code> 在所有浏览器中都是有效的，但使用 <code>&lt;br/&gt;</code> 其实是更长远的保障。</dd>
           </dl>
           </Session>
 
           <Session title="HTML 提示：使用小写标签">
           <dl>
-            <dd>HTML 标签对大小写不敏感：&lt;P&gt; 等同于 &lt;p&gt;。许多网站都使用大写的 HTML 标签。</dd>
-            <dd>W3School 使用的是小写标签，因为万维网联盟（W3C）在 HTML 4 中推荐使用小写，而在未来 (X)HTML 版本中强制使用小写。</dd>
+            <dd>HTML 标签对大小写不敏感：<code>&lt;P&gt;</code> 等同于 <code>&lt;p&gt;</code>。许多网站都使用大写的 HTML 标签。</dd>
+            <dd>我们使用的是小写标签，因为万维网联盟（W3C）在 HTML 4 中推荐使用小写，而在未来 (X)HTML 版本中强制使用小写。</dd>
           </dl>
           </Session>
         </Panel>

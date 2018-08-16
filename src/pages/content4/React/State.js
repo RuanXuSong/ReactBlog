@@ -5,6 +5,7 @@ import Result from '../../../components/Result';
 import NoteTip from '../../../components/NoteTip';
 import XMP from '../../../components/XMP';
 import In from '../../../components/Indent';
+
 class Clock extends React.Component {
   constructor(props) {
     super(props);
@@ -21,6 +22,7 @@ class Clock extends React.Component {
     );
   }
 }
+
 class Clock1 extends React.Component {
   constructor(props) {
     super(props);
@@ -49,11 +51,13 @@ class State extends Component{
     return(
       <Panel title="State(状态)">
         <Session title="Component">
-          <div>React 把组件看成是一个状态机（State Machines）。通过与用户的交互，实现不同状态，然后渲染 UI，让用户界面和数据保持一致。</div>
-          <div>React 里，只需更新组件的 state，然后根据新的 state 重新渲染用户界面（不要操作 DOM）。</div>
-          <div>以下实例创建一个名称扩展为Component 的 ES6 类，在 render() 方法中使用 this.state 来修改当前的时间。</div>
-          <div>添加一个类构造函数来初始化状态 this.state，类组件应始终使用 props 调用基础构造函数。</div>
-          <NoteTip>state不可通过外部访问和修改，在组件内部修改</NoteTip>
+          <dl>
+            <dd>React 把组件看成是一个状态机（State Machines）。通过与用户的交互，实现不同状态，然后渲染 UI，让用户界面和数据保持一致。</dd>
+            <dd>React 里，只需更新组件的 <code>state</code>，然后浏览器就会自动根据新的 <code>state</code> 重新渲染用户界面（不要操作 DOM）。</dd>
+            <dd>注意：添加一个类构造函数来初始化状态 <code>this.state</code>，类组件应始终使用 <code>props</code> 调用基础构造函数。</dd>
+          </dl>
+          <div>以下实例创建一个名称扩展为<code>Component</code> 的 ES6 类，在 <code>render()</code> 方法中使用 <code>this.state</code> 来修改当前的时间。</div>
+          <NoteTip><code>state</code>不可通过外部访问和修改，在组件内部修改</NoteTip>
           <XMP>
           <i>class Clock extends React.Component &#123;</i>
             <In>constructor(props) &#123;</In>
@@ -74,7 +78,7 @@ class State extends Component{
           <Result>
               <Clock/>
           </Result>   
-          <NoteTip>上面例子中出现的<code>super(props)</code>是用来获得父类值，相当于子类调用父类构造器，必须要用<code>super(props)</code>不然取不到值</NoteTip>
+          <NoteTip>上面例子中出现的<code>super(props)</code>是用来获得父类值，相当于子类调用父类构造器，必须要用<code>super(props)</code>不然取不到this的属性</NoteTip>
           <div>但是大家看到，时间并没有动起来，接下来，我们让他每秒钟更新一次。</div>
           <XMP>
           <i>class Clock extends React.Component &#123;</i>
@@ -109,8 +113,8 @@ class State extends Component{
           <Result>
               <Clock1/>
           </Result>
-          <div>在上面例子中，大家可以看到 componentDidMount()(组件完成挂载的时候调用)
-            和componentWillUnmount()(组件在dom中移除的时候调用)这两个是生命周期钩子，后面会详细讲到</div>
+          <div>在上面例子中，大家可以看到 <code>componentDidMount()</code>(组件完成挂载的时候调用)
+            和<code>componentWillUnmount()</code>(组件在dom中移除的时候调用)这两个是生命周期钩子，后面会详细讲到</div>
           </Session>
       </Panel>
       )

@@ -22,8 +22,8 @@ class CssGramb extends Component{
           </XMP>            
           </Session>
           <Session>
-            <div>下面这行代码的作用是将 h1 元素内的文字颜色定义为红色，同时将字体大小设置为 14 像素。</div>
-            <div>在这个例子中，h1 是选择器，color 和 font-size 是属性，red 和 14px 是值。</div>
+            <div>下面这行代码的作用是将 <code>h1</code> 元素内的文字颜色定义为红色，同时将字体大小设置为 14 像素。</div>
+            <div>在这个例子中，<code>h1</code> 是选择器，color 和 font-size 是属性，red 和 14px 是值。</div>
             <XMP>
               <i>h1 &#123;color:red; font-size:14px;}</i>
             </XMP> 
@@ -46,7 +46,7 @@ class CssGramb extends Component{
               <p style={{fontFamily:'sans serif'}}>我是p元素</p>
           </Result>
           <dl>
-            <dd>这个 &lt;p&gt; 元素使用了sans serif字体。</dd>
+            <dd>这个 <code>&lt;p&gt;</code> 元素使用了sans serif字体。</dd>
           </dl>
           </Session>
 
@@ -71,24 +71,7 @@ class CssGramb extends Component{
           <Result>
               <p style={{textAlign:'center',color:'black',fontFamily:'arial'}}>我是p元素</p>
           </Result>
-          </Session>
-          
-          <Session title="空的 HTML 元素">
-          <dl>
-            <dd>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</dd>
-            <dd>&lt;br&gt; 就是没有关闭标签的空元素（&lt;br&gt; 标签定义换行）。</dd>
-            <dd>在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。</dd>
-            <dd>在开始标签中添加斜杠，比如 &lt;br /&gt;，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</dd>
-            <dd>即使 &lt;br&gt; 在所有浏览器中都是有效的，但使用 &lt;br /&gt; 其实是更长远的保障。</dd>
-          </dl>
-          </Session>
-
-          <Session title="HTML 提示：使用小写标签">
-          <dl>
-            <dd>HTML 标签对大小写不敏感：&lt;P&gt; 等同于 &lt;p&gt;。许多网站都使用大写的 HTML 标签。</dd>
-            <dd>W3School 使用的是小写标签，因为万维网联盟（W3C）在 HTML 4 中推荐使用小写，而在未来 (X)HTML 版本中强制使用小写。</dd>
-          </dl>
-          </Session>
+          </Session>     
         </Panel>
         )
     }
