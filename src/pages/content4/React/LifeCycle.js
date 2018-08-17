@@ -84,20 +84,20 @@ class LifeCycle extends Component{
           <i>class Hello extends React.Component &#123;</i>
             <In>constructor(props) &#123;</In>
                 <In><In>super(props);</In></In>
-                <In><In>this.state = &#123;opacity: 1.0};</In></In>
+                <In><In>this.state = &#123;opacity: <span className="Number">1.0</span>};</In></In>
             <In>}</In>
 
               <In>componentDidMount() &#123;</In>
                 <In><In>this.timer = setInterval(function () &#123;</In></In>
                 <In><In><In>var opacity = this.state.opacity;</In></In></In>
-                <In><In><In>opacity -= .05;</In></In></In>
-                <In><In><In>if (opacity &lt; 0.1) &#123;</In></In></In>
-                    <In><In><In><In>opacity = 1.0;</In></In></In></In>
+                <In><In><In>opacity -= <span className="Number">.05</span>;</In></In></In>
+                <In><In><In>if (opacity &lt; <span className="Number">0.1</span>) &#123;</In></In></In>
+                    <In><In><In><In>opacity = <span className="Number">1.0</span>;</In></In></In></In>
                   <In><In><In>}</In></In></In>
                   <In><In><In>this.setState(&#123;</In></In></In>
                   <In><In><In><In>opacity: opacity</In></In></In></In>
                   <In><In><In>});</In></In></In>
-                  <In><In>}.bind(this), 100);</In></In>
+                  <In><In>}.bind(this), <span className="Number">100</span>);</In></In>
                 <In>}</In>
 
               <In>render () &#123;</In>
@@ -110,7 +110,7 @@ class LifeCycle extends Component{
                   <In>}</In>
 
               <In>ReactDOM.render(</In>
-                <In><In>&lt;Hello name="world"/>,</In></In>
+                <In><In>&lt;Hello name=<span className="code-string">"world"</span>/>,</In></In>
                 <In><In>document.body</In></In>
               <In>);</In>
             </XMP>

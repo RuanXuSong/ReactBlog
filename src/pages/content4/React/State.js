@@ -94,7 +94,7 @@ class State extends Component{
             <In><In><In>date: new Date().toLocaleTimeString()</In></In></In>
             <In><In>})</In></In>          
             <In>}</In>
-            <In>,1000)}</In>
+            <In>,<span className="Number">1000</span>)}</In>
             <i/>
             <In>componentWillUnmount()&#123;</In>
             <In><In>if(this.timer!=null)&#123;</In></In>
@@ -113,6 +113,8 @@ class State extends Component{
           <Result>
               <Clock1/>
           </Result>
+          <div>React DOM 会将元素及其子元素与之前版本逐一对比, 并只对有必要更新的 DOM 进行更新, 以达到 DOM 所需的状态。
+            即使我们我们每隔 1 秒都重建了整个元素, 但实际上 React DOM 只更新了修改过的文本节点.</div>
           <div>在上面例子中，大家可以看到 <code>componentDidMount()</code>(组件完成挂载的时候调用)
             和<code>componentWillUnmount()</code>(组件在dom中移除的时候调用)这两个是生命周期钩子，后面会详细讲到</div>
           </Session>

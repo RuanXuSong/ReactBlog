@@ -85,20 +85,20 @@ import XMP from '../../../components/XMP';
             <i>}</i> 
             <i/>
             <i>.container &#123;</i>
-                <In>width:900px;</In>
+                <In>width:<span className="Number">900px</span>;</In>
                 <In>@include media("(max-width: 767px)")&#123;</In>
-                    <In><In>width: 100%;</In></In>
+                    <In><In>width: <span className="Number">100%</span>;</In></In>
                 <In>}</In>
             <i>}</i>            
           </XMP>
           <div>其实际的运行结果如下：</div>
           <XMP>
             <i>.container &#123;</i>
-                <In>width:900px;</In>
+                <In>width:<span className="Number">900px</span>;</In>
             <i>}</i> 
             <i>@media (max-width: 767px) &#123;</i>
                 <In>.container&#123;</In>
-                    <In><In>width: 100%;</In></In>
+                    <In><In>width: <span className="Number">100%</span>;</In></In>
                 <In>}</In>
             <i>}</i>                 
           </XMP>
@@ -115,8 +115,8 @@ import XMP from '../../../components/XMP';
           <div>现在就可以在代码中使用这个函数了：</div>
           <XMP>
             <i>$container-width :100%;</i>
-            <i>$column-count :4;</i>
-            <i>$margin :1%;</i>
+            <i>$column-count :<span className="Number">4</span>;</i>
+            <i>$margin :<span className="Number">1%</span>;</i>
             <i>.container &#123;</i>
             <In>width: $container-width;</In>
             <i>} </i>     

@@ -52,7 +52,7 @@ import In from '../../../components/Indent';
                   <In>return <span className="code-string">"Hello, "</span> + person;</In>
                   <i>}</i>
               <i/>      
-              <i>let user = [0, 1, 2];</i>
+              <i>let user = [<span className="Number">0</span>, <span className="Number">1</span>, <span className="Number">2</span>];</i>
               <i/>
               <i>document.body.innerHTML = greeter(user);</i>
             </XMP>

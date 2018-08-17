@@ -47,7 +47,10 @@ dd::before{
 .NoteTip{
   color: $orange;
   margin: rem(20) 0;
-  font-size: 14px;
+  background: $lred;
+  border-left: rem(5) solid $orange;
+  padding: rem(20);
+
 }
 .CodeSession {
   width: 100%;
@@ -122,5 +125,5 @@ code{
   color: $red;
 }
 .Number{
-  color:$blue;
+  color:$green;
 }

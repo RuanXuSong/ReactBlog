@@ -125,13 +125,13 @@ class JSX extends Component{
             <XMP>
                 <i>render(</i>
                   <In>&lt;h1>Hello, world!&lt;/h1>,</In>
-                  <In>document.getElementById('example')</In>
+                  <In>document.getElementById(<span className="code-string">'example'</span>)</In>
                 <i>);</i>
             </XMP>
             <div>然后在 HTML 文件中引入该 JS 文件：</div>
             <XMP>
               <i>&lt;body></i>
-                <In>&lt;div id="example">&lt;/div></In>
+                <In>&lt;div id=<span className="code-string">"example"</span>>&lt;/div></In>
               <In>&lt;script type=<span className="code-string">"text/babel"</span> src=<span className="code-string">"helloworld_react.js"</span>>&lt;/script></In>
               <i>&lt;/body></i>
             </XMP>
@@ -144,7 +144,7 @@ class JSX extends Component{
             <XMP>
               <i>ReactDOM.render(</i>
                   <In>&lt;div></In>
-                    <In><In>&lt;h1>&#123;1+1}&lt;/h1></In></In>
+                    <In><In>&lt;h1>&#123;<span className="Number">1</span>+<span className="Number">1</span>}&lt;/h1></In></In>
                   <In>&lt;/div></In>
                   <In>,</In>
                   <In>document.getElementById(<span className="code-string">'example'</span>)</In>
@@ -157,7 +157,7 @@ class JSX extends Component{
             <XMP>
               <i>ReactDOM.render(</i>
                   <In>&lt;div></In>
-                  <In><h1>&#123;i === 1 ? <span className="code-string">'True!'</span> : <span className="code-string">'False'</span>}</h1></In>
+                  <In><In>&lt;h1>&#123;i === <span className="Number">1</span> ? <span className="code-string">'True!'</span> : <span className="code-string">'False'</span>}&lt;/h1></In></In>
                   <In>&lt;/div></In>
                   <In>,</In>
                   <In>document.getElementById(<span className="code-string">'example'</span>)</In>
@@ -180,26 +180,36 @@ class JSX extends Component{
             </XMP>
             <div>如果override(重复定义)，该怎么做呢？也很简单：</div>
             <XMP>
-              <i>var component = &lt;Component &#123;...props} foo="override"/>;</i>
+              <i>var component = &lt;Component &#123;...props} foo=<span className="code-string">"override"</span>/>;</i>
               <i>console.log(this.props.foo) //输出 override</i>
             </XMP>
           </Session>     
           <Session title="样式">
             <div>React 推荐使用内联样式。我们可以使用 camelCase（驼峰） 语法来设置内联样式. React 会在指定元素数字后自动添加 <code>px</code> 。以下实例演示了为 <code>h1</code> 元素添加 <code>myStyle</code> 内联样式：</div>
             <XMP>
-            <i>var myStyle = &#123;</i>
-              <In>fontSize: 50,</In>
-              <In>color: <span className="code-string">'#FF0000'</span></In>
-            <i>};</i>
-            <i>ReactDOM.render(</i>
-              <In>&lt;h1 style = &#123;myStyle}>内联样式&lt;/h1>,</In>
-            <i>document.getElementById(<span className="code-string">'example'</span>)</i>
-            <i>);</i>  
+              <i>var myStyle = &#123;</i>
+                <In>fontSize: <span className="Number">50</span>,</In>
+                <In>color: <span className="code-string">'#FF0000'</span></In>
+              <i>};</i>
+              <i>ReactDOM.render(</i>
+                <In>&lt;h1 style = &#123;myStyle}>内联样式&lt;/h1>,</In>
+              <i>document.getElementById(<span className="code-string">'example'</span>)</i>
+              <i>);</i>
             </XMP>    
             <Result>
               <Result4/>
             </Result>         
-          </Session>                      
+          </Session>  
+          <Session title="用 JSX 指定属性值">
+              <div>你可以使用双引号来指定字符串字面量作为属性值：</div>
+              <XMP>
+                <i>const element = &lt;div tabIndex="<span className="Number">0</span>">&lt;/div>;</i>
+              </XMP>
+              <div>您也可以用花括号嵌入一个 JavaScript 表达式作为属性值:</div>
+              <XMP>
+                <i>const element = &lt;img src=&#123;user.avatarUrl}/>;</i>
+              </XMP>
+          </Session>              
         </Panel>
         )
     }

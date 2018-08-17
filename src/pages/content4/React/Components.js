@@ -18,6 +18,7 @@ class JSX extends Component{
             <dd>在React中，组件（component）就是一个UI的单元。它的思想是，将要展示的内容，分成多个独立部分，每一个这样的部分，就是一个组件。</dd>
             <dd>每个组件，其实在代码中体现出来就是一个类。可以在组件里面定义方法和属性。对于组件来说，<code>render()</code>方法是非常重要的（必须实现），
             就是在这个方法返回组件的界面。在<code>render()</code>方法中，使用了JSX来定义组件的界面。</dd>
+            <dd>通过将标签和逻辑放在单独的文件中，而不是人为分离技术 ，伴有松散耦合单元的 React <a href="https://en.wikipedia.org/wiki/Separation_of_concerns">关注点分离</a> 称为“组件（components）”。</dd>
             <dd>我个人把组件理解为一个模具，把<code>div</code>按照规定的样式做成元素返回，每一个组件都能实现一种特定的功能，并且能够复用，大大提升了工作效率。</dd>
           </dl>
         </Session>

@@ -52,7 +52,7 @@ import XMP from '../../../components/XMP';
           <div>另一个很有用的标识符是<code>!default</code>——特别是编写混合宏时。这确保了我们在触发事件时，
           即使未传递参数，变量也会有默认的值。如果传递了参数，那么该参数就会覆盖默认值：</div>   
           <XMP>
-          <i>$firstValue: 62.5%;</i>
+          <i>$firstValue: <span className="Number">62.5%</span>;</i>
           <i>$firstValue: 24px !default;</i>
           <i>body &#123;</i>
               <In>font-size:$firstValue;//编译后62.5%;</In>
@@ -80,12 +80,12 @@ import XMP from '../../../components/XMP';
           </XMP>
           <div>第二，不可以混合使用值的单位：</div>
           <XMP>
-            <i>$container-width :100% - 20px;</i>
+            <i>$container-width :<span className="Number">100%</span> - 20px;</i>
           </XMP>
           <div>上面这个例子行不通。相反，对于这个特殊的例子你可以使用<code>calc</code>函数——它可以在渲染时解释执行。</div>
           <div>回到数学计算上来，让我们基于基础的容器宽度创建一个动态列声明：</div>
           <XMP>
-            <i>$container-width :100%;</i>
+            <i>$container-width :<span className="Number">100%</span>;</i>
             <i>.container &#123;</i>
             <In>width: $container-width;</In>
             <i>&#125; </i>     
@@ -101,14 +101,14 @@ import XMP from '../../../components/XMP';
           <div>尝试<code>darken()</code>函数吧。你可以传递给它一个颜色和比例，稍等一会，就会使你的颜色变暗了。看看这个例子就知道为什么它很酷了：</div>
           <XMP>
             <i>$buttonColor: #2ecc71;</i>
-            <i>$buttonDark: darken($buttonColor, 10%);</i>
-            <i>$buttonDarker: darken($buttonDark, 10%);</i>
+            <i>$buttonDark: darken($buttonColor, <span className="Number">10%</span>);</i>
+            <i>$buttonDarker: darken($buttonDark, <span className="Number">10%</span>);</i>
             <i>button &#123;</i>
             <In>background : $buttonColor;</In>
             <i> &#125;</i>
             <i>button:hover &#123;</i>
-            <In>background : darken($buttonDark,10%);</In>
-            <In>box-shadow : darken($buttonDarker,10%);</In>
+            <In>background : darken($buttonDark,<span className="Number">10%</span>);</In>
+            <In>box-shadow : darken($buttonDarker,<span className="Number">10%</span>);</In>
             <i>&#125;</i>
           </XMP>
 
@@ -120,7 +120,7 @@ import XMP from '../../../components/XMP';
           <div>基础的嵌套指在一个声明内实现另一个声明的能力。通常在CSS中，我们会这么写：</div>
           <XMP>            
             <i>.container &#123;</i>
-              <In>width : 100%;</In>
+              <In>width : <span className="Number">100%</span>;</In>
             <i>&#125;</i> 
             <i>.container h1 &#123;</i>
               <In>color : red;</In>
