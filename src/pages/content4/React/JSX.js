@@ -169,9 +169,10 @@ class JSX extends Component{
             <div className="session-head">在JSX中使用<code>...</code>操作符</div>
             <div><code>...</code>操作符是ES6新语法，JSX使用了它的特点，但并不是真正的ES6语法。其作用是把对象中的各个属性展开</div>
             <XMP>
-              <i>var props = &#123;;</i>
+              <i>var props = &#123;</i>
               <i>props.foo = x;</i>
               <i>props.bar = y;</i>
+              <i>}</i>
               <i>var component = &lt;Component &#123;...props} />;</i>
             </XMP>
             <div>相当于</div>

@@ -27,6 +27,9 @@ class Hello extends Component {
     }.bind(this), 100);
   }
  
+  componentWillUnmount(){
+    clearInterval(this.timer);
+  }
   render () {
     return (
       <div style={{opacity: this.state.opacity}}>
@@ -56,7 +59,8 @@ class LifeCycle extends Component{
             <dd><b>componentWillReceiveProps</b>: 在组件接收到一个新的 <code>prop</code> (更新后)时被调用。这个方法在初始化render时不会被调用。</dd>
             <dd><b>shouldComponentUpdate</b>: 返回一个布尔值。在组件接收到新的<code>props</code>或者<code>state</code>时被调用。在初始化时或者使用<code>forceUpdate</code>时不被调用。 
               可以在你确认不需要更新组件时使用。</dd>
-            <dd><b>componentWillUpdate</b>: 在组件接收到新的<code>props</code>或者<code>state</code>但还没有<code>render</code>时被调用。在初始化时不会被调用。</dd>
+            <dd><b>componentWillUpdate</b>: 在组件接收到新的<code>props</code>或者<code>state</code>但还没有<code>render</code>时被调用。在初始化时不会被调用。需要特别注意的是，在这个函数里面，你就不能使用this.setState来修改状态。
+            这个函数调用之后，就会把<code>nextProps</code>和<code>nextState</code>分别设置到<code>this.props</code>和<code>this.state</code>中。紧接着这个函数，就会调用<code>render()</code>来更新界面了</dd>
             <dd><b>componentDidUpdate</b>: 在组件完成更新后立即调用。在初始化时不会被调用。</dd>
             <dd><b>componentWillUnmount</b>: 在组件从 DOM 中移除的时候立刻被调用。</dd>
           </dl>

@@ -28,7 +28,6 @@ class FramePage extends Component{
         page:e.key
       });
       Page.savePageInfo(4,sub,e.key);
-      console.log(Page.getPageInfo());
     }
     render(){
       const { match }=this.props;
