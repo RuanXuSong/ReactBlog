@@ -183,9 +183,9 @@ class State extends Component{
                   <In>}</In>
                   <In>componentDidMount()&#123;</In>
                   <In><In>this.timer=setInterval(()=></In></In>
-                  <In><In>&#123;this.setState(&#123;</In></In>
-                  <In><In><In>date: date: new Date().toLocaleTimeString()+prevState.date+props.count</In></In></In>
-                  <In><In>})</In></In>          
+                  <In><In>&#123; this.setState((prevState, props) => (&#123;</In></In>
+                    <In><In><In>date: new Date().toLocaleTimeString()+prevState.date+props.count</In></In></In>
+                    <In><In>}),this.callBack());</In></In>          
                   <In>}</In>
                   <In>,<span className="Number">1000</span>)}</In>
                   <i/>
