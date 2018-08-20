@@ -9,9 +9,9 @@ import SassBrief from './Sass/Brief';
 import SassGramb from './Sass/SassGramb';
 import SassGramh from './Sass/SassGramh';
 import FlexBox from './LayOut/FlexBox';
-import CssGrid from './LayOut/CssGrid';
-import Box from './LayOut/Box';
-import Float from './LayOut/Float';
+// import CssGrid from './LayOut/CssGrid';
+// import Box from './LayOut/Box';
+// import Float from './LayOut/Float';
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 class CssPage extends Component{
@@ -53,10 +53,10 @@ class CssPage extends Component{
                     <Menu.Item key="Sass高级语法" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/SassGramh`}>Sass高级语法</Link></Menu.Item>                   
                   </SubMenu>   
                   <SubMenu key="sub3" title={<span><Icon type="bars" />css布局</span>}>
-                    <Menu.Item key="盒模型" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/Box`}>盒模型</Link></Menu.Item>
-                    <Menu.Item key="Float" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/Float`}>Float</Link></Menu.Item>
+                    {/* <Menu.Item key="盒模型" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/Box`}>盒模型</Link></Menu.Item>
+                    <Menu.Item key="Float" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/Float`}>Float</Link></Menu.Item> */}
                     <Menu.Item key="FlexBox" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/FlexBox`}>FlexBox</Link></Menu.Item>
-                    <Menu.Item key="CssGrid" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/CssGrid`}>CssGrid</Link></Menu.Item>                   
+                    {/* <Menu.Item key="CssGrid" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/CssGrid`}>CssGrid</Link></Menu.Item>                    */}
                   </SubMenu>          
                 </Menu>
               </Sider>
@@ -75,10 +75,10 @@ class CssPage extends Component{
                     <Route path={`${match.path}/SassBrief`} component={SassBrief}/>
                     <Route path={`${match.path}/SassGramb`} component={SassGramb}/>
                     <Route path={`${match.path}/SassGramh`} component={SassGramh}/>
-                    <Route path={`${match.path}/Box`} component={Box}/>
-                    <Route path={`${match.path}/Float`} component={Float}/>
                     <Route path={`${match.path}/FlexBox`} component={FlexBox}/>
-                    <Route path={`${match.path}/CssGrid`} component={CssGrid}/>
+                    {/* <Route path={`${match.path}/Box`} component={Box}/>
+                    <Route path={`${match.path}/Float`} component={Float}/>  
+                    <Route path={`${match.path}/CssGrid`} component={CssGrid}/> */}
                   </Switch>
                 </Content>
               </Layout>
