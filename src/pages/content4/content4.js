@@ -11,7 +11,7 @@ import Props from './React/Props';
 import State from './React/State';
 import LifeCycle from './React/LifeCycle';
 import Events from './React/Events';
-import BiBinding from './React/BiBinding';
+// import BiBinding from './React/BiBinding';
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
@@ -56,7 +56,7 @@ class FramePage extends Component{
                     <Menu.Item key="State" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/State`}>State</Link></Menu.Item>
                     <Menu.Item key="生命周期" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/LifeCycle`}>生命周期</Link></Menu.Item>  
                     <Menu.Item key="事件处理" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/Events`}>事件处理</Link></Menu.Item>  
-                    <Menu.Item key="双向绑定" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/BiBinding`}>双向绑定</Link></Menu.Item>                               
+                    {/* <Menu.Item key="双向绑定" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/BiBinding`}>双向绑定</Link></Menu.Item>                                */}
                   </SubMenu>              
                 </Menu>
               </Sider>
@@ -78,7 +78,7 @@ class FramePage extends Component{
                     <Route path={`${match.path}/State`} component={State}/>
                     <Route path={`${match.path}/LifeCycle`} component={LifeCycle}/>
                     <Route path={`${match.path}/Events`} component={Events}/>
-                    <Route path={`${match.path}/BiBinding`} component={BiBinding}/>                 
+                    {/* <Route path={`${match.path}/BiBinding`} component={BiBinding}/>                  */}
                   </Switch>
                 </Content>
               </Layout>
