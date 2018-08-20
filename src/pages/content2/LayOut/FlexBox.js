@@ -49,7 +49,7 @@ class FlexBox extends Component{
           </Result>
           <div>我们可以看到，li居然并排排列了，这是本来在float才会看到的结果。这就是flex的体现，加了<code>display:flex</code>以后，ul已经成为了一个flexbox,其子元素li就会成为flex的一个项目。这只是小试牛刀</div>
           </Session>         
-          <Session className="flex-direction">
+          <Session title="flex-direction">
             <div>既然flex可以横着排列，那么当然flex应该也可以竖着排列，<code>flex-direction</code>就是你想要的。这个属性让你决定Flex项目如何排列。它可以是行（水平）、列（垂直）或者行和列的反向。
             从技术上讲，水平和垂直在Flex世界中不是什么方向（概念）。它们常常被称为主轴（Main-Axis）和侧轴（Cross-Axis）。主轴从左往右，侧轴从上往下。默认设置如下所示。</div>
             <Img src="zhou1.jpg" alt="flex轴"/>
@@ -67,7 +67,7 @@ class FlexBox extends Component{
             <div>可以看到，li的方向变成了竖排排列，并且从上往下排，flex-direction属性的值默认是row，从左往右排。</div>
             <div>不过这里有个坑，等一下会提到</div>
           </Session>
-          <Session className="flex-wrap">
+          <Session title="flex-wrap">
             <div>flex-wrap有三个可选值<code>wrap || nowrap || wrap-reverse</code></div>
             <div>flex-wrap属性的默认值是nowrap,这个属性跟white-space很像，既然是nowrap，那就是不换行。</div>
             <div>下面来一个实例,当li的数量很多的时候:</div>
@@ -158,7 +158,7 @@ class FlexBox extends Component{
             </Result>
             <div>可以看到，li是按照最下面那行沿着正方向往右排列的，如果溢出就往上再从最左边开始排列,虽然不一定有用，但是很神奇。</div>
           </Session>
-          <Session className="flex-flow">
+          <Session title="flex-flow">
             <div>给上面两个<code>flex-direction</code>和<code>flex-wrap</code>来个"融合"怎么样呢。</div>
             <div>那就是<code>flex-flow</code>了，这是一个混合属性，可以同时描述<code>flex-direction</code>和<code>flex-wrap</code></div>
             <div>书写规则是先写<code>flex-direction</code>再写<code>flex-wrap</code>,就像这样:</div>
@@ -237,7 +237,7 @@ class FlexBox extends Component{
                 <li>4</li>
               </ul>
             </Result>
-            <div><code>space-around</code>让所有div之间距离为<code>auto</code>，等间距排列。</div>
+            <div><code>space-around</code>跟<code>space-between</code>的区别就在于前者为第一个和最后一个在两边留了1/2间距的边距，其他div之间距离还是等间距排列的。</div>
           </Session>   
         </Panel>
         )
