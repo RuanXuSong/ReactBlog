@@ -1,0 +1,52 @@
+@import '../../../styles/common.scss';
+ul{
+  margin:0;
+  padding: 0;
+}
+.FlexBox{
+  display: flex;
+  color: $white;
+  border:1px solid $blue;
+  li{
+    width: 100px;
+    height: 100px;
+    background: $red;
+    margin: rem(8);
+  }
+}
+.FlexBox1{
+  @extend .FlexBox;
+  flex-direction:column;
+}
+.FlexBox2{
+  @extend .FlexBox;
+  flex-wrap:nowrap;
+}
+.FlexBox3{
+  @extend .FlexBox;
+  flex-wrap:wrap;
+}
+.FlexBox4{
+  @extend .FlexBox;
+  flex-wrap:wrap-reverse;
+}
+.FlexBox5{
+  @extend .FlexBox;
+  justify-content: flex-start;
+}
+.FlexBox6{
+  @extend .FlexBox;
+  justify-content: flex-end;
+}
+.FlexBox7{
+  @extend .FlexBox;
+  justify-content: center;
+}
+.FlexBox8{
+  @extend .FlexBox;
+  justify-content: space-between;
+}
+.FlexBox9{
+  @extend .FlexBox;
+  justify-content: space-around;
+}

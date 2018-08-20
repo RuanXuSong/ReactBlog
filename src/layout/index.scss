@@ -3,6 +3,9 @@ p{
   margin-top: 0;
   margin-bottom: 0.2em;
 }
+li{
+  list-style: none;
+}
 .banner{
   position: relative;
   overflow: hidden;
@@ -31,14 +34,16 @@ dd::before{
   padding-right:rem(10); 
   font-size: 10px;
 }
-.split-line {
-  border-bottom: 1px dashed $grey;
-  margin: rem(40) 0;
+.session-wrap{
+  margin: rem(20) 0 rem(40) 0;
 }
 .session-head{
   font-weight: bold;
-  margin-bottom: rem(16);
+  margin-bottom: rem(15);
+  padding-bottom: rem(5);
   font-size: 18px;
+  color:$blue;  
+  border-bottom: 1px solid $grey;
 }
 .NoteTip{
   color: $orange;
