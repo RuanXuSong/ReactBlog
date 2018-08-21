@@ -5,6 +5,7 @@ import Page from '../../utils/Page';
 import JsBrief from './Js/Brief';
 import EchartBrief from './Echart/Brief';
 import EchartEg from './Echart/EchartEg';
+import EchartCom from './Echart/EchartCom';
 import TypeBrief from './TypeScript/Brief';
 import TypeBase from './TypeScript/TypeBase';
 const { SubMenu } = Menu;
@@ -42,7 +43,8 @@ class JsPage extends Component{
                   </SubMenu>                 
                   <SubMenu key="sub2" title={<span><Icon type="bars" />Echart</span>}>
                     <Menu.Item key="Echart简介" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/EchartBrief`}>Echart简介</Link></Menu.Item>
-                    <Menu.Item key="Echart实例" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/EchartEg`}>Echart实例</Link></Menu.Item>                  
+                    <Menu.Item key="Echart实例" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/EchartEg`}>Echart实例</Link></Menu.Item>    
+                    <Menu.Item key="Echart组件" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/EchartCom`}>Echart组件</Link></Menu.Item>                
                   </SubMenu>  
                   <SubMenu key="sub3" title={<span><Icon type="bars" />TypeScript</span>}>
                     <Menu.Item key="TypeScript简介" onClick={(e)=>this.handleClick(e,3)}><Link to={`${match.path}/TypeBrief`}>TypeScript简介</Link></Menu.Item>
@@ -62,6 +64,7 @@ class JsPage extends Component{
                     <Route path={`${match.path}/JsBrief`} component={JsBrief}/>                  
                     <Route path={`${match.path}/EchartBrief`} component={EchartBrief}/>
                     <Route path={`${match.path}/EchartEg`} component={EchartEg}/>
+                    <Route path={`${match.path}/EchartCom`} component={EchartCom}/>
                     <Route path={`${match.path}/TypeBrief`} component={TypeBrief}/>
                     <Route path={`${match.path}/TypeBase`} component={TypeBase}/>
                   </Switch>
