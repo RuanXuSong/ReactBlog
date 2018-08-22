@@ -11,7 +11,7 @@ import Props from './React/Props';
 import State from './React/State';
 import LifeCycle from './React/LifeCycle';
 import Events from './React/Events';
-// import BiBinding from './React/BiBinding';
+
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;

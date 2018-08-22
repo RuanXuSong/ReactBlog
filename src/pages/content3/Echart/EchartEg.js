@@ -26,14 +26,15 @@ var echarts = require('echarts');
       echarts.init(document.getElementById('pie-chart')).setOption({
         title: {
           text: 'ECharts-饼状图'
-        },       
+        },
+        color: ['#ff0000',null,'#ff8000'],       
         series: {
             name: '访问来源',
             type: 'pie',
             data: [
-                {name: 'A', value: 1212},
-                {name: 'B', value: 2400},
-                {name: 'C', value: 1500}
+                {"name": "A", "value": 1212},
+                {"name": "B", "value": 2400},
+                {"name": "C", "value": 1500}
             ]
         }
     });

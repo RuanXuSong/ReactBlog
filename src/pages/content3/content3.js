@@ -44,7 +44,7 @@ class JsPage extends Component{
                   <SubMenu key="sub2" title={<span><Icon type="bars" />Echart</span>}>
                     <Menu.Item key="Echart简介" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/EchartBrief`}>Echart简介</Link></Menu.Item>
                     <Menu.Item key="Echart实例" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/EchartEg`}>Echart实例</Link></Menu.Item>    
-                    <Menu.Item key="Echart组件" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/EchartCom`}>Echart组件</Link></Menu.Item>                
+                    <Menu.Item key="标准化Echart" onClick={(e)=>this.handleClick(e,2)}><Link to={`${match.path}/EchartCom`}>标准化Echart</Link></Menu.Item>                
                   </SubMenu>  
                   <SubMenu key="sub3" title={<span><Icon type="bars" />TypeScript</span>}>
                     <Menu.Item key="TypeScript简介" onClick={(e)=>this.handleClick(e,3)}><Link to={`${match.path}/TypeBrief`}>TypeScript简介</Link></Menu.Item>
