@@ -6,7 +6,7 @@ import './index.scss';
 const Option = Select.Option;
 
 require('echarts-gl');
-var colorArr=new Array();
+var colorArr=[];
 var echarts = require('echarts');
 // 基于准备好的dom，初始化echarts实例
   class EchartCom extends Component{ 
