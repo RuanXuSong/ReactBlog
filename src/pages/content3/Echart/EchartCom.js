@@ -210,12 +210,12 @@ var echarts = require('echarts');
                 {
                     colorArr.map((color,idx)=>
                         (
-                        <div key="idx"><div>color:</div><input type='color' value={this.state.color[idx]} style={{ height:30 }} onChange={(e)=>{this.handleChangeColor(e,idx)}}/></div>
+                        <div key={idx}><div>color:</div><input type='color' value={this.state.color[idx]} style={{ height:30 }} onChange={(e)=>{this.handleChangeColor(e,idx)}}/></div>
                         )
                     )
                 }
-                <div><div>X轴列名:</div><textarea value={this.state.xAxis} style={{ width: 300,height:100,marginBottom: 10 }} onChange={(e)=>{this.handleChangeX(e)}}/></div>  
-                <Button type="primary" onClick={(e)=>{this.handleClick(e)}}>确认</Button>
+                {this.state.type==='pie'?'':<div><div>X轴列名:</div><textarea value={this.state.xAxis} style={{ width: 300,height:100 }} onChange={(e)=>{this.handleChangeX(e)}}/></div>}  
+                <Button type="primary" style={{ marginTop: 10 }} onClick={(e)=>{this.handleClick(e)}}>确认</Button>
             </div>                 
             <div id="chart" style={{width:'90%',height:"500px"}}></div>             
           </div>

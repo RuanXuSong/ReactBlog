@@ -19,7 +19,7 @@ const { Content, Sider } = Layout;
       this.setState({
         page:e.key
       });
-      Page.savePageInfo(1,sub,e.key);
+      Page.savePageInfo('1',sub,e.key);
     }
     render(){
       const { match }=this.props;
