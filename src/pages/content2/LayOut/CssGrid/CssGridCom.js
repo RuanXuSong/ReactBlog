@@ -5,8 +5,8 @@ class CssGridCom extends Component{
   constructor(props){
     super(props);
     this.state={
-      columns:'1fr 1fr',
-      rows:'1fr 1fr',
+      columns:'none',
+      rows:'none',
       columngap:'1px',
       rowgap:'1px',
       gridRowStart:'auto',
@@ -18,7 +18,27 @@ class CssGridCom extends Component{
       gridArea:'auto',
       gridTemArea:'none',
       gridAutoFlow:'row',
+      gridAutoRow:'auto',
+      gridAutoColumn:'auto',
+      justifyItems:'auto',
+      alignItems:'auto',
+      justifySelf:'auto',
+      alignSelf:'auto',
+      justifyContent:'normal',
+      alignContent:'normal',
+      width:'60%',
+      height:'auto',
     }
+  }
+  handleChangeWidth(value){
+    this.setState({
+      width:value
+    })
+  }
+  handleChangeHeight(value){
+    this.setState({
+      height:value
+    })
   }
   handleChangeColumns(value){
     this.setState({
@@ -85,15 +105,64 @@ class CssGridCom extends Component{
       gridAutoFlow:value
     })
   }
+  handleChangeAutoRow(value){
+    this.setState({
+      gridAutoRow:value
+    })
+  }
+  handleChangeAutoColumn(value){
+    this.setState({
+      gridAutoColumn:value
+    })
+  }
+
+  handleChangeJustifyItems(value){
+    this.setState({
+      justifyItems:value
+    })
+  }
+  handleChangeAlignItems(value){
+    this.setState({
+      alignItems:value
+    })
+  }
+  handleChangeJustifySelf(value){
+    this.setState({
+      justifySelf:value
+    })
+  }
+  handleChangeAlignSelf(value){
+    this.setState({
+      alignSelf:value
+    })
+  }
+  handleChangeJustifyContent(value){
+    this.setState({
+      justifyContent:value
+    })
+  }
+  handleChangeAlignContent(value){
+    this.setState({
+      alignContent:value
+    })
+  }
+  
   render(){
     var gridcss={
-      width:'60%',
+      width:this.state.width,
+      height:this.state.height,
       gridTemplateColumns:this.state.columns,
       gridTemplateRows:this.state.rows,
       gridColumnGap:this.state.columngap,
       gridRowGap:this.state.rowgap,
       gridTemplateAreas:this.state.gridTemArea,
       gridAutoFlow:this.state.gridAutoFlow,
+      gridAutoRows:this.state.gridAutoRow,
+      gridAutoColumns:this.state.gridAutoColumn,
+      justifyItems:this.state.justifyItems,
+      alignItems:this.state.alignItems,
+      justifyContent:this.state.justifyContent,
+      alignContent:this.state.alignContent,
     }
     var itemcss={
       gridRowStart: this.state.gridRowStart,
@@ -103,12 +172,15 @@ class CssGridCom extends Component{
       gridRow:this.state.gridRow,
       gridColumn:this.state.gridColumn,
       gridArea:this.state.gridArea,
+      justifySelf:this.state.justifySelf,
+      alignSelf:this.state.alignSelf,
     }
     var gridTemplate0=(
     <React.Fragment>
       <div className="grid-config">
       <span>grid-template-columns:</span>
-      <Select defaultValue="1fr 1fr" style={{ width: '100%' }} onChange={(e)=>this.handleChangeColumns(e)}>
+      <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeColumns(e)}>
+          <Option value="none">none</Option>
           <Option value="1fr 1fr">1fr 1fr</Option>
           <Option value="2fr 1fr 2fr">2fr 1fr 2fr</Option>
           <Option value="repeat(3, [cs] 1fr [ce])">repeat(3, [cs] 1fr [ce])</Option>
@@ -117,7 +189,8 @@ class CssGridCom extends Component{
     </div>
     <div className="grid-config">
       <span>grid-template-rows:</span>
-      <Select defaultValue="1fr 1fr" style={{ width: '100%' }} onChange={(e)=>this.handleChangeRows(e)}>
+      <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeRows(e)}>
+          <Option value="none">none</Option>
           <Option value="1fr 1fr">1fr 1fr</Option>
           <Option value="2fr 1fr 2fr">2fr 1fr 2fr</Option>
           <Option value="repeat(3, [rs] 1fr [re])">repeat(3, [rs] 1fr [re])</Option>
@@ -144,7 +217,8 @@ class CssGridCom extends Component{
     var gridTemplate=(<React.Fragment>
     <div className="grid-config">
     <span>grid-template-columns:</span>
-    <Select defaultValue="1fr 1fr" style={{ width: '100%' }} onChange={(e)=>this.handleChangeColumns(e)}>
+    <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeColumns(e)}>
+        <Option value="none">none</Option>
         <Option value="1fr 1fr">1fr 1fr</Option>
         <Option value="2fr 1fr">2fr 1fr</Option>
         <Option value="2fr 1fr 2fr">2fr 1fr 2fr</Option>
@@ -159,7 +233,8 @@ class CssGridCom extends Component{
   </div>
   <div className="grid-config">
     <span>grid-template-rows:</span>
-    <Select defaultValue="1fr 1fr" style={{ width: '100%' }} onChange={(e)=>this.handleChangeRows(e)}>
+    <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeRows(e)}>
+       <Option value="none">none</Option>
         <Option value="1fr 1fr">1fr 1fr</Option>
         <Option value="2fr 1fr">2fr 1fr</Option>
         <Option value="2fr 1fr 2fr">2fr 1fr 2fr</Option>
@@ -269,7 +344,7 @@ class CssGridCom extends Component{
                 <Option value="1 / span 3">1 / span 3</Option>
             </Select>
           </div>
-          <div className="grid-config" style={{gridColumn:'3/5'}}>
+          <div className="grid-config" style={{gridColumn:'span 2'}}>
             <span>grid-area[项目A]:</span>
             <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeGridArea(e)}>
                 <Option value="auto">auto</Option>
@@ -285,27 +360,29 @@ class CssGridCom extends Component{
     <React.Fragment>
           <div className="grid-config">
             <span>grid-template-columns:</span>
-            <Select defaultValue="1fr 1fr" style={{ width: '100%' }} onChange={(e)=>this.handleChangeColumns(e)}>
+            <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeColumns(e)}>
+                <Option value="none">none</Option>
                 <Option value="1fr 1fr">1fr 1fr</Option>
                 <Option value="2fr 1fr">2fr 1fr</Option>                 
             </Select>
           </div>
           <div className="grid-config">
             <span>grid-template-rows:</span>
-            <Select defaultValue="1fr 1fr" style={{ width: '100%' }} onChange={(e)=>this.handleChangeRows(e)}>
+            <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeRows(e)}>
+                <Option value="none">none</Option>
                 <Option value="1fr 1fr">1fr 1fr</Option>
                 <Option value="1fr 2fr 1fr">1fr 2fr 1fr</Option>
                 <Option value="2fr 1fr 2fr">2fr 1fr 2fr</Option>
             </Select>
           </div>
-          <div className="grid-config" style={{gridColumn:'3/5'}}>
+          <div className="grid-config" style={{gridColumn:'span 2'}}>
             <span>grid-template-areas:</span>
             <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeGridTemAreas(e)}>
                 <Option value="none">none</Option>
                 <Option value='"header header" "content sidebar" "footer footer"'>"header header" "content sidebar" "footer footer"</Option> 
             </Select>
           </div>
-          <div className="grid-config" style={{gridColumn:'1/3'}}>
+          <div className="grid-config" style={{gridColumn:'span 2'}}>
             <span>grid-area[项目A]:</span>
             <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeGridArea(e)}>
                 <Option value="auto">auto</Option>
@@ -321,29 +398,174 @@ class CssGridCom extends Component{
     <React.Fragment>
         <div className="grid-config">
             <span>grid-template-columns:</span>
-            <Select defaultValue="1fr 1fr" style={{ width: '100%' }} onChange={(e)=>this.handleChangeColumns(e)}>
+            <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeColumns(e)}>
+                <Option value="none">none</Option>
                 <Option value="1fr 1fr">1fr 1fr</Option>
                 <Option value="2fr 1fr 2fr">2fr 1fr 2fr</Option>
+                <Option value="50px 50px 50px">50px 50px 50px</Option>
                 <Option value="repeat(3, [cs] 1fr [ce])">repeat(3, [cs] 1fr [ce])</Option>
                 <Option value="[cs] 1fr [c2s] 1fr [c3s] 1fr [ce]">[cs] 1fr [c2s] 1fr [c3s] 1fr [ce]</Option>                       
             </Select>
           </div>
           <div className="grid-config">
             <span>grid-template-rows:</span>
-            <Select defaultValue="1fr 1fr" style={{ width: '100%' }} onChange={(e)=>this.handleChangeRows(e)}>
+            <Select defaultValue="none" style={{ width: '100%' }} onChange={(e)=>this.handleChangeRows(e)}>
+                <Option value="none">none</Option>
                 <Option value="1fr 1fr">1fr 1fr</Option>
                 <Option value="2fr 1fr 2fr">2fr 1fr 2fr</Option>
+                <Option value="50px 50px">50px 50px</Option>
                 <Option value="repeat(3, [rs] 1fr [re])">repeat(3, [rs] 1fr [re])</Option>
                 <Option value="[rs r1s] 1fr [r1e r2s] 1fr [r2e re]">[rs r1s] 1fr [r1e r2s] 1fr [r2e re]</Option> 
             </Select>
           </div>
-          <div className="grid-config">
-            <span>grid-auto-flow:</span>: 
+          <div className="grid-config" style={{gridColumn:'span 2'}}>
+            <span>grid-auto-flow:</span>
             <Select defaultValue="row" style={{ width: '100%' }} onChange={(e)=>this.handleChangeFlow(e)}>
                 <Option value="row">row</Option>    
                 <Option value="column">column</Option>             
             </Select>
           </div>
+    </React.Fragment>
+  )
+  var gridAuto=(  
+    <React.Fragment>
+        {gridAutoFlow}
+        <div className="grid-config">
+          <span>grid-auto-rows:</span>
+          <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeAutoRow(e)}>
+              <Option value="auto">auto</Option>    
+              <Option value="30px">30px</Option>
+              <Option value="50px">50px</Option>                 
+          </Select>
+        </div>
+        <div className="grid-config">
+          <span>grid-auto-columns:</span>
+          <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeAutoColumn(e)}>
+              <Option value="auto">auto</Option>    
+              <Option value="30px">30px</Option>
+              <Option value="50px">50px</Option>                 
+          </Select>
+        </div>
+    </React.Fragment>
+  )
+  var gridJustify=(  
+    <React.Fragment>
+        {gridAutoFlow}
+        <div className="grid-config">
+          <span>justify-items:</span>
+          <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeJustifyItems(e)}>
+              <Option value="auto">auto</Option>    
+              <Option value="normal">normal</Option>
+              <Option value="start">start</Option>
+              <Option value="end">end</Option>
+              <Option value="center">center</Option>
+              <Option value="stretch">stretch</Option>                 
+              <Option value="baseline">baseline</Option>
+              <Option value="first baseline">first baseline</Option>
+              <Option value="last baseline">last baseline</Option>
+          </Select>
+        </div>
+        <div className="grid-config">
+          <span>align-items:</span>
+          <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeAlignItems(e)}>
+          <Option value="auto">auto</Option>    
+              <Option value="normal">normal</Option>
+              <Option value="start">start</Option>
+              <Option value="end">end</Option>
+              <Option value="center">center</Option>
+              <Option value="stretch">stretch</Option>                 
+              <Option value="baseline">baseline</Option>
+              <Option value="first baseline">first baseline</Option>
+              <Option value="last baseline">last baseline</Option>
+          </Select>
+        </div>
+        <div className="grid-config">
+          <span>justify-self(A项目):</span>
+          <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeJustifySelf(e)}>
+              <Option value="auto">auto</Option>    
+              <Option value="normal">normal</Option>
+              <Option value="start">start</Option>
+              <Option value="end">end</Option>
+              <Option value="center">center</Option>
+              <Option value="stretch">stretch</Option>                 
+              <Option value="baseline">baseline</Option>
+              <Option value="first baseline">first baseline</Option>
+              <Option value="last baseline">last baseline</Option>
+          </Select>
+        </div>
+        <div className="grid-config">
+          <span>align-self(A项目):</span>
+          <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeAlignSelf(e)}>
+              <Option value="auto">auto</Option>    
+              <Option value="normal">normal</Option>
+              <Option value="start">start</Option>
+              <Option value="end">end</Option>
+              <Option value="center">center</Option>
+              <Option value="stretch">stretch</Option>    
+              <Option value="baseline">baseline</Option>
+              <Option value="first baseline">first baseline</Option>
+              <Option value="last baseline">last baseline</Option>
+          </Select>
+        </div>
+    </React.Fragment>
+  )
+  var gridContent=(  
+    <React.Fragment>
+        <div className="grid-config">
+          <span>width[容器]:</span>
+          <Select defaultValue="300px" style={{ width: '100%' }} onChange={(e)=>this.handleChangeWidth(e)}>
+              <Option value="60%">60%</Option> 
+              <Option value="300px">300px</Option>    
+              <Option value="500px">500px</Option>
+          </Select>
+        </div>
+        <div className="grid-config">
+          <span>height[容器]:</span>
+          <Select defaultValue="300px" style={{ width: '100%' }} onChange={(e)=>this.handleChangeHeight(e)}>
+              <Option value="auto">auto</Option> 
+              <Option value="300px">300px</Option>    
+              <Option value="500px">500px</Option>
+          </Select>
+        </div>
+        {gridJustify}
+        <div className="grid-config">
+          <span>justify-content:</span>
+          <Select defaultValue="normal" style={{ width: '100%' }} onChange={(e)=>this.handleChangeJustifyContent(e)}>
+              <Option value="normal">normal</Option>    
+              <Option value="start">start</Option>
+              <Option value="end">end</Option>
+              <Option value="center">center</Option>
+              <Option value="stretch">stretch</Option> 
+              <Option value="space-around">space-around</Option>   
+              <Option value="space-between">space-between</Option>   
+              <Option value="space-evenly">space-evenly</Option>                   
+              <Option value="baseline">baseline</Option>
+              <Option value="first baseline">first baseline</Option>
+              <Option value="last baseline">last baseline</Option>
+          </Select>
+        </div>
+        <div className="grid-config">
+          <span>align-content:</span>
+          <Select defaultValue="normal" style={{ width: '100%' }} onChange={(e)=>this.handleChangeAlignContent(e)}>
+              <Option value="normal">normal</Option>    
+              <Option value="start">start</Option>
+              <Option value="end">end</Option>
+              <Option value="center">center</Option>
+              <Option value="stretch">stretch</Option> 
+              <Option value="space-around">space-around</Option>   
+              <Option value="space-between">space-between</Option>   
+              <Option value="space-evenly">space-evenly</Option>                   
+              <Option value="baseline">baseline</Option>
+              <Option value="first baseline">first baseline</Option>
+              <Option value="last baseline">last baseline</Option>
+          </Select>
+        </div>
+    </React.Fragment>
+  )
+  var gridAll=(  
+    <React.Fragment>
+        {gridRow}
+        {gridContent}
     </React.Fragment>
   )
     function gridConfigs(gridMode){
@@ -368,6 +590,18 @@ class CssGridCom extends Component{
       }
       else if(gridMode==='6'){
         gridConfig=gridAutoFlow;
+      }
+      else if(gridMode==='7'){
+        gridConfig=gridAuto;
+      }
+      else if(gridMode==='8'){
+        gridConfig=gridJustify;
+      }
+      else if(gridMode==='9'){
+        gridConfig=gridContent;
+      }
+      else if(gridMode==='10'){
+        gridConfig=gridAll;
       }
       return(gridConfig);
     }

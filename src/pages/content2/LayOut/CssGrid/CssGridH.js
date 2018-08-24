@@ -37,7 +37,7 @@ class CssGridH extends Component{
             <div>
               还是按习惯先给大家看个整体效果:
               <Result>
-                <CssGridCom gridMode="4"/>
+                <CssGridCom gridMode="10"/>
               </Result>
             </div>
             <Session title="minmax()" sub="true">
@@ -174,10 +174,80 @@ class CssGridH extends Component{
                 <XMP>
                   <i>grid-auto-flow: column</i>
                 </XMP>
-              </Session>
-              <Result>
+                <Result>
                   <CssGridCom gridMode="6"/>
                 </Result>
+                <b>grid-auto-rows</b>
+                <b>grid-auto-columns</b>
+                <div>默认值为auto</div>
+                <div>使用grid-auto-rows和grid-auto-columns属性可以定义隐式的网格,也就是定义默认值</div>
+                <XMP>
+                  <i>grid-template-rows:70px;</i>
+                  <i>grid-template-columns: repeat(2, 1fr);</i>
+                  <i>grid-auto-rows:140px;</i>
+                </XMP>
+                <div>
+                  在上面这个例子中我们只定义了一行（轨道），所以item1和item2的高都是70px。第二行（轨道）自动创建了item3和item4空间。
+                  grid-auto-rows定义隐式网格中的行（轨道）的大小，因此item3和item4的高度是140px
+                </div>
+                <Result>
+                  <CssGridCom gridMode="7"/>
+                </Result>
+              </Session>
+              <Session title="隐式命名" sub="true">
+                <b>隐式命名网格区域名称</b>
+                <div>通常可以将网格线命名成任何想命名的名称，如果网格线名称添加-start和-end的后缀，其实也隐式的创建一个网格区域，
+                  可以用来设置网格项目的位置</div>
+                <XMP>
+                  <i>grid-template-rows:    [outer-start] 1fr [inner-start] 1fr [inner-end] 1fr [outer-end];</i>
+                  <i>grid-template-columns: [outer-start] 1fr [inner-start] 1fr [inner-end] 1fr [inner-end];</i>
+                </XMP>
+                <div>在这个示例中，行和列都具有inner-start和inner-end网格线名称，同时也对应的创建一个隐式网格区域名称inner</div>
+                <XMP>
+                  <i>grid-area: inner</i>
+                </XMP>
+                <div>网格项目定位可以通过网格区域名称来设置，而不需要使用网格线名称</div>
+                <Img src="gridArea.png" alt="gridArea"/> 
+                <Result>
+                  <CssGridCom gridMode="7"/>
+                </Result>
+              </Session>
+              <Session title="网格项目层级">
+                <div>网格项目可以具有层级和堆栈，必要时可能通过z-index属性来指定。</div>
+                <div>跟position里面的z-index一样，越大的项目处于越上层</div>
+              </Session>
+              <Session title="对齐">
+                <Session title="网格项目对齐方式" sub="true">
+                  <b>justify-items</b>
+                  <div>justify-items指定网格项目沿着行轴对齐方式,应用在网格容器上。</div>
+                  <b>justify-self</b>
+                  <div>justify-self指定网格项目沿着行轴对齐方式,应用在网格项目自身上。</div>
+                  <b>align-items</b>
+                  <div>align-items指定网格项目沿着列轴对齐方式,应用在网格容器上。</div>
+                  <b>align-self</b>
+                  <div>align-self指定网格项目沿着列轴对齐方式,应用在网格项目自身上。</div>
+                  <div>这些值接受以下属性:
+                    <code>auto | normal | start | end | center | stretch | baseline | first baseline | last baseline</code>
+                  </div>
+                  <Result>
+                    <CssGridCom gridMode="8"/>
+                  </Result>
+                </Session>
+                <Session title="网格轨道对齐方式" sub="true">
+                  <b>align-content</b>
+                  <div>align-content指定网格轨道沿着列轴对齐方式。</div>
+                  <b>justify-content</b>
+                  <div>justify-self指定网格轨道沿着行轴对齐方式。</div>
+                  <div>这些值接受以下属性:
+                    <code>normal | start | end | center | stretch | space-around | space-between | space-evenly | baseline | first baseline | last baseline</code>
+                  </div>
+                  <div>想看到下面的<code>align-content</code>和<code>justify-content</code>的效果需要将<code>grid-template-columns</code>和<code>grid-template-rows</code>改为"50px 50px 50px".</div>
+                  <Result>
+                    <CssGridCom gridMode="9"/>
+                  </Result>
+                </Session>
+              </Session>
+              
            </Session>
            
         </Panel>
