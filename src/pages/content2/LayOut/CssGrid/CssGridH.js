@@ -200,7 +200,7 @@ class CssGridH extends Component{
                   可以用来设置网格项目的位置</div>
                 <XMP>
                   <i>grid-template-rows:    [outer-start] 1fr [inner-start] 1fr [inner-end] 1fr [outer-end];</i>
-                  <i>grid-template-columns: [outer-start] 1fr [inner-start] 1fr [inner-end] 1fr [inner-end];</i>
+                  <i>grid-template-columns: [outer-start] 1fr [inner-start] 1fr [inner-end] 1fr [outer-end];</i>
                 </XMP>
                 <div>在这个示例中，行和列都具有inner-start和inner-end网格线名称，同时也对应的创建一个隐式网格区域名称inner</div>
                 <XMP>
@@ -241,7 +241,7 @@ class CssGridH extends Component{
                   <div>这些值接受以下属性:
                     <code>normal | start | end | center | stretch | space-around | space-between | space-evenly | baseline | first baseline | last baseline</code>
                   </div>
-                  <div>想看到下面的<code>align-content</code>和<code>justify-content</code>的效果需要将<code>grid-template-columns</code>和<code>grid-template-rows</code>改为"50px 50px 50px".</div>
+                  <div>想看到下面的<code>align-content</code>和<code>justify-content</code>的效果需要将<code>grid-template-columns</code>和<code>grid-template-rows</code>改为"50px 50px 50px".并将width，height改为300px或500px;</div>
                   <Result>
                     <CssGridCom gridMode="9"/>
                   </Result>

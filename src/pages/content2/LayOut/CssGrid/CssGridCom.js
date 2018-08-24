@@ -327,7 +327,7 @@ class CssGridCom extends Component{
                 <Option value="2 / 4">2 / 4</Option>
                 <Option value="3 / 4">3 / 4</Option>
                 <Option value="span 2">span 2</Option>
-                <Option value="2 / span 2">1 / span 3</Option>
+                <Option value="2 / span 2">2 / span 2</Option>
                 <Option value="1 / span 3">1 / span 3</Option>
             </Select>
           </div>
@@ -340,7 +340,7 @@ class CssGridCom extends Component{
                 <Option value="2 / 4">2 / 4</Option>
                 <Option value="3 / 4">3 / 4</Option>
                 <Option value="span 2">span 2</Option>
-                <Option value="2 / span 2">1 / span 3</Option>
+                <Option value="2 / span 2">2 / span 2</Option>
                 <Option value="1 / span 3">1 / span 3</Option>
             </Select>
           </div>
@@ -513,7 +513,7 @@ class CssGridCom extends Component{
     <React.Fragment>
         <div className="grid-config">
           <span>width[容器]:</span>
-          <Select defaultValue="300px" style={{ width: '100%' }} onChange={(e)=>this.handleChangeWidth(e)}>
+          <Select defaultValue="60%" style={{ width: '100%' }} onChange={(e)=>this.handleChangeWidth(e)}>
               <Option value="60%">60%</Option> 
               <Option value="300px">300px</Option>    
               <Option value="500px">500px</Option>
@@ -521,7 +521,7 @@ class CssGridCom extends Component{
         </div>
         <div className="grid-config">
           <span>height[容器]:</span>
-          <Select defaultValue="300px" style={{ width: '100%' }} onChange={(e)=>this.handleChangeHeight(e)}>
+          <Select defaultValue="auto" style={{ width: '100%' }} onChange={(e)=>this.handleChangeHeight(e)}>
               <Option value="auto">auto</Option> 
               <Option value="300px">300px</Option>    
               <Option value="500px">500px</Option>
