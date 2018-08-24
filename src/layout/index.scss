@@ -13,6 +13,14 @@ li{
     position: absolute;
   }
 }
+blockquote{
+  background: #f5f2f0;
+  border:10px solid #dcd1cb;
+  border-radius: 5px;
+  padding: 20px;
+  margin:10px 0;
+  font-family: "PingFang SC", "Hiragino Sans GB", "Heiti SC", "Microsoft YaHei", "WenQuanYi Micro Hei";
+}
 .head-title{
   border-left: 12px solid $blue;
   padding:rem(20);
@@ -20,6 +28,7 @@ li{
   font-weight: bold;
   box-shadow: rem(-2) rem(2) rem(10) #666;
   margin-bottom: rem(24);
+  font-family: Georgia, serif;
 }
 .content-container{
   border: 1px solid $grey;
@@ -43,6 +52,7 @@ dd::before{
   padding-bottom: rem(5);
   font-size: 18px;
   color:$blue;  
+  font-family: Georgia, serif;
   border-bottom: 1px solid $grey;
 }
 .NoteTip{

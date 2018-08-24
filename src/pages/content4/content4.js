@@ -27,7 +27,7 @@ class FramePage extends Component{
       this.setState({
         page:e.key
       });
-      Page.savePageInfo('4',sub,e.key);
+      Page.savePageInfo('frame',sub,e.key);
     }
     render(){
       const { match }=this.props;

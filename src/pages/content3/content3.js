@@ -21,7 +21,7 @@ class JsPage extends Component{
       this.setState({
         page:e.key
       });
-      Page.savePageInfo('3',sub,e.key);
+      Page.savePageInfo('js',sub,e.key);
     }
     render(){
       const { match }=this.props;

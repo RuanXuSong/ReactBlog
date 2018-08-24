@@ -3,7 +3,7 @@ export default class HeadTitle extends Component{
     render(){
         return(
             <div className="session-wrap">
-                {this.props.title?<div className="session-head">{this.props.title}</div>:''}
+                {this.props.title?<div className="session-head" style={this.props.sub?{fontSize:16}:{}}>{this.props.title}</div>:''}
                 <div>
                     {this.props.children}
                 </div>

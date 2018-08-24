@@ -7,13 +7,13 @@ import PrimaryLayout from './layout/index';
 import Page from './utils/Page';
 import './index.scss';
 var direction;
-if(Page.getPageInfo().index==='4'){
+if(Page.getPageInfo().index==='frame'){
     direction="/myblog/frame";
 }
-else if(Page.getPageInfo().index==='2'){
+else if(Page.getPageInfo().index==='css'){
     direction="/myblog/css";
 }
-else if(Page.getPageInfo().index==='3'){
+else if(Page.getPageInfo().index==='js'){
     direction="/myblog/js";
 }
 else{
