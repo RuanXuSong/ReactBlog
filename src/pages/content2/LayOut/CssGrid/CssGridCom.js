@@ -146,7 +146,11 @@ class CssGridCom extends Component{
       alignContent:value
     })
   }
-  
+  // handleChange(name,value){
+  //   this.setState({
+  //     name:value
+  //   })
+  // }
   render(){
     var gridcss={
       width:this.state.width,

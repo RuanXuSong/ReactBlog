@@ -136,6 +136,7 @@ class CssGridH extends Component{
                 <Result>
                   <CssGridCom gridMode="0"/>
                 </Result> 
+                <NoteTip>【注意】：若所有的列线名字都与grid-column中属性名不一样，就会以最后一条线的后面一条不存在的线作为该线，并且如果grid-column中，/后面的线在前面，则改区块会把前面列的所有区块挤开，反着占空间。</NoteTip>
                 <div>使用repeat()函数可以给网格线分配相同的名称。这可以节省一定的时间。</div>
                   <XMP>
                     <i>grid-template-rows: repeat(3, [row-start] 1fr [row-end]);</i>
