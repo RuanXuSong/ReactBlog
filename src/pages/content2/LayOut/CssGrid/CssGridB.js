@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Panel from '../../../../components/Panel';
 import Session from '../../../../components/Session';
-import CssGridCom from './CssGridCom';
+import CssGridCom from '../components/CssGridCom';
 import In from '../../../../components/Indent';
 import Result from '../../../../components/Result';
 import NoteTip from '../../../../components/NoteTip';

@@ -6,6 +6,7 @@ import XMP from '../../../components/XMP';
 import NoteTip from '../../../components/NoteTip';
 import Result from '../../../components/Result';
 import Img from '../../../components/Img'; 
+import FlexCom from './components/FlexCom';
 import './index.scss';
 class FlexBox extends Component{
     render(){
@@ -13,10 +14,14 @@ class FlexBox extends Component{
         <Panel title="FlexBox布局">
           <Session title="简介">
           <div>
-            FlexBox是现代Web布局的主流方式之一,它也成为一个新的W3C标准规范。flex将取代float和display:table的时代。
+            FlexBox是现代Web布局的主流方式之一,它也成为一个新的W3C标准规范。flex将取代float和display:table的时代。这是一个更简洁的制作智能布局。
           </div>       
           </Session>
           <Session title="开始使用flex">
+          <div>下面给出flexBox操作实例</div>
+          <Result>
+            <FlexCom flexMode='1'/>
+          </Result>
           <blockquote>
               <p>Flex容器属性包括:</p>
               <p>1.flex-direction</p>
@@ -75,7 +80,7 @@ class FlexBox extends Component{
               </ul>
             </Result>
             <div>可以看到，li的方向变成了竖排排列，并且从上往下排，flex-direction属性的值默认是row，从左往右排。</div>
-            <div>不过这里有个坑，等一下会提到</div>
+            <div>不过这里有个坑，就是如果把flex-direction改变了以后，flex的主轴方向也会改变，相对应的<code>justify-content</code>和<code>align-items</code>方向也会改变</div>
           </Session>
           <Session title="flex-wrap">
             <div>flex-wrap有三个可选值<code>wrap || nowrap || wrap-reverse</code></div>
@@ -493,7 +498,7 @@ class FlexBox extends Component{
                 <div>可以看到，这两个Flex项目先全部排到最后，再按HTML源代码中的顺序排列</div>
               </Session>
               <Session title="flex-grow" sub="true">
-              <div>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。</div>
+              <div>flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大，如果不同的flex项目flex-grow不同，他们会按照比例flex-glow的比值平分剩余空间。</div>
                 <XMP>
                   <i>.item &#123;</i>
                     <In>flex-grow: &lt;number>; /* default 0 */</In>

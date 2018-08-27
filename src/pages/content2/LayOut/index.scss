@@ -162,6 +162,16 @@ ul{
     }
   }
 }
+.flex-config-box{
+  @extend .grid-config-box;
+  .flex-config{
+    @extend .grid-config;
+    span{
+      margin-right: rem(10);
+      margin-bottom: rem(5);
+    }
+  }
+}
 .grid-wrap{
   display: grid;
   background-color: black;

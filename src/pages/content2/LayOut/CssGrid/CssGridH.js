@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Panel from '../../../../components/Panel';
 import Session from '../../../../components/Session';
 import Img from '../../../../components/Img';
-import CssGridCom from './CssGridCom';
+import CssGridCom from '../components/CssGridCom';
 import Result from '../../../../components/Result';
 import XMP from '../../../../components/XMP';
 import NoteTip from '../../../../components/NoteTip';
