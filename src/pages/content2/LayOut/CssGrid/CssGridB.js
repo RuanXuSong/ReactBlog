@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Panel from '../../../../components/Panel';
 import Session from '../../../../components/Session';
 import CssGridCom from '../components/CssGridCom';
+import Img from '../../../../components/Img';
 import In from '../../../../components/Indent';
 import Result from '../../../../components/Result';
 import NoteTip from '../../../../components/NoteTip';
@@ -13,11 +14,29 @@ class CssGridB extends Component{
         <Panel title="CssGrid">
           <Session title="简介">
           <dl>
-            <dt>CSS Grid 布局是 Web 的第一个真正的布局系统。它的目的是将内容组织成行列的形式，最终使开发人员能高度控制我们眼前屏幕上页面的显示效果。</dt>
+            <dd>CSS Grid 布局是 Web 的第一个真正的布局系统。它的目的是将内容组织成行列的形式，最终使开发人员能高度控制我们眼前屏幕上页面的显示效果。</dd>
             <dd>CSS Grid 布局不仅仅可以使复杂的布局和精美的排版成为可能，而且还可以使其变的干净利落可维护。</dd>
             <dd>CSS Grid 没有替换 flexbox 属性，尽可能保留了它的功能。我们甚至可以将这些属性与 CSS Grid 混用。</dd>
             <dd>通过使用 CSS Grid，Web开发变得更加简洁且对开发者更加友好了</dd>
           </dl>                   
+          </Session>
+          <Session title="Grid 布局模块概念">
+          <dl>
+            <div>下面是一些新的概念以便于你更好的理解Grid布局。虽然有大量的新概念，我们只看看其中的几个。</div>
+            <dt>网格项(Grid Item)</dt>
+            <dd>Grid项是Grid容器的子元素。</dd>
+            <dt>网格线(Grid Lines)</dt>
+            <Img src="gridLine.png" alt="网格线"/>
+            <dd>Grid线是存在于行或列旁边的线。这里有两种Grid线的设置:一种用于定义列(纵轴),另一种用于定义行(水平轴)。</dd>
+            <dd>上面为第一个示例的截图，我创建了四个为<code>1fr</code>的列，这将创建五个垂直线条。我还创建了一行，创建了两条水平线。</dd>
+            <dt>网格轨道(Grid Track)</dt>
+            <dd>两个相邻网格线之间的空间。你可以把它们想像成网格的行或列。下图所示的是第二行和第三行网格线之间的网格轨道。</dd>
+            <Img src="gridTrack.png" alt="gridTrack"/>
+            <dt>网格单元格(Grid Cell)</dt>
+            <dd>两个相邻的行和两个相邻的列之间的网格线空间。它是网格的一个"单位"。下面图片所示的是行网格线 1 和 2 与列网格线 2 和 3 之间的网格单元格。</dd>
+            <Img src="gridCell.png" alt="gridCell"/>
+          </dl>     
+          <NoteTip>注: column, float, clear, 和 vertical-align 元素对网格容器不起作用。</NoteTip>              
           </Session>
           <Session title="CssGrid基础">
             <blockquote>

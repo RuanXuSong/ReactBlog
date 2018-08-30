@@ -13,9 +13,11 @@ class FlexBox extends Component{
       return(
         <Panel title="FlexBox布局">
           <Session title="简介">
-          <div>
-            FlexBox是现代Web布局的主流方式之一,它也成为一个新的W3C标准规范。flex将取代float和display:table的时代。这是一个更简洁的制作智能布局。
-          </div>       
+          <dl>
+            <dd>FlexBox是现代Web布局的主流方式之一,它也成为一个新的W3C标准规范。</dd>
+            <dd>Flex是Flexible Box的缩写，意为”弹性布局”，这是一个更简洁的制作智能布局,用来为盒状模型提供最大的灵活性。</dd>
+            <dd>flex将取代float和display:table的时代。</dd>
+          </dl>     
           </Session>
           <Session title="开始使用flex">
           <div>下面给出flexBox操作实例</div>
