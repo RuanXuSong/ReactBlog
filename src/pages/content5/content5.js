@@ -2,25 +2,25 @@ import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Page from '../../utils/Page';
-import Brief from './Html/Brief';
-import HtmlEle from './Html/HtmlEle';
-import HtmlStyle from './Html/HtmlStyle';
-import Esse from './Html/Esse';
+import DiaryFace from './Diary/DiaryFace';
+import Y2018M8D31 from './Diary/2018/08/31';
+import StudyBrief from './Study/StudyBrief';
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
-class HtmlPage extends Component {
+class StudyPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			page: 'brief'
+			page: 'Diary'
 		};
 	}
 	handleClick = (e, sub) => {
 		this.setState({
 			page: e.key
 		});
-		Page.savePageInfo(1, sub, e.key);
+		Page.savePageInfo(5, sub, e.key);
 	};
+	//获取page打开的menu
 	getPageArr = () => {
 		let PageArr = [];
 		if (typeof Page.getPageInfo().sub === 'object') {
@@ -40,7 +40,7 @@ class HtmlPage extends Component {
 					<Menu
 						mode="inline"
 						defaultSelectedKeys={[
-							Page.getPageInfo().page ? Page.getPageInfo().page : 'HTML简介'
+							Page.getPageInfo().page ? Page.getPageInfo().page : 'Diary'
 						]}
 						defaultOpenKeys={
 							Page.getPageInfo().sub ? this.getPageArr() : ['sub1']
@@ -52,24 +52,51 @@ class HtmlPage extends Component {
 							title={
 								<span>
 									<Icon type="bars" />
-									HTML基础
+									Diary
 								</span>
 							}
 						>
-							<Menu.Item key="HTML简介" onClick={e => this.handleClick(e, 1)}>
-								<Link to={`${match.path}/brief`}>HTML简介</Link>
+							<Menu.Item key="Diary" onClick={e => this.handleClick(e, 1)}>
+								<Link to={`${match.path}/diaryFace`}>face</Link>
 							</Menu.Item>
-							<Menu.Item key="HTML元素" onClick={e => this.handleClick(e, 1)}>
-								<Link to={`${match.path}/HtmlEle`}>HTML元素</Link>
-							</Menu.Item>
-							<Menu.Item key="HTML样式" onClick={e => this.handleClick(e, 1)}>
-								<Link to={`${match.path}/HtmlStyle`}>HTML样式</Link>
-							</Menu.Item>
-							<Menu.Item
-								key="HTML字符实体"
-								onClick={e => this.handleClick(e, 1)}
+							<SubMenu
+								key="sub1.1"
+								title={
+									<span>
+										<Icon type="bars" />
+										2018
+									</span>
+								}
 							>
-								<Link to={`${match.path}/Esse`}>HTML字符实体</Link>
+								<SubMenu
+									key="sub1.1.1"
+									title={
+										<span>
+											<Icon type="bars" />
+											08
+										</span>
+									}
+								>
+									<Menu.Item
+										key="Y2018M8D31"
+										onClick={e => this.handleClick(e, [1, 1.1, '1.1.1'])}
+									>
+										<Link to={`${match.path}/Y2018M8D31`}>31</Link>
+									</Menu.Item>
+								</SubMenu>
+							</SubMenu>
+						</SubMenu>
+						<SubMenu
+							key="sub2"
+							title={
+								<span>
+									<Icon type="bars" />
+									Diary
+								</span>
+							}
+						>
+							<Menu.Item key="Study" onClick={e => this.handleClick(e, 2)}>
+								<Link to={`${match.path}/studyBrief`}>brief</Link>
 							</Menu.Item>
 						</SubMenu>
 					</Menu>
@@ -82,7 +109,7 @@ class HtmlPage extends Component {
 						</Breadcrumb.Item>
 						<Breadcrumb.Item>
 							<Icon type="user" />
-							HTML
+							学习
 						</Breadcrumb.Item>
 						<Breadcrumb.Item>{this.state.page}</Breadcrumb.Item>
 					</Breadcrumb>
@@ -95,11 +122,10 @@ class HtmlPage extends Component {
 						}}
 					>
 						<Switch>
-							<Route exact path={`${match.path}`} component={Brief} />
-							<Route path={`${match.path}/brief`} component={Brief} />
-							<Route path={`${match.path}/HtmlEle`} component={HtmlEle} />
-							<Route path={`${match.path}/HtmlStyle`} component={HtmlStyle} />
-							<Route path={`${match.path}/Esse`} component={Esse} />
+							<Route exact path={`${match.path}`} component={DiaryFace} />
+							<Route path={`${match.path}/diaryFace`} component={DiaryFace} />
+							<Route path={`${match.path}/Y2018M8D31`} component={Y2018M8D31} />
+							<Route path={`${match.path}/studyBrief`} component={StudyBrief} />
 						</Switch>
 					</Content>
 				</Layout>
@@ -107,4 +133,4 @@ class HtmlPage extends Component {
 		);
 	}
 }
-export default HtmlPage;
+export default StudyPage;

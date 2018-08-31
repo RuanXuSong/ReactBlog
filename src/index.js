@@ -16,6 +16,9 @@ else if(Page.getPageInfo().index==='css'){
 else if(Page.getPageInfo().index==='js'){
     direction="/myblog/js";
 }
+else if(Page.getPageInfo().index==='study'){
+    direction="/myblog/study";
+}
 else{
     direction="/myblog/html";
 }

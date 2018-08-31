@@ -25,12 +25,13 @@ class CssGridH extends Component {
 						<p>CssGrid有以下进阶属性：</p>
 						<p>1.minmax()</p>
 						<p>2.repeat()</p>
-						<p>3.网格线</p>
-						<p>4.grid-area</p>
-						<p>5.网格线命名</p>
-						<p>6.网格区域命名</p>
-						<p>7.对齐</p>
-						<p>8.隐式网格</p>
+						<p>3.auto-fit和auto-fill</p>
+						<p>4.网格线</p>
+						<p>5.grid-area</p>
+						<p>6.网格线命名</p>
+						<p>7.网格区域命名</p>
+						<p>8.对齐</p>
+						<p>9.隐式网格</p>
 					</blockquote>
 					<div>
 						还是按习惯先给大家看个整体效果:
@@ -119,7 +120,8 @@ class CssGridH extends Component {
 							<p>4.grid-column-end</p>
 						</blockquote>
 						<div>
-							默认值为auto。通过网格线可以定位网格项目。网格线实际上是代表线的开始、结束，两者之间就是网格列或行。每条线是从网格轨道开始，网格的网格线从1开始，每条网格线逐步增加1。
+							默认值为auto。通过网格线可以定位网格项目。网格线实际上是代表线的开始、结束，两者之间就是网格列或行。
+							每条线是从网格轨道开始，网格的网格线从1开始，每条网格线逐步增加1。
 						</div>
 						<XMP>
 							<i>grid-row-start: 2;</i>
@@ -128,7 +130,8 @@ class CssGridH extends Component {
 							<i>grid-column-end: 3;</i>
 						</XMP>
 						<div>
-							两列三行的网格创建三条列网格线和四条行网格线。项目A就是由行和列的号码重新定位。如果一个网格项目跨度只有一行或一列，那么grid-row-end和grid-column-end不是必需的
+							两列三行的网格创建三条列网格线和四条行网格线。项目A就是由行和列的号码重新定位。如果一个网格项目跨度只有一行或一列，
+							那么grid-row-end和grid-column-end不是必需的
 						</div>
 						<Result>
 							<CssGridCom gridMode="3" />

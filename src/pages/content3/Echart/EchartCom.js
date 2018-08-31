@@ -13,9 +13,10 @@ var echarts = require('echarts');
     constructor(props){
         super(props);
         this.state={
-            data:'[1,2,3,4,5,6]',
+            data:'[1,2,{"a":"1","b":"2"},4,5,6]',
             type:'bar',           
             showTitle:'true',
+            DataType:'',
             title:'请输入图表名称',
             color:['#000'],
             colorNum:1,
@@ -42,6 +43,7 @@ var echarts = require('echarts');
             })
         }
     }
+    
     handleClick(e){ 
         if(this.state.type === 'pie'){                 
             echarts.init(document.getElementById('chart')).setOption({
@@ -171,6 +173,28 @@ var echarts = require('echarts');
             showTitle:e
     })
 }
+    componentDidMount(){
+        this.setState({
+            dataType:JSON.parse(this.state.data)
+        })
+    }
+    ChangeShowDataType(e){
+        let str = '';
+        let datas;
+        
+        if(e){
+            datas=JSON.parse(this.state.data);
+            str+=JSON.stringify(datas,'',4);
+            this.setState({
+                data:str,
+            }) 
+        }
+        else{
+            this.setState({
+                data:JSON.stringify(this.state.dataType),
+            }) 
+        }
+    }
     handleChangeLabel(e){
         this.setState({
             label:e.target.value
@@ -207,6 +231,7 @@ var echarts = require('echarts');
                 <div>是否显示表名: <Switch defaultChecked onChange={(e)=>{this.ChangeShowChartName(e)}} /></div>
                 <div><div>标注名:</div><textarea value={this.state.label} style={{ height:30 }} onChange={(e)=>{this.handleChangeLabel(e)}}/></div>
                 <div><div>数据:</div><textarea value={this.state.data} style={{ height:30 }} onChange={(e)=>{this.handleChange(e)}}/></div>
+                <div>数据是否显示为JSON: <Switch onChange={(e)=>{this.ChangeShowDataType(e)}} /></div>
                 {
                     colorArr.map((color,idx)=>
                         (

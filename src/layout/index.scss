@@ -85,11 +85,11 @@ dd::before {
   background: $lblue;
   line-height: 1.4;
   font-family: Consolas;
+}
 
-  .Indent {
-    margin-left: rem(20);
-    @extend p;
-  }
+.Indent {
+  margin-left: rem(20);
+  @extend p;
 }
 
 .imgWrap {

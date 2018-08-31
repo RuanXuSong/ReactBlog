@@ -1,0 +1,15 @@
+@import '../../styles/fn.scss';
+
+.diary-face {
+  position: relative;
+}
+
+.diary-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: serif;
+  font-size: rem(30);
+  text-shadow: rem(2) rem(2) rem(10) #666;
+}
