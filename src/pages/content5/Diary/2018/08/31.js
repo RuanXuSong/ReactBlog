@@ -16,7 +16,7 @@ class Y2018M8D31 extends Component {
 				</Session>
 				<Session title="今日收获">
 					<dl>
-						<dd>1.</dd>
+						<dd>1.SubMenu问题状态保存解决。记录在Antd/SubMenu模块中</dd>
 						<dd>2.</dd>
 					</dl>
 				</Session>
