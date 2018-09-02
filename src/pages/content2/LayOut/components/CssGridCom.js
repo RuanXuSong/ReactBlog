@@ -237,7 +237,7 @@ class CssGridCom extends Component {
 						onChange={e => this.handleChangeGridColumn(e)}
 					>
 						<Option value="auto">auto</Option>
-						<Option value="cs/ce2">cs/ce2</Option>
+						<Option value="cs/ce 2">cs/ce 2</Option>
 						<Option value="c2s/ce">c2s/ce</Option>
 					</Select>
 				</div>
@@ -432,7 +432,7 @@ class CssGridCom extends Component {
 						<Option value="span 2">span 2</Option>
 						<Option value="2 / span 2">2 / span 2</Option>
 						<Option value="1 / span 3">1 / span 3</Option>
-						<Option value="cs/ce2">cs/ce2</Option>
+						<Option value="cs/ce 2">cs/ce 2</Option>
 						<Option value="c2s/ce">c2s/ce</Option>
 					</Select>
 				</div>

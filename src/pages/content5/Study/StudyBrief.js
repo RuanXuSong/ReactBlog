@@ -3,7 +3,6 @@ import Panel from '../../../components/Panel';
 import Img from '../../../components/Img';
 import Session from '../../../components/Session';
 import In from '../../../components/Indent';
-import '../index.scss';
 class StudyBrief extends Component {
 	render() {
 		return (

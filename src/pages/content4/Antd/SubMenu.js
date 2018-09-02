@@ -67,11 +67,8 @@ class SubMenus extends Component {
 								)}>
 							</i>
 							<In>
-								&lt;Link to= &#123;
-								<span className="code-string">
-									`$&#123;match.path}/CssBrief`
-								</span>
-								} >CSS简介&lt;/Link>
+								&lt;Link to= &#123; &lt;span className="code-string">
+								`$&#123;match.path}/CssBrief` &lt;/span> } >CSS简介&lt;/Link>
 							</In>
 							<i>&lt;/Menu.Item></i>
 						</XMP>
@@ -96,7 +93,7 @@ class SubMenus extends Component {
 							</i>
 							<i>const cookie = new Cookies();</i>
 							<i>class Page&#123;</i>
-							<i>// 保存刷新前页面信息</i>
+							<i>/ / 保存刷新前页面信息</i>
 							<i>static savePageInfo(index,sub,page)&#123;</i>
 							<In>
 								cookie.set(
@@ -104,7 +101,7 @@ class SubMenus extends Component {
 								,JSON.stringify(&#123;index,sub,page}));
 							</In>
 							<i>}</i>
-							<i>//获得刷新前页面信息</i>
+							<i>/ /获得刷新前页面信息</i>
 							<i>static getPageInfo()&#123;</i>
 							<In>
 								return cookie.get(

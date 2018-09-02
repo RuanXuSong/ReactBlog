@@ -27,7 +27,6 @@ class CssPage extends Component {
 			page: e.key
 		});
 		Page.savePageInfo(2, sub, e.key);
-		console.log(Page.getPageInfo());
 	};
 	getPageArr = () => {
 		let PageArr = [];
@@ -114,8 +113,6 @@ class CssPage extends Component {
 								</span>
 							}
 						>
-							{/* <Menu.Item key="盒模型" onClick={(e)=>this.handleClick(e,3)}><Link to={`${match.path}/Box`}>盒模型</Link></Menu.Item>
-                    <Menu.Item key="Float" onClick={(e)=>this.handleClick(e,3)}><Link to={`${match.path}/Float`}>Float</Link></Menu.Item> */}
 							<Menu.Item key="FlexBox" onClick={e => this.handleClick(e, 3)}>
 								<Link to={`${match.path}/FlexBox`}>FlexBox</Link>
 							</Menu.Item>

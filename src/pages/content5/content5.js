@@ -3,8 +3,10 @@ import { Route, Link, Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Page from '../../utils/Page';
 import DiaryFace from './Diary/DiaryFace';
-import Y2018M8D31 from './Diary/2018/08/31';
+import Y2018M08D31 from './Diary/2018/08/31';
+import Y2018M09D01 from './Diary/2018/09/01';
 import StudyBrief from './Study/StudyBrief';
+import MIME from './Study/MIME';
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 class StudyPage extends Component {
@@ -78,10 +80,26 @@ class StudyPage extends Component {
 									}
 								>
 									<Menu.Item
-										key="Y2018M8D31"
+										key="Y2018M08D31"
 										onClick={e => this.handleClick(e, [1, 1.1, '1.1.1'])}
 									>
-										<Link to={`${match.path}/Y2018M8D31`}>31</Link>
+										<Link to={`${match.path}/Y2018M08D31`}>31</Link>
+									</Menu.Item>
+								</SubMenu>
+								<SubMenu
+									key="sub1.1.2"
+									title={
+										<span>
+											<Icon type="bars" />
+											09
+										</span>
+									}
+								>
+									<Menu.Item
+										key="Y2018M09D01"
+										onClick={e => this.handleClick(e, [1, 1.1, '1.1.2'])}
+									>
+										<Link to={`${match.path}/Y2018M09D01`}>01</Link>
 									</Menu.Item>
 								</SubMenu>
 							</SubMenu>
@@ -97,6 +115,9 @@ class StudyPage extends Component {
 						>
 							<Menu.Item key="Study" onClick={e => this.handleClick(e, 2)}>
 								<Link to={`${match.path}/studyBrief`}>brief</Link>
+							</Menu.Item>
+							<Menu.Item key="MIME" onClick={e => this.handleClick(e, 2)}>
+								<Link to={`${match.path}/MIME`}>MIME类型</Link>
 							</Menu.Item>
 						</SubMenu>
 					</Menu>
@@ -124,8 +145,16 @@ class StudyPage extends Component {
 						<Switch>
 							<Route exact path={`${match.path}`} component={DiaryFace} />
 							<Route path={`${match.path}/diaryFace`} component={DiaryFace} />
-							<Route path={`${match.path}/Y2018M8D31`} component={Y2018M8D31} />
+							<Route
+								path={`${match.path}/Y2018M08D31`}
+								component={Y2018M08D31}
+							/>
+							<Route
+								path={`${match.path}/Y2018M09D01`}
+								component={Y2018M09D01}
+							/>
 							<Route path={`${match.path}/studyBrief`} component={StudyBrief} />
+							<Route path={`${match.path}/MIME`} component={MIME} />
 						</Switch>
 					</Content>
 				</Layout>

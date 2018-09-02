@@ -4,25 +4,24 @@ import Img from '../../../../../components/Img';
 import Session from '../../../../../components/Session';
 import In from '../../../../../components/Indent';
 import '../../../index.scss';
-class Y2018M08D31 extends Component {
+class Y2018M09D01 extends Component {
 	render() {
 		return (
-			<Panel title="2018/08/31">
+			<Panel title="2018/09/01">
 				<Session title="今日安排">
 					<dl>
-						<dd>1.JS红宝书。</dd>
-						<dd>2.做好博客部署工作</dd>
-						<dd>3.debug大海项目</dd>
+						<dd>1.JS红宝书目标50页。</dd>
+						<dd>3.检查大海数据大屏</dd>
 					</dl>
 				</Session>
 				<Session title="今日收获">
 					<dl>
-						<dd>1.SubMenu问题状态保存解决。记录在Antd/SubMenu模块中</dd>
-						<dd>2.找到一个bug并汇报</dd>
+						<dd>1.MIME类型</dd>
+						<dd>2.</dd>
 					</dl>
 				</Session>
 			</Panel>
 		);
 	}
 }
-export default Y2018M08D31;
+export default Y2018M09D01;
