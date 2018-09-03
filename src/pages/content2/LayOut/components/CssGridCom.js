@@ -256,7 +256,7 @@ class CssGridCom extends Component {
 						<Option value="1fr 1fr">1fr 1fr</Option>
 						<Option value="2fr 1fr">2fr 1fr</Option>
 						<Option value="2fr 1fr 2fr">2fr 1fr 2fr</Option>
-						<Option value="50px 50px">50px 50px</Option>
+						<Option value="50px 50px 50px">50px 50px 50px</Option>
 						<Option value="50% 50%">50% 50%</Option>
 						<Option value="100px 1fr 2fr">100px 1fr 2fr</Option>
 						<Option value="repeat(3, 1fr)">repeat(3, 1fr)</Option>
