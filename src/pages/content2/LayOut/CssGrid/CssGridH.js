@@ -55,6 +55,9 @@ class CssGridH extends Component {
 						<Result>
 							<CssGridCom gridMode="1" />
 						</Result>
+						<NoteTip>
+							这里minmax()的特性是:如果容器长或宽是定值，则会尽可能地取定值，如果长或高是auto，则会自适应跟最小的比例值相等
+						</NoteTip>
 					</Session>
 
 					<Session title="repeat()" sub="true">
