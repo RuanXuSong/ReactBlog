@@ -28,11 +28,12 @@ class CssPage extends Component {
 		});
 		Page.savePageInfo(2, sub, e.key);
 	};
+	//获取page打开的menu
 	getPageArr = () => {
 		let PageArr = [];
 		if (typeof Page.getPageInfo().sub === 'object') {
-			Page.getPageInfo().sub.map(function(item, idx) {
-				PageArr.push('sub' + item);
+			Page.getPageInfo().sub.forEach(function(element) {
+				PageArr.push('sub' + element);
 			});
 		} else {
 			PageArr.push('sub' + Page.getPageInfo().sub);

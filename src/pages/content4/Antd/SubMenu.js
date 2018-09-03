@@ -67,8 +67,8 @@ class SubMenus extends Component {
 								)}>
 							</i>
 							<In>
-								&lt;Link to= &#123; &lt;span className="code-string">
-								`$&#123;match.path}/CssBrief` &lt;/span> } >CSS简介&lt;/Link>
+								&lt;Link to= &#123; &lt;span className="code-string"> `$
+								&#123;match.path}/CssBrief` &lt;/span> } >CSS简介&lt;/Link>
 							</In>
 							<i>&lt;/Menu.Item></i>
 						</XMP>
@@ -118,7 +118,7 @@ class SubMenus extends Component {
 					<div>
 						<div>下面这段代码是Menu里的属性配置：</div>
 						<XMP>
-							<i>//获取打开的Menu数组</i>
+							<i>/ /获取打开的Menu数组</i>
 							<i>getPageArr = () => &#123;</i>
 							<In>let PageArr = [];</In>
 							<In>
@@ -147,7 +147,7 @@ class SubMenus extends Component {
 							<In>&#125;</In>
 							<In>return PageArr;</In>
 							<i>};</i>
-							<i>//以下为在Menu中的代码片段：</i>
+							<i>/ /以下为在Menu中的代码片段：</i>
 							<i>&lt;Menu</i>
 							<In>mode="inline"</In>
 							<In>defaultSelectedKeys=&#123;[</In>
@@ -216,8 +216,8 @@ class SubMenus extends Component {
 							</In>
 							<i>&gt;</i>
 							<i>
-								&lt;Link
-								to=&#123;`$&#123;match.path}/CssGridB`}>CssGrid基础&lt;/Link>
+								&lt;Link to=&#123;`$
+								&#123;match.path}/CssGridB`}>CssGrid基础&lt;/Link>
 							</i>
 							<i>&lt;/Menu.Item></i>
 							<i>&lt;Menu.Item</i>
@@ -232,8 +232,8 @@ class SubMenus extends Component {
 								<In>
 									<In>
 										<In>
-											&lt;Link
-											to=&lt;`$&#123;match.path}/CssGridH`}>CssGrid进阶&lt;/Link>
+											&lt;Link to=&lt;`$
+											&#123;match.path}/CssGridH`}>CssGrid进阶&lt;/Link>
 										</In>
 									</In>
 								</In>

@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 import { Route, Link, Switch } from 'react-router-dom';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import Page from '../../utils/Page';
-import DiaryFace from './Diary/DiaryFace';
-import Y2018M08D31 from './Diary/2018/08/31';
-import Y2018M09D01 from './Diary/2018/09/01';
+import MapForEach from './Study/MapForEach';
 import StudyBrief from './Study/StudyBrief';
 import MIME from './Study/MIME';
 const { SubMenu } = Menu;
@@ -13,7 +11,7 @@ class StudyPage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			page: 'Diary'
+			page: 'Study'
 		};
 	}
 	handleClick = (e, sub) => {
@@ -26,8 +24,8 @@ class StudyPage extends Component {
 	getPageArr = () => {
 		let PageArr = [];
 		if (typeof Page.getPageInfo().sub === 'object') {
-			Page.getPageInfo().sub.map(function(item, idx) {
-				PageArr.push('sub' + item);
+			Page.getPageInfo().sub.forEach(element => {
+				PageArr.push('sub' + element);
 			});
 		} else {
 			PageArr.push('sub' + Page.getPageInfo().sub);
@@ -42,7 +40,7 @@ class StudyPage extends Component {
 					<Menu
 						mode="inline"
 						defaultSelectedKeys={[
-							Page.getPageInfo().page ? Page.getPageInfo().page : 'Diary'
+							Page.getPageInfo().page ? Page.getPageInfo().page : 'Study'
 						]}
 						defaultOpenKeys={
 							Page.getPageInfo().sub ? this.getPageArr() : ['sub1']
@@ -54,70 +52,18 @@ class StudyPage extends Component {
 							title={
 								<span>
 									<Icon type="bars" />
-									Diary
+									Study
 								</span>
 							}
 						>
-							<Menu.Item key="Diary" onClick={e => this.handleClick(e, 1)}>
-								<Link to={`${match.path}/diaryFace`}>face</Link>
-							</Menu.Item>
-							<SubMenu
-								key="sub1.1"
-								title={
-									<span>
-										<Icon type="bars" />
-										2018
-									</span>
-								}
-							>
-								<SubMenu
-									key="sub1.1.1"
-									title={
-										<span>
-											<Icon type="bars" />
-											08
-										</span>
-									}
-								>
-									<Menu.Item
-										key="Y2018M08D31"
-										onClick={e => this.handleClick(e, [1, 1.1, '1.1.1'])}
-									>
-										<Link to={`${match.path}/Y2018M08D31`}>31</Link>
-									</Menu.Item>
-								</SubMenu>
-								<SubMenu
-									key="sub1.1.2"
-									title={
-										<span>
-											<Icon type="bars" />
-											09
-										</span>
-									}
-								>
-									<Menu.Item
-										key="Y2018M09D01"
-										onClick={e => this.handleClick(e, [1, 1.1, '1.1.2'])}
-									>
-										<Link to={`${match.path}/Y2018M09D01`}>01</Link>
-									</Menu.Item>
-								</SubMenu>
-							</SubMenu>
-						</SubMenu>
-						<SubMenu
-							key="sub2"
-							title={
-								<span>
-									<Icon type="bars" />
-									Diary
-								</span>
-							}
-						>
-							<Menu.Item key="Study" onClick={e => this.handleClick(e, 2)}>
+							<Menu.Item key="Study" onClick={e => this.handleClick(e, 1)}>
 								<Link to={`${match.path}/studyBrief`}>brief</Link>
 							</Menu.Item>
-							<Menu.Item key="MIME" onClick={e => this.handleClick(e, 2)}>
+							<Menu.Item key="MIME" onClick={e => this.handleClick(e, 1)}>
 								<Link to={`${match.path}/MIME`}>MIME类型</Link>
+							</Menu.Item>
+							<Menu.Item key="MapForEach" onClick={e => this.handleClick(e, 1)}>
+								<Link to={`${match.path}/MapForEach`}>map和forEach</Link>
 							</Menu.Item>
 						</SubMenu>
 					</Menu>
@@ -143,18 +89,10 @@ class StudyPage extends Component {
 						}}
 					>
 						<Switch>
-							<Route exact path={`${match.path}`} component={DiaryFace} />
-							<Route path={`${match.path}/diaryFace`} component={DiaryFace} />
-							<Route
-								path={`${match.path}/Y2018M08D31`}
-								component={Y2018M08D31}
-							/>
-							<Route
-								path={`${match.path}/Y2018M09D01`}
-								component={Y2018M09D01}
-							/>
+							<Route exact path={`${match.path}`} component={StudyBrief} />
 							<Route path={`${match.path}/studyBrief`} component={StudyBrief} />
 							<Route path={`${match.path}/MIME`} component={MIME} />
+							<Route path={`${match.path}/MapForEach`} component={MapForEach} />
 						</Switch>
 					</Content>
 				</Layout>

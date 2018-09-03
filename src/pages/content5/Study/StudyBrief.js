@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
 import Img from '../../../components/Img';
 import Session from '../../../components/Session';
-import In from '../../../components/Indent';
 class StudyBrief extends Component {
 	render() {
 		return (
