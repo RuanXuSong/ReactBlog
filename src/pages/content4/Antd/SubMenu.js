@@ -126,12 +126,12 @@ class SubMenus extends Component {
 								<span className="code-string">'object'</span>) &#123;
 							</In>
 							<In>
-								<In>Page.getPageInfo().sub.map(function(item, idx) &#123;</In>
+								<In>Page.getPageInfo().sub.forEach(element => &#123;</In>
 							</In>
 							<In>
 								<In>
 									PageArr.push(
-									<span className="code-string">'sub'</span> + item);
+									<span className="code-string">'sub'</span> + element);
 								</In>
 							</In>
 							<In>});</In>

@@ -603,7 +603,6 @@ class CssGridCom extends Component {
 						style={{ width: '100%' }}
 						onChange={e => this.handleChangeJustifyItems(e)}
 					>
-						<Option value="auto">auto</Option>
 						<Option value="normal">normal</Option>
 						<Option value="start">start</Option>
 						<Option value="end">end</Option>
@@ -672,6 +671,7 @@ class CssGridCom extends Component {
 		);
 		var gridContent = (
 			<React.Fragment>
+				
 				<div className="grid-config">
 					<span>width[容器]:</span>
 					<Select
