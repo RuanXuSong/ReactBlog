@@ -16,7 +16,6 @@ var echarts = require('echarts');
             data:'[1,2,3,4,5,6]',
             type:'bar',           
             showTitle:'true',
-            DataType:'',
             title:'请输入图表名称',
             color:['#000'],
             colorNum:1,
@@ -184,14 +183,14 @@ var echarts = require('echarts');
         
         if(e){
             datas=JSON.parse(this.state.data);
-            str+=JSON.stringify(datas,'',4);
+            str=JSON.stringify(datas,'',4);
             this.setState({
                 data:str,
             }) 
         }
         else{
             this.setState({
-                data:JSON.stringify(this.state.dataType),
+                data:JSON.stringify(JSON.parse(this.state.data)),
             }) 
         }
     }
@@ -241,8 +240,8 @@ var echarts = require('echarts');
                 }
                 {this.state.type==='pie'?'':<div><div>X轴列名:</div><textarea value={this.state.xAxis} style={{ overflowX:"hidden",width: 300,height:100 }} onChange={(e)=>{this.handleChangeX(e)}}/></div>}  
                 <Button type="primary" style={{ marginTop: 10 }} onClick={(e)=>{this.handleClick(e)}}>确认</Button>
-            </div>                 
-            <div id="chart" style={{width:'90%',height:"500px"}}></div>             
+            </div>
+            <div id="chart" style={{width:'90%',height:"500px"}}></div>
           </div>
           <div>输出结果:</div>  
           <textarea style={{ width:'90%',height:300 }} value={this.state.result}/>

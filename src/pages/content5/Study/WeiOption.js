@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 import Panel from '../../../components/Panel';
-import Img from '../../../components/Img';
 import Session from '../../../components/Session';
 import In from '../../../components/Indent';
-import TableList from '../../../components/TableList';
 import XMP from '../../../components/XMP';
-import NoteTip from '../../../components/NoteTip';
 class OneVar extends Component {
 	render() {
 		return (
