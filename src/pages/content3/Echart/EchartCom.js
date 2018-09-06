@@ -13,7 +13,7 @@ var echarts = require('echarts');
     constructor(props){
         super(props);
         this.state={
-            data:'[1,2,{"a":"1","b":"2"},4,5,6]',
+            data:'[1,2,3,4,5,6]',
             type:'bar',           
             showTitle:'true',
             DataType:'',
@@ -227,10 +227,10 @@ var echarts = require('echarts');
                     <Option value="pie">pie</Option>
                     <Option value="scatter">scatter</Option>
                 </Select>
-                <div><div>表名:</div><textarea value={this.state.title} style={{ height:30 }} onChange={(e)=>{this.handleChangeTitle(e)}}/></div>
+                <div><div>表名:</div><textarea value={this.state.title} style={{ overflowX:"hidden",width: 300,height:50 }} onChange={(e)=>{this.handleChangeTitle(e)}}/></div>
                 <div>是否显示表名: <Switch defaultChecked onChange={(e)=>{this.ChangeShowChartName(e)}} /></div>
-                <div><div>标注名:</div><textarea value={this.state.label} style={{ height:30 }} onChange={(e)=>{this.handleChangeLabel(e)}}/></div>
-                <div><div>数据:</div><textarea value={this.state.data} style={{ height:30 }} onChange={(e)=>{this.handleChange(e)}}/></div>
+                <div><div>标注名:</div><textarea value={this.state.label} style={{ overflowX:"hidden",width: 300,height:50 }} onChange={(e)=>{this.handleChangeLabel(e)}}/></div>
+                <div><div>数据:</div><textarea value={this.state.data} style={{ overflowX:"hidden",width: 300,height:50 }} onChange={(e)=>{this.handleChange(e)}}/></div>
                 <div>数据是否显示为JSON: <Switch onChange={(e)=>{this.ChangeShowDataType(e)}} /></div>
                 {
                     colorArr.map((color,idx)=>
@@ -239,7 +239,7 @@ var echarts = require('echarts');
                         )
                     )
                 }
-                {this.state.type==='pie'?'':<div><div>X轴列名:</div><textarea value={this.state.xAxis} style={{ width: 300,height:100 }} onChange={(e)=>{this.handleChangeX(e)}}/></div>}  
+                {this.state.type==='pie'?'':<div><div>X轴列名:</div><textarea value={this.state.xAxis} style={{ overflowX:"hidden",width: 300,height:100 }} onChange={(e)=>{this.handleChangeX(e)}}/></div>}  
                 <Button type="primary" style={{ marginTop: 10 }} onClick={(e)=>{this.handleClick(e)}}>确认</Button>
             </div>                 
             <div id="chart" style={{width:'90%',height:"500px"}}></div>             
